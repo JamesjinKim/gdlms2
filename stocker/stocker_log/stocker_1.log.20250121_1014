@@ -1,0 +1,971 @@
+2025-01-21 10:13:36,715 - StockerServer - INFO - 
+=== Received Data ===
+2025-01-21 10:13:36,715 - StockerServer - INFO - Bunker ID: 0
+2025-01-21 10:13:36,715 - StockerServer - INFO - Stocker ID: 14
+2025-01-21 10:13:36,715 - StockerServer - INFO - 
+=== Barcode Data ===
+2025-01-21 10:13:36,715 - StockerServer - INFO - [A] Port Barcode Data: [62675, 54689, 63051, 65428, 20775, 42594, 43099, 29426, 19049, 6042, 12959, 22060, 26102, 21648, 17993, 42424, 32806, 20400, 29828, 32256, 33888, 17415, 33633, 2128, 2034, 20579, 19961, 52354, 56679, 2712]
+2025-01-21 10:13:36,715 - StockerServer - INFO - [B] Port Barcode Data: [25236, 56340, 52675, 33162, 33488, 38078, 31222, 42594, 36911, 23838, 59864, 54845, 40163, 15603, 16200, 2054, 8404, 32526, 30764, 64930, 33967, 54797, 38699, 43452, 15154, 3939, 36756, 42460, 8202, 10265]
+2025-01-21 10:13:36,716 - StockerServer - INFO - 
+=== Gas Type ===
+2025-01-21 10:13:36,716 - StockerServer - INFO - [A] Port 가스 종류: [62, 73, 78, 47, 44]
+2025-01-21 10:13:36,716 - StockerServer - INFO - [B] Port 가스 종류: [49, 82, 79, 90, 17]
+2025-01-21 10:13:36,716 - StockerServer - INFO - 
+=== System Status ===
+2025-01-21 10:13:36,716 - StockerServer - INFO - Stocker Alarm Code: 556
+2025-01-21 10:13:36,716 - StockerServer - INFO - X축 현재값: 636
+2025-01-21 10:13:36,716 - StockerServer - INFO - Z축 현재값: 66
+2025-01-21 10:13:36,716 - StockerServer - INFO - 
+=== A Port Settings ===
+2025-01-21 10:13:36,716 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 59
+2025-01-21 10:13:36,716 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 94
+2025-01-21 10:13:36,716 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 864
+2025-01-21 10:13:36,716 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 906
+2025-01-21 10:13:36,716 - StockerServer - INFO - X축 Cylinder Pos 설정값: 864
+2025-01-21 10:13:36,716 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 168
+2025-01-21 10:13:36,716 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 250
+2025-01-21 10:13:36,716 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 264
+2025-01-21 10:13:36,717 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 723
+2025-01-21 10:13:36,717 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 950
+2025-01-21 10:13:36,717 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 66
+2025-01-21 10:13:36,717 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 313
+2025-01-21 10:13:36,717 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 835
+2025-01-21 10:13:36,717 - StockerServer - INFO - Worker Door Torque 설정값: 510
+2025-01-21 10:13:36,717 - StockerServer - INFO - Bunker Door Torque 설정값: 73
+2025-01-21 10:13:36,717 - StockerServer - INFO - Worker Door Open Pos 설정값: 95
+2025-01-21 10:13:36,717 - StockerServer - INFO - Bunker Door Open Pos 설정값: 68
+2025-01-21 10:13:36,717 - StockerServer - INFO - Worker Door Close Pos 설정값: 452
+2025-01-21 10:13:36,717 - StockerServer - INFO - Bunker Door Close Pos 설정값: 4
+2025-01-21 10:13:36,717 - StockerServer - INFO - Worker Door Torque 현재값: 33
+2025-01-21 10:13:36,717 - StockerServer - INFO - Bunker Door Torque 현재값: 45
+2025-01-21 10:13:36,717 - StockerServer - INFO - Worker Door Pos 현재값: 29
+2025-01-21 10:13:36,717 - StockerServer - INFO - Bunker Door Pos 현재값: 77
+2025-01-21 10:13:36,717 - StockerServer - INFO - 
+=== B Port Settings ===
+2025-01-21 10:13:36,718 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 861
+2025-01-21 10:13:36,718 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 825
+2025-01-21 10:13:36,718 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 90
+2025-01-21 10:13:36,718 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 63
+2025-01-21 10:13:36,718 - StockerServer - INFO - X축 Cylinder Pos 설정값: 478
+2025-01-21 10:13:36,718 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 716
+2025-01-21 10:13:36,718 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 83
+2025-01-21 10:13:36,718 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 9
+2025-01-21 10:13:36,718 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 942
+2025-01-21 10:13:36,718 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 0
+2025-01-21 10:13:36,718 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 0
+2025-01-21 10:13:36,718 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 0
+2025-01-21 10:13:36,718 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 0
+2025-01-21 10:13:36,718 - StockerServer - INFO - Worker Door Torque 설정값: 0
+2025-01-21 10:13:36,718 - StockerServer - INFO - Bunker Door Torque 설정값: 0
+2025-01-21 10:13:36,718 - StockerServer - INFO - Worker Door Open Pos 설정값: 0
+2025-01-21 10:13:36,718 - StockerServer - INFO - Bunker Door Open Pos 설정값: 0
+2025-01-21 10:13:36,719 - StockerServer - INFO - Worker Door Close Pos 설정값: 0
+2025-01-21 10:13:36,719 - StockerServer - INFO - Bunker Door Close Pos 설정값: 0
+2025-01-21 10:13:36,719 - StockerServer - INFO - Worker Door Torque 현재값: 0
+2025-01-21 10:13:36,719 - StockerServer - INFO - Bunker Door Torque 현재값: 0
+2025-01-21 10:13:36,719 - StockerServer - INFO - Worker Door Pos 현재값: 0
+2025-01-21 10:13:36,719 - StockerServer - INFO - Bunker Door Pos 현재값: 0
+2025-01-21 10:13:36,719 - StockerServer - INFO - 
+==================
+2025-01-21 10:13:36,822 - StockerServer - INFO - 
+=== Received Data ===
+2025-01-21 10:13:36,822 - StockerServer - INFO - Bunker ID: 0
+2025-01-21 10:13:36,822 - StockerServer - INFO - Stocker ID: 14
+2025-01-21 10:13:36,822 - StockerServer - INFO - 
+=== Barcode Data ===
+2025-01-21 10:13:36,822 - StockerServer - INFO - [A] Port Barcode Data: [62675, 54689, 63051, 65428, 20775, 42594, 43099, 29426, 19049, 6042, 12959, 22060, 26102, 21648, 17993, 42424, 32806, 20400, 29828, 32256, 33888, 17415, 33633, 2128, 2034, 20579, 19961, 52354, 56679, 2712]
+2025-01-21 10:13:36,822 - StockerServer - INFO - [B] Port Barcode Data: [25236, 56340, 52675, 33162, 33488, 38078, 31222, 42594, 36911, 23838, 59864, 54845, 40163, 15603, 16200, 2054, 8404, 32526, 60999, 49722, 52428, 47443, 19434, 52434, 4120, 46742, 9990, 30798, 56792, 48477]
+2025-01-21 10:13:36,823 - StockerServer - INFO - 
+=== Gas Type ===
+2025-01-21 10:13:36,823 - StockerServer - INFO - [A] Port 가스 종류: [85, 53, 85, 61, 90]
+2025-01-21 10:13:36,823 - StockerServer - INFO - [B] Port 가스 종류: [16, 19, 75, 89, 35]
+2025-01-21 10:13:36,823 - StockerServer - INFO - 
+=== System Status ===
+2025-01-21 10:13:36,823 - StockerServer - INFO - Stocker Alarm Code: 534
+2025-01-21 10:13:36,823 - StockerServer - INFO - X축 현재값: 526
+2025-01-21 10:13:36,823 - StockerServer - INFO - Z축 현재값: 28
+2025-01-21 10:13:36,823 - StockerServer - INFO - 
+=== A Port Settings ===
+2025-01-21 10:13:36,824 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 29
+2025-01-21 10:13:36,824 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 2
+2025-01-21 10:13:36,824 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 974
+2025-01-21 10:13:36,824 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 863
+2025-01-21 10:13:36,824 - StockerServer - INFO - X축 Cylinder Pos 설정값: 49
+2025-01-21 10:13:36,824 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 269
+2025-01-21 10:13:36,824 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 515
+2025-01-21 10:13:36,824 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 648
+2025-01-21 10:13:36,825 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 455
+2025-01-21 10:13:36,825 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 212
+2025-01-21 10:13:36,825 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 15
+2025-01-21 10:13:36,825 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 544
+2025-01-21 10:13:36,825 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 76
+2025-01-21 10:13:36,825 - StockerServer - INFO - Worker Door Torque 설정값: 660
+2025-01-21 10:13:36,825 - StockerServer - INFO - Bunker Door Torque 설정값: 68
+2025-01-21 10:13:36,825 - StockerServer - INFO - Worker Door Open Pos 설정값: 24
+2025-01-21 10:13:36,825 - StockerServer - INFO - Bunker Door Open Pos 설정값: 231
+2025-01-21 10:13:36,825 - StockerServer - INFO - Worker Door Close Pos 설정값: 592
+2025-01-21 10:13:36,826 - StockerServer - INFO - Bunker Door Close Pos 설정값: 50
+2025-01-21 10:13:36,826 - StockerServer - INFO - Worker Door Torque 현재값: 62
+2025-01-21 10:13:36,826 - StockerServer - INFO - Bunker Door Torque 현재값: 45
+2025-01-21 10:13:36,826 - StockerServer - INFO - Worker Door Pos 현재값: 29
+2025-01-21 10:13:36,826 - StockerServer - INFO - Bunker Door Pos 현재값: 77
+2025-01-21 10:13:36,826 - StockerServer - INFO - 
+=== B Port Settings ===
+2025-01-21 10:13:36,826 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 861
+2025-01-21 10:13:36,826 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 825
+2025-01-21 10:13:36,826 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 90
+2025-01-21 10:13:36,826 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 63
+2025-01-21 10:13:36,826 - StockerServer - INFO - X축 Cylinder Pos 설정값: 478
+2025-01-21 10:13:36,827 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 716
+2025-01-21 10:13:36,827 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 83
+2025-01-21 10:13:36,827 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 9
+2025-01-21 10:13:36,827 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 942
+2025-01-21 10:13:36,827 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 0
+2025-01-21 10:13:36,827 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 0
+2025-01-21 10:13:36,827 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 0
+2025-01-21 10:13:36,827 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 0
+2025-01-21 10:13:36,827 - StockerServer - INFO - Worker Door Torque 설정값: 0
+2025-01-21 10:13:36,827 - StockerServer - INFO - Bunker Door Torque 설정값: 0
+2025-01-21 10:13:36,827 - StockerServer - INFO - Worker Door Open Pos 설정값: 0
+2025-01-21 10:13:36,828 - StockerServer - INFO - Bunker Door Open Pos 설정값: 0
+2025-01-21 10:13:36,828 - StockerServer - INFO - Worker Door Close Pos 설정값: 0
+2025-01-21 10:13:36,828 - StockerServer - INFO - Bunker Door Close Pos 설정값: 0
+2025-01-21 10:13:36,828 - StockerServer - INFO - Worker Door Torque 현재값: 0
+2025-01-21 10:13:36,828 - StockerServer - INFO - Bunker Door Torque 현재값: 0
+2025-01-21 10:13:36,828 - StockerServer - INFO - Worker Door Pos 현재값: 0
+2025-01-21 10:13:36,828 - StockerServer - INFO - Bunker Door Pos 현재값: 0
+2025-01-21 10:13:36,828 - StockerServer - INFO - 
+==================
+2025-01-21 10:13:36,930 - StockerServer - INFO - 
+=== Received Data ===
+2025-01-21 10:13:36,930 - StockerServer - INFO - Bunker ID: 0
+2025-01-21 10:13:36,930 - StockerServer - INFO - Stocker ID: 14
+2025-01-21 10:13:36,930 - StockerServer - INFO - 
+=== Barcode Data ===
+2025-01-21 10:13:36,930 - StockerServer - INFO - [A] Port Barcode Data: [62675, 54689, 63051, 65428, 20775, 42594, 43099, 29426, 19049, 6042, 12959, 22060, 26102, 21648, 17993, 42424, 32806, 20400, 29828, 32256, 33888, 17415, 33633, 2128, 2034, 20579, 19961, 52354, 56679, 2712]
+2025-01-21 10:13:36,931 - StockerServer - INFO - [B] Port Barcode Data: [25236, 56340, 52675, 33162, 33488, 38078, 31222, 42594, 36911, 23838, 59864, 54845, 40163, 15603, 16200, 2054, 8404, 32526, 60999, 49722, 52428, 47443, 19434, 52434, 4120, 46742, 9990, 30798, 56792, 48477]
+2025-01-21 10:13:36,931 - StockerServer - INFO - 
+=== Gas Type ===
+2025-01-21 10:13:36,931 - StockerServer - INFO - [A] Port 가스 종류: [85, 53, 85, 61, 90]
+2025-01-21 10:13:36,931 - StockerServer - INFO - [B] Port 가스 종류: [16, 19, 75, 89, 35]
+2025-01-21 10:13:36,931 - StockerServer - INFO - 
+=== System Status ===
+2025-01-21 10:13:36,931 - StockerServer - INFO - Stocker Alarm Code: 534
+2025-01-21 10:13:36,931 - StockerServer - INFO - X축 현재값: 526
+2025-01-21 10:13:36,931 - StockerServer - INFO - Z축 현재값: 28
+2025-01-21 10:13:36,932 - StockerServer - INFO - 
+=== A Port Settings ===
+2025-01-21 10:13:36,932 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 29
+2025-01-21 10:13:36,932 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 2
+2025-01-21 10:13:36,932 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 974
+2025-01-21 10:13:36,932 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 863
+2025-01-21 10:13:36,932 - StockerServer - INFO - X축 Cylinder Pos 설정값: 49
+2025-01-21 10:13:36,932 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 269
+2025-01-21 10:13:36,932 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 515
+2025-01-21 10:13:36,932 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 648
+2025-01-21 10:13:36,933 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 455
+2025-01-21 10:13:36,933 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 212
+2025-01-21 10:13:36,933 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 15
+2025-01-21 10:13:36,933 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 544
+2025-01-21 10:13:36,933 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 76
+2025-01-21 10:13:36,933 - StockerServer - INFO - Worker Door Torque 설정값: 660
+2025-01-21 10:13:36,933 - StockerServer - INFO - Bunker Door Torque 설정값: 68
+2025-01-21 10:13:36,933 - StockerServer - INFO - Worker Door Open Pos 설정값: 24
+2025-01-21 10:13:36,933 - StockerServer - INFO - Bunker Door Open Pos 설정값: 231
+2025-01-21 10:13:36,933 - StockerServer - INFO - Worker Door Close Pos 설정값: 592
+2025-01-21 10:13:36,934 - StockerServer - INFO - Bunker Door Close Pos 설정값: 50
+2025-01-21 10:13:36,934 - StockerServer - INFO - Worker Door Torque 현재값: 62
+2025-01-21 10:13:36,934 - StockerServer - INFO - Bunker Door Torque 현재값: 20
+2025-01-21 10:13:36,934 - StockerServer - INFO - Worker Door Pos 현재값: 34
+2025-01-21 10:13:36,934 - StockerServer - INFO - Bunker Door Pos 현재값: 571
+2025-01-21 10:13:36,934 - StockerServer - INFO - 
+=== B Port Settings ===
+2025-01-21 10:13:36,934 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 224
+2025-01-21 10:13:36,934 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 145
+2025-01-21 10:13:36,934 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 66
+2025-01-21 10:13:36,934 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 87
+2025-01-21 10:13:36,934 - StockerServer - INFO - X축 Cylinder Pos 설정값: 555
+2025-01-21 10:13:36,935 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 538
+2025-01-21 10:13:36,935 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 55
+2025-01-21 10:13:36,935 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 97
+2025-01-21 10:13:36,935 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 579
+2025-01-21 10:13:36,935 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 0
+2025-01-21 10:13:36,935 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 0
+2025-01-21 10:13:36,935 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 0
+2025-01-21 10:13:36,935 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 0
+2025-01-21 10:13:36,935 - StockerServer - INFO - Worker Door Torque 설정값: 0
+2025-01-21 10:13:36,935 - StockerServer - INFO - Bunker Door Torque 설정값: 0
+2025-01-21 10:13:36,935 - StockerServer - INFO - Worker Door Open Pos 설정값: 0
+2025-01-21 10:13:36,936 - StockerServer - INFO - Bunker Door Open Pos 설정값: 0
+2025-01-21 10:13:36,936 - StockerServer - INFO - Worker Door Close Pos 설정값: 0
+2025-01-21 10:13:36,936 - StockerServer - INFO - Bunker Door Close Pos 설정값: 0
+2025-01-21 10:13:36,936 - StockerServer - INFO - Worker Door Torque 현재값: 0
+2025-01-21 10:13:36,936 - StockerServer - INFO - Bunker Door Torque 현재값: 0
+2025-01-21 10:13:36,936 - StockerServer - INFO - Worker Door Pos 현재값: 0
+2025-01-21 10:13:36,936 - StockerServer - INFO - Bunker Door Pos 현재값: 0
+2025-01-21 10:13:36,936 - StockerServer - INFO - 
+==================
+2025-01-21 10:13:42,040 - StockerServer - INFO - 
+=== Received Data ===
+2025-01-21 10:13:42,040 - StockerServer - INFO - Bunker ID: 0
+2025-01-21 10:13:42,040 - StockerServer - INFO - Stocker ID: 22
+2025-01-21 10:13:42,040 - StockerServer - INFO - 
+=== Barcode Data ===
+2025-01-21 10:13:42,040 - StockerServer - INFO - [A] Port Barcode Data: [49664, 11980, 41607, 55504, 39634, 13472, 60683, 54181, 11236, 37166, 63714, 42601, 23942, 24079, 36908, 46422, 57285, 5794, 5706, 12396, 38419, 56210, 13290, 28074, 28142, 57396, 42204, 39910, 56908, 3416]
+2025-01-21 10:13:42,040 - StockerServer - INFO - [B] Port Barcode Data: [29651, 55068, 13588, 5978, 55691, 38018, 43222, 22140, 54711, 11248, 44833, 12701, 24181, 25100, 50638, 28023, 4520, 65020, 60999, 49722, 52428, 47443, 19434, 52434, 4120, 46742, 9990, 30798, 56792, 48477]
+2025-01-21 10:13:42,040 - StockerServer - INFO - 
+=== Gas Type ===
+2025-01-21 10:13:42,040 - StockerServer - INFO - [A] Port 가스 종류: [85, 53, 85, 61, 90]
+2025-01-21 10:13:42,040 - StockerServer - INFO - [B] Port 가스 종류: [16, 19, 75, 89, 35]
+2025-01-21 10:13:42,040 - StockerServer - INFO - 
+=== System Status ===
+2025-01-21 10:13:42,040 - StockerServer - INFO - Stocker Alarm Code: 534
+2025-01-21 10:13:42,041 - StockerServer - INFO - X축 현재값: 526
+2025-01-21 10:13:42,041 - StockerServer - INFO - Z축 현재값: 28
+2025-01-21 10:13:42,041 - StockerServer - INFO - 
+=== A Port Settings ===
+2025-01-21 10:13:42,041 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 29
+2025-01-21 10:13:42,041 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 2
+2025-01-21 10:13:42,041 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 974
+2025-01-21 10:13:42,041 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 863
+2025-01-21 10:13:42,041 - StockerServer - INFO - X축 Cylinder Pos 설정값: 49
+2025-01-21 10:13:42,041 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 269
+2025-01-21 10:13:42,041 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 515
+2025-01-21 10:13:42,041 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 648
+2025-01-21 10:13:42,041 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 455
+2025-01-21 10:13:42,041 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 212
+2025-01-21 10:13:42,041 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 15
+2025-01-21 10:13:42,041 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 544
+2025-01-21 10:13:42,042 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 76
+2025-01-21 10:13:42,042 - StockerServer - INFO - Worker Door Torque 설정값: 660
+2025-01-21 10:13:42,042 - StockerServer - INFO - Bunker Door Torque 설정값: 68
+2025-01-21 10:13:42,042 - StockerServer - INFO - Worker Door Open Pos 설정값: 24
+2025-01-21 10:13:42,042 - StockerServer - INFO - Bunker Door Open Pos 설정값: 231
+2025-01-21 10:13:42,042 - StockerServer - INFO - Worker Door Close Pos 설정값: 592
+2025-01-21 10:13:42,042 - StockerServer - INFO - Bunker Door Close Pos 설정값: 50
+2025-01-21 10:13:42,042 - StockerServer - INFO - Worker Door Torque 현재값: 62
+2025-01-21 10:13:42,042 - StockerServer - INFO - Bunker Door Torque 현재값: 20
+2025-01-21 10:13:42,042 - StockerServer - INFO - Worker Door Pos 현재값: 34
+2025-01-21 10:13:42,042 - StockerServer - INFO - Bunker Door Pos 현재값: 571
+2025-01-21 10:13:42,042 - StockerServer - INFO - 
+=== B Port Settings ===
+2025-01-21 10:13:42,042 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 224
+2025-01-21 10:13:42,042 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 145
+2025-01-21 10:13:42,042 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 66
+2025-01-21 10:13:42,042 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 87
+2025-01-21 10:13:42,043 - StockerServer - INFO - X축 Cylinder Pos 설정값: 555
+2025-01-21 10:13:42,043 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 538
+2025-01-21 10:13:42,043 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 55
+2025-01-21 10:13:42,043 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 97
+2025-01-21 10:13:42,043 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 579
+2025-01-21 10:13:42,043 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 0
+2025-01-21 10:13:42,043 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 0
+2025-01-21 10:13:42,043 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 0
+2025-01-21 10:13:42,043 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 0
+2025-01-21 10:13:42,043 - StockerServer - INFO - Worker Door Torque 설정값: 0
+2025-01-21 10:13:42,043 - StockerServer - INFO - Bunker Door Torque 설정값: 0
+2025-01-21 10:13:42,043 - StockerServer - INFO - Worker Door Open Pos 설정값: 0
+2025-01-21 10:13:42,043 - StockerServer - INFO - Bunker Door Open Pos 설정값: 0
+2025-01-21 10:13:42,043 - StockerServer - INFO - Worker Door Close Pos 설정값: 0
+2025-01-21 10:13:42,043 - StockerServer - INFO - Bunker Door Close Pos 설정값: 0
+2025-01-21 10:13:42,044 - StockerServer - INFO - Worker Door Torque 현재값: 0
+2025-01-21 10:13:42,044 - StockerServer - INFO - Bunker Door Torque 현재값: 0
+2025-01-21 10:13:42,044 - StockerServer - INFO - Worker Door Pos 현재값: 0
+2025-01-21 10:13:42,044 - StockerServer - INFO - Bunker Door Pos 현재값: 0
+2025-01-21 10:13:42,044 - StockerServer - INFO - 
+==================
+2025-01-21 10:13:42,146 - StockerServer - INFO - 
+=== Received Data ===
+2025-01-21 10:13:42,146 - StockerServer - INFO - Bunker ID: 0
+2025-01-21 10:13:42,146 - StockerServer - INFO - Stocker ID: 22
+2025-01-21 10:13:42,146 - StockerServer - INFO - 
+=== Barcode Data ===
+2025-01-21 10:13:42,146 - StockerServer - INFO - [A] Port Barcode Data: [49664, 11980, 41607, 55504, 39634, 13472, 60683, 54181, 11236, 37166, 63714, 42601, 23942, 24079, 36908, 46422, 57285, 5794, 5706, 12396, 38419, 56210, 13290, 28074, 28142, 57396, 42204, 39910, 56908, 3416]
+2025-01-21 10:13:42,146 - StockerServer - INFO - [B] Port Barcode Data: [29651, 55068, 13588, 5978, 55691, 38018, 43222, 22140, 54711, 11248, 44833, 12701, 24181, 25100, 50638, 28023, 4520, 65020, 32575, 57986, 29776, 45044, 23495, 27157, 30871, 37194, 36282, 64474, 9458, 31562]
+2025-01-21 10:13:42,146 - StockerServer - INFO - 
+=== Gas Type ===
+2025-01-21 10:13:42,146 - StockerServer - INFO - [A] Port 가스 종류: [97, 16, 52, 92, 58]
+2025-01-21 10:13:42,146 - StockerServer - INFO - [B] Port 가스 종류: [64, 89, 26, 4, 93]
+2025-01-21 10:13:42,146 - StockerServer - INFO - 
+=== System Status ===
+2025-01-21 10:13:42,146 - StockerServer - INFO - Stocker Alarm Code: 941
+2025-01-21 10:13:42,146 - StockerServer - INFO - X축 현재값: 155
+2025-01-21 10:13:42,147 - StockerServer - INFO - Z축 현재값: 31
+2025-01-21 10:13:42,147 - StockerServer - INFO - 
+=== A Port Settings ===
+2025-01-21 10:13:42,147 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 28
+2025-01-21 10:13:42,147 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 78
+2025-01-21 10:13:42,147 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 209
+2025-01-21 10:13:42,147 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 342
+2025-01-21 10:13:42,147 - StockerServer - INFO - X축 Cylinder Pos 설정값: 346
+2025-01-21 10:13:42,147 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 714
+2025-01-21 10:13:42,147 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 907
+2025-01-21 10:13:42,147 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 797
+2025-01-21 10:13:42,147 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 335
+2025-01-21 10:13:42,147 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 922
+2025-01-21 10:13:42,147 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 40
+2025-01-21 10:13:42,147 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 581
+2025-01-21 10:13:42,147 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 892
+2025-01-21 10:13:42,148 - StockerServer - INFO - Worker Door Torque 설정값: 123
+2025-01-21 10:13:42,148 - StockerServer - INFO - Bunker Door Torque 설정값: 63
+2025-01-21 10:13:42,148 - StockerServer - INFO - Worker Door Open Pos 설정값: 56
+2025-01-21 10:13:42,148 - StockerServer - INFO - Bunker Door Open Pos 설정값: 460
+2025-01-21 10:13:42,148 - StockerServer - INFO - Worker Door Close Pos 설정값: 815
+2025-01-21 10:13:42,148 - StockerServer - INFO - Bunker Door Close Pos 설정값: 68
+2025-01-21 10:13:42,148 - StockerServer - INFO - Worker Door Torque 현재값: 2
+2025-01-21 10:13:42,148 - StockerServer - INFO - Bunker Door Torque 현재값: 20
+2025-01-21 10:13:42,148 - StockerServer - INFO - Worker Door Pos 현재값: 34
+2025-01-21 10:13:42,148 - StockerServer - INFO - Bunker Door Pos 현재값: 571
+2025-01-21 10:13:42,149 - StockerServer - INFO - 
+=== B Port Settings ===
+2025-01-21 10:13:42,149 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 224
+2025-01-21 10:13:42,149 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 145
+2025-01-21 10:13:42,149 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 66
+2025-01-21 10:13:42,149 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 87
+2025-01-21 10:13:42,149 - StockerServer - INFO - X축 Cylinder Pos 설정값: 555
+2025-01-21 10:13:42,149 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 538
+2025-01-21 10:13:42,149 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 55
+2025-01-21 10:13:42,149 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 97
+2025-01-21 10:13:42,149 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 579
+2025-01-21 10:13:42,150 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 0
+2025-01-21 10:13:42,150 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 0
+2025-01-21 10:13:42,150 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 0
+2025-01-21 10:13:42,150 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 0
+2025-01-21 10:13:42,150 - StockerServer - INFO - Worker Door Torque 설정값: 0
+2025-01-21 10:13:42,150 - StockerServer - INFO - Bunker Door Torque 설정값: 0
+2025-01-21 10:13:42,150 - StockerServer - INFO - Worker Door Open Pos 설정값: 0
+2025-01-21 10:13:42,150 - StockerServer - INFO - Bunker Door Open Pos 설정값: 0
+2025-01-21 10:13:42,150 - StockerServer - INFO - Worker Door Close Pos 설정값: 0
+2025-01-21 10:13:42,150 - StockerServer - INFO - Bunker Door Close Pos 설정값: 0
+2025-01-21 10:13:42,150 - StockerServer - INFO - Worker Door Torque 현재값: 0
+2025-01-21 10:13:42,150 - StockerServer - INFO - Bunker Door Torque 현재값: 0
+2025-01-21 10:13:42,150 - StockerServer - INFO - Worker Door Pos 현재값: 0
+2025-01-21 10:13:42,150 - StockerServer - INFO - Bunker Door Pos 현재값: 0
+2025-01-21 10:13:42,151 - StockerServer - INFO - 
+==================
+2025-01-21 10:13:42,252 - StockerServer - INFO - 
+=== Received Data ===
+2025-01-21 10:13:42,252 - StockerServer - INFO - Bunker ID: 0
+2025-01-21 10:13:42,252 - StockerServer - INFO - Stocker ID: 22
+2025-01-21 10:13:42,252 - StockerServer - INFO - 
+=== Barcode Data ===
+2025-01-21 10:13:42,252 - StockerServer - INFO - [A] Port Barcode Data: [49664, 11980, 41607, 55504, 39634, 13472, 60683, 54181, 11236, 37166, 63714, 42601, 23942, 24079, 36908, 46422, 57285, 5794, 5706, 12396, 38419, 56210, 13290, 28074, 28142, 57396, 42204, 39910, 56908, 3416]
+2025-01-21 10:13:42,252 - StockerServer - INFO - [B] Port Barcode Data: [29651, 55068, 13588, 5978, 55691, 38018, 43222, 22140, 54711, 11248, 44833, 12701, 24181, 25100, 50638, 28023, 4520, 65020, 32575, 57986, 29776, 45044, 23495, 27157, 30871, 37194, 36282, 64474, 9458, 31562]
+2025-01-21 10:13:42,252 - StockerServer - INFO - 
+=== Gas Type ===
+2025-01-21 10:13:42,253 - StockerServer - INFO - [A] Port 가스 종류: [97, 16, 52, 92, 58]
+2025-01-21 10:13:42,253 - StockerServer - INFO - [B] Port 가스 종류: [64, 89, 26, 4, 93]
+2025-01-21 10:13:42,253 - StockerServer - INFO - 
+=== System Status ===
+2025-01-21 10:13:42,253 - StockerServer - INFO - Stocker Alarm Code: 941
+2025-01-21 10:13:42,253 - StockerServer - INFO - X축 현재값: 155
+2025-01-21 10:13:42,253 - StockerServer - INFO - Z축 현재값: 31
+2025-01-21 10:13:42,253 - StockerServer - INFO - 
+=== A Port Settings ===
+2025-01-21 10:13:42,253 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 28
+2025-01-21 10:13:42,253 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 78
+2025-01-21 10:13:42,253 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 209
+2025-01-21 10:13:42,253 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 342
+2025-01-21 10:13:42,254 - StockerServer - INFO - X축 Cylinder Pos 설정값: 346
+2025-01-21 10:13:42,254 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 714
+2025-01-21 10:13:42,254 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 907
+2025-01-21 10:13:42,254 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 797
+2025-01-21 10:13:42,254 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 335
+2025-01-21 10:13:42,254 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 922
+2025-01-21 10:13:42,254 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 40
+2025-01-21 10:13:42,254 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 581
+2025-01-21 10:13:42,254 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 892
+2025-01-21 10:13:42,254 - StockerServer - INFO - Worker Door Torque 설정값: 123
+2025-01-21 10:13:42,254 - StockerServer - INFO - Bunker Door Torque 설정값: 63
+2025-01-21 10:13:42,254 - StockerServer - INFO - Worker Door Open Pos 설정값: 56
+2025-01-21 10:13:42,254 - StockerServer - INFO - Bunker Door Open Pos 설정값: 460
+2025-01-21 10:13:42,254 - StockerServer - INFO - Worker Door Close Pos 설정값: 815
+2025-01-21 10:13:42,255 - StockerServer - INFO - Bunker Door Close Pos 설정값: 68
+2025-01-21 10:13:42,255 - StockerServer - INFO - Worker Door Torque 현재값: 2
+2025-01-21 10:13:42,255 - StockerServer - INFO - Bunker Door Torque 현재값: 30
+2025-01-21 10:13:42,255 - StockerServer - INFO - Worker Door Pos 현재값: 17
+2025-01-21 10:13:42,255 - StockerServer - INFO - Bunker Door Pos 현재값: 827
+2025-01-21 10:13:42,255 - StockerServer - INFO - 
+=== B Port Settings ===
+2025-01-21 10:13:42,255 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 156
+2025-01-21 10:13:42,255 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 412
+2025-01-21 10:13:42,255 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 24
+2025-01-21 10:13:42,255 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 97
+2025-01-21 10:13:42,255 - StockerServer - INFO - X축 Cylinder Pos 설정값: 146
+2025-01-21 10:13:42,255 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 131
+2025-01-21 10:13:42,255 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 56
+2025-01-21 10:13:42,255 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 15
+2025-01-21 10:13:42,256 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 420
+2025-01-21 10:13:42,256 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 0
+2025-01-21 10:13:42,256 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 0
+2025-01-21 10:13:42,256 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 0
+2025-01-21 10:13:42,256 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 0
+2025-01-21 10:13:42,256 - StockerServer - INFO - Worker Door Torque 설정값: 0
+2025-01-21 10:13:42,256 - StockerServer - INFO - Bunker Door Torque 설정값: 0
+2025-01-21 10:13:42,256 - StockerServer - INFO - Worker Door Open Pos 설정값: 0
+2025-01-21 10:13:42,256 - StockerServer - INFO - Bunker Door Open Pos 설정값: 0
+2025-01-21 10:13:42,256 - StockerServer - INFO - Worker Door Close Pos 설정값: 0
+2025-01-21 10:13:42,256 - StockerServer - INFO - Bunker Door Close Pos 설정값: 0
+2025-01-21 10:13:42,256 - StockerServer - INFO - Worker Door Torque 현재값: 0
+2025-01-21 10:13:42,256 - StockerServer - INFO - Bunker Door Torque 현재값: 0
+2025-01-21 10:13:42,256 - StockerServer - INFO - Worker Door Pos 현재값: 0
+2025-01-21 10:13:42,257 - StockerServer - INFO - Bunker Door Pos 현재값: 0
+2025-01-21 10:13:42,257 - StockerServer - INFO - 
+==================
+2025-01-21 10:13:47,360 - StockerServer - INFO - 
+=== Received Data ===
+2025-01-21 10:13:47,361 - StockerServer - INFO - Bunker ID: 0
+2025-01-21 10:13:47,361 - StockerServer - INFO - Stocker ID: 75
+2025-01-21 10:13:47,361 - StockerServer - INFO - 
+=== Barcode Data ===
+2025-01-21 10:13:47,361 - StockerServer - INFO - [A] Port Barcode Data: [24322, 12111, 35330, 9800, 38443, 58579, 29458, 7739, 65013, 48264, 874, 17534, 17439, 63584, 10837, 23126, 27069, 29997, 33529, 50918, 29157, 60644, 42157, 65402, 32198, 30837, 50413, 22585, 35549, 59915]
+2025-01-21 10:13:47,361 - StockerServer - INFO - [B] Port Barcode Data: [62319, 9741, 49256, 36090, 25892, 40390, 27879, 44432, 3280, 28325, 63876, 5829, 51526, 58066, 36764, 27519, 62183, 59213, 32575, 57986, 29776, 45044, 23495, 27157, 30871, 37194, 36282, 64474, 9458, 31562]
+2025-01-21 10:13:47,361 - StockerServer - INFO - 
+=== Gas Type ===
+2025-01-21 10:13:47,361 - StockerServer - INFO - [A] Port 가스 종류: [97, 16, 52, 92, 58]
+2025-01-21 10:13:47,361 - StockerServer - INFO - [B] Port 가스 종류: [64, 89, 26, 4, 93]
+2025-01-21 10:13:47,361 - StockerServer - INFO - 
+=== System Status ===
+2025-01-21 10:13:47,362 - StockerServer - INFO - Stocker Alarm Code: 941
+2025-01-21 10:13:47,362 - StockerServer - INFO - X축 현재값: 155
+2025-01-21 10:13:47,362 - StockerServer - INFO - Z축 현재값: 31
+2025-01-21 10:13:47,362 - StockerServer - INFO - 
+=== A Port Settings ===
+2025-01-21 10:13:47,362 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 28
+2025-01-21 10:13:47,362 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 78
+2025-01-21 10:13:47,362 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 209
+2025-01-21 10:13:47,362 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 342
+2025-01-21 10:13:47,362 - StockerServer - INFO - X축 Cylinder Pos 설정값: 346
+2025-01-21 10:13:47,363 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 714
+2025-01-21 10:13:47,363 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 907
+2025-01-21 10:13:47,363 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 797
+2025-01-21 10:13:47,363 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 335
+2025-01-21 10:13:47,363 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 922
+2025-01-21 10:13:47,363 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 40
+2025-01-21 10:13:47,363 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 581
+2025-01-21 10:13:47,363 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 892
+2025-01-21 10:13:47,363 - StockerServer - INFO - Worker Door Torque 설정값: 123
+2025-01-21 10:13:47,363 - StockerServer - INFO - Bunker Door Torque 설정값: 63
+2025-01-21 10:13:47,364 - StockerServer - INFO - Worker Door Open Pos 설정값: 56
+2025-01-21 10:13:47,364 - StockerServer - INFO - Bunker Door Open Pos 설정값: 460
+2025-01-21 10:13:47,364 - StockerServer - INFO - Worker Door Close Pos 설정값: 815
+2025-01-21 10:13:47,364 - StockerServer - INFO - Bunker Door Close Pos 설정값: 68
+2025-01-21 10:13:47,364 - StockerServer - INFO - Worker Door Torque 현재값: 2
+2025-01-21 10:13:47,364 - StockerServer - INFO - Bunker Door Torque 현재값: 30
+2025-01-21 10:13:47,364 - StockerServer - INFO - Worker Door Pos 현재값: 17
+2025-01-21 10:13:47,364 - StockerServer - INFO - Bunker Door Pos 현재값: 827
+2025-01-21 10:13:47,364 - StockerServer - INFO - 
+=== B Port Settings ===
+2025-01-21 10:13:47,364 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 156
+2025-01-21 10:13:47,365 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 412
+2025-01-21 10:13:47,365 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 24
+2025-01-21 10:13:47,365 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 97
+2025-01-21 10:13:47,365 - StockerServer - INFO - X축 Cylinder Pos 설정값: 146
+2025-01-21 10:13:47,365 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 131
+2025-01-21 10:13:47,365 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 56
+2025-01-21 10:13:47,365 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 15
+2025-01-21 10:13:47,365 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 420
+2025-01-21 10:13:47,365 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 0
+2025-01-21 10:13:47,365 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 0
+2025-01-21 10:13:47,365 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 0
+2025-01-21 10:13:47,366 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 0
+2025-01-21 10:13:47,366 - StockerServer - INFO - Worker Door Torque 설정값: 0
+2025-01-21 10:13:47,366 - StockerServer - INFO - Bunker Door Torque 설정값: 0
+2025-01-21 10:13:47,366 - StockerServer - INFO - Worker Door Open Pos 설정값: 0
+2025-01-21 10:13:47,366 - StockerServer - INFO - Bunker Door Open Pos 설정값: 0
+2025-01-21 10:13:47,366 - StockerServer - INFO - Worker Door Close Pos 설정값: 0
+2025-01-21 10:13:47,366 - StockerServer - INFO - Bunker Door Close Pos 설정값: 0
+2025-01-21 10:13:47,366 - StockerServer - INFO - Worker Door Torque 현재값: 0
+2025-01-21 10:13:47,366 - StockerServer - INFO - Bunker Door Torque 현재값: 0
+2025-01-21 10:13:47,366 - StockerServer - INFO - Worker Door Pos 현재값: 0
+2025-01-21 10:13:47,366 - StockerServer - INFO - Bunker Door Pos 현재값: 0
+2025-01-21 10:13:47,366 - StockerServer - INFO - 
+==================
+2025-01-21 10:13:47,468 - StockerServer - INFO - 
+=== Received Data ===
+2025-01-21 10:13:47,468 - StockerServer - INFO - Bunker ID: 0
+2025-01-21 10:13:47,468 - StockerServer - INFO - Stocker ID: 75
+2025-01-21 10:13:47,468 - StockerServer - INFO - 
+=== Barcode Data ===
+2025-01-21 10:13:47,468 - StockerServer - INFO - [A] Port Barcode Data: [24322, 12111, 35330, 9800, 38443, 58579, 29458, 7739, 65013, 48264, 874, 17534, 17439, 63584, 10837, 23126, 27069, 29997, 33529, 50918, 29157, 60644, 42157, 65402, 32198, 30837, 50413, 22585, 35549, 59915]
+2025-01-21 10:13:47,468 - StockerServer - INFO - [B] Port Barcode Data: [62319, 9741, 49256, 36090, 25892, 40390, 27879, 44432, 3280, 28325, 63876, 5829, 51526, 58066, 36764, 27519, 62183, 59213, 59729, 13898, 65301, 4573, 14004, 34112, 18850, 40487, 46468, 5767, 3173, 8546]
+2025-01-21 10:13:47,469 - StockerServer - INFO - 
+=== Gas Type ===
+2025-01-21 10:13:47,469 - StockerServer - INFO - [A] Port 가스 종류: [6, 16, 99, 37, 42]
+2025-01-21 10:13:47,469 - StockerServer - INFO - [B] Port 가스 종류: [7, 70, 59, 69, 82]
+2025-01-21 10:13:47,469 - StockerServer - INFO - 
+=== System Status ===
+2025-01-21 10:13:47,469 - StockerServer - INFO - Stocker Alarm Code: 956
+2025-01-21 10:13:47,469 - StockerServer - INFO - X축 현재값: 636
+2025-01-21 10:13:47,469 - StockerServer - INFO - Z축 현재값: 65
+2025-01-21 10:13:47,469 - StockerServer - INFO - 
+=== A Port Settings ===
+2025-01-21 10:13:47,469 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 37
+2025-01-21 10:13:47,469 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 56
+2025-01-21 10:13:47,470 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 455
+2025-01-21 10:13:47,470 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 866
+2025-01-21 10:13:47,470 - StockerServer - INFO - X축 Cylinder Pos 설정값: 492
+2025-01-21 10:13:47,470 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 169
+2025-01-21 10:13:47,470 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 412
+2025-01-21 10:13:47,470 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 454
+2025-01-21 10:13:47,470 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 697
+2025-01-21 10:13:47,470 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 807
+2025-01-21 10:13:47,470 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 32
+2025-01-21 10:13:47,470 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 912
+2025-01-21 10:13:47,470 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 55
+2025-01-21 10:13:47,471 - StockerServer - INFO - Worker Door Torque 설정값: 889
+2025-01-21 10:13:47,471 - StockerServer - INFO - Bunker Door Torque 설정값: 48
+2025-01-21 10:13:47,471 - StockerServer - INFO - Worker Door Open Pos 설정값: 82
+2025-01-21 10:13:47,471 - StockerServer - INFO - Bunker Door Open Pos 설정값: 770
+2025-01-21 10:13:47,471 - StockerServer - INFO - Worker Door Close Pos 설정값: 798
+2025-01-21 10:13:47,471 - StockerServer - INFO - Bunker Door Close Pos 설정값: 45
+2025-01-21 10:13:47,471 - StockerServer - INFO - Worker Door Torque 현재값: 23
+2025-01-21 10:13:47,471 - StockerServer - INFO - Bunker Door Torque 현재값: 30
+2025-01-21 10:13:47,471 - StockerServer - INFO - Worker Door Pos 현재값: 17
+2025-01-21 10:13:47,471 - StockerServer - INFO - Bunker Door Pos 현재값: 827
+2025-01-21 10:13:47,471 - StockerServer - INFO - 
+=== B Port Settings ===
+2025-01-21 10:13:47,472 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 156
+2025-01-21 10:13:47,472 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 412
+2025-01-21 10:13:47,472 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 24
+2025-01-21 10:13:47,472 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 97
+2025-01-21 10:13:47,472 - StockerServer - INFO - X축 Cylinder Pos 설정값: 146
+2025-01-21 10:13:47,472 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 131
+2025-01-21 10:13:47,472 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 56
+2025-01-21 10:13:47,472 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 15
+2025-01-21 10:13:47,472 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 420
+2025-01-21 10:13:47,472 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 0
+2025-01-21 10:13:47,472 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 0
+2025-01-21 10:13:47,473 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 0
+2025-01-21 10:13:47,473 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 0
+2025-01-21 10:13:47,473 - StockerServer - INFO - Worker Door Torque 설정값: 0
+2025-01-21 10:13:47,473 - StockerServer - INFO - Bunker Door Torque 설정값: 0
+2025-01-21 10:13:47,473 - StockerServer - INFO - Worker Door Open Pos 설정값: 0
+2025-01-21 10:13:47,473 - StockerServer - INFO - Bunker Door Open Pos 설정값: 0
+2025-01-21 10:13:47,473 - StockerServer - INFO - Worker Door Close Pos 설정값: 0
+2025-01-21 10:13:47,473 - StockerServer - INFO - Bunker Door Close Pos 설정값: 0
+2025-01-21 10:13:47,473 - StockerServer - INFO - Worker Door Torque 현재값: 0
+2025-01-21 10:13:47,473 - StockerServer - INFO - Bunker Door Torque 현재값: 0
+2025-01-21 10:13:47,473 - StockerServer - INFO - Worker Door Pos 현재값: 0
+2025-01-21 10:13:47,473 - StockerServer - INFO - Bunker Door Pos 현재값: 0
+2025-01-21 10:13:47,473 - StockerServer - INFO - 
+==================
+2025-01-21 10:13:47,575 - StockerServer - INFO - 
+=== Received Data ===
+2025-01-21 10:13:47,576 - StockerServer - INFO - Bunker ID: 0
+2025-01-21 10:13:47,576 - StockerServer - INFO - Stocker ID: 75
+2025-01-21 10:13:47,576 - StockerServer - INFO - 
+=== Barcode Data ===
+2025-01-21 10:13:47,576 - StockerServer - INFO - [A] Port Barcode Data: [24322, 12111, 35330, 9800, 38443, 58579, 29458, 7739, 65013, 48264, 874, 17534, 17439, 63584, 10837, 23126, 27069, 29997, 33529, 50918, 29157, 60644, 42157, 65402, 32198, 30837, 50413, 22585, 35549, 59915]
+2025-01-21 10:13:47,576 - StockerServer - INFO - [B] Port Barcode Data: [62319, 9741, 49256, 36090, 25892, 40390, 27879, 44432, 3280, 28325, 63876, 5829, 51526, 58066, 36764, 27519, 62183, 59213, 59729, 13898, 65301, 4573, 14004, 34112, 18850, 40487, 46468, 5767, 3173, 8546]
+2025-01-21 10:13:47,576 - StockerServer - INFO - 
+=== Gas Type ===
+2025-01-21 10:13:47,576 - StockerServer - INFO - [A] Port 가스 종류: [6, 16, 99, 37, 42]
+2025-01-21 10:13:47,577 - StockerServer - INFO - [B] Port 가스 종류: [7, 70, 59, 69, 82]
+2025-01-21 10:13:47,577 - StockerServer - INFO - 
+=== System Status ===
+2025-01-21 10:13:47,577 - StockerServer - INFO - Stocker Alarm Code: 956
+2025-01-21 10:13:47,577 - StockerServer - INFO - X축 현재값: 636
+2025-01-21 10:13:47,577 - StockerServer - INFO - Z축 현재값: 65
+2025-01-21 10:13:47,577 - StockerServer - INFO - 
+=== A Port Settings ===
+2025-01-21 10:13:47,577 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 37
+2025-01-21 10:13:47,577 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 56
+2025-01-21 10:13:47,577 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 455
+2025-01-21 10:13:47,577 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 866
+2025-01-21 10:13:47,577 - StockerServer - INFO - X축 Cylinder Pos 설정값: 492
+2025-01-21 10:13:47,578 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 169
+2025-01-21 10:13:47,578 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 412
+2025-01-21 10:13:47,578 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 454
+2025-01-21 10:13:47,578 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 697
+2025-01-21 10:13:47,578 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 807
+2025-01-21 10:13:47,578 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 32
+2025-01-21 10:13:47,578 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 912
+2025-01-21 10:13:47,578 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 55
+2025-01-21 10:13:47,578 - StockerServer - INFO - Worker Door Torque 설정값: 889
+2025-01-21 10:13:47,578 - StockerServer - INFO - Bunker Door Torque 설정값: 48
+2025-01-21 10:13:47,578 - StockerServer - INFO - Worker Door Open Pos 설정값: 82
+2025-01-21 10:13:47,579 - StockerServer - INFO - Bunker Door Open Pos 설정값: 770
+2025-01-21 10:13:47,579 - StockerServer - INFO - Worker Door Close Pos 설정값: 798
+2025-01-21 10:13:47,579 - StockerServer - INFO - Bunker Door Close Pos 설정값: 45
+2025-01-21 10:13:47,579 - StockerServer - INFO - Worker Door Torque 현재값: 23
+2025-01-21 10:13:47,579 - StockerServer - INFO - Bunker Door Torque 현재값: 58
+2025-01-21 10:13:47,579 - StockerServer - INFO - Worker Door Pos 현재값: 33
+2025-01-21 10:13:47,579 - StockerServer - INFO - Bunker Door Pos 현재값: 424
+2025-01-21 10:13:47,579 - StockerServer - INFO - 
+=== B Port Settings ===
+2025-01-21 10:13:47,579 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 989
+2025-01-21 10:13:47,579 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 935
+2025-01-21 10:13:47,580 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 29
+2025-01-21 10:13:47,580 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 71
+2025-01-21 10:13:47,580 - StockerServer - INFO - X축 Cylinder Pos 설정값: 848
+2025-01-21 10:13:47,580 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 857
+2025-01-21 10:13:47,580 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 85
+2025-01-21 10:13:47,580 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 88
+2025-01-21 10:13:47,580 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 638
+2025-01-21 10:13:47,580 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 0
+2025-01-21 10:13:47,580 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 0
+2025-01-21 10:13:47,580 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 0
+2025-01-21 10:13:47,580 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 0
+2025-01-21 10:13:47,580 - StockerServer - INFO - Worker Door Torque 설정값: 0
+2025-01-21 10:13:47,580 - StockerServer - INFO - Bunker Door Torque 설정값: 0
+2025-01-21 10:13:47,581 - StockerServer - INFO - Worker Door Open Pos 설정값: 0
+2025-01-21 10:13:47,581 - StockerServer - INFO - Bunker Door Open Pos 설정값: 0
+2025-01-21 10:13:47,581 - StockerServer - INFO - Worker Door Close Pos 설정값: 0
+2025-01-21 10:13:47,581 - StockerServer - INFO - Bunker Door Close Pos 설정값: 0
+2025-01-21 10:13:47,581 - StockerServer - INFO - Worker Door Torque 현재값: 0
+2025-01-21 10:13:47,581 - StockerServer - INFO - Bunker Door Torque 현재값: 0
+2025-01-21 10:13:47,581 - StockerServer - INFO - Worker Door Pos 현재값: 0
+2025-01-21 10:13:47,581 - StockerServer - INFO - Bunker Door Pos 현재값: 0
+2025-01-21 10:13:47,581 - StockerServer - INFO - 
+==================
+2025-01-21 10:13:52,685 - StockerServer - INFO - 
+=== Received Data ===
+2025-01-21 10:13:52,685 - StockerServer - INFO - Bunker ID: 0
+2025-01-21 10:13:52,685 - StockerServer - INFO - Stocker ID: 66
+2025-01-21 10:13:52,685 - StockerServer - INFO - 
+=== Barcode Data ===
+2025-01-21 10:13:52,685 - StockerServer - INFO - [A] Port Barcode Data: [22567, 2453, 25773, 28223, 1841, 41690, 38346, 46347, 11070, 46315, 2365, 45665, 12963, 52384, 18423, 22829, 16484, 33225, 13243, 31887, 51371, 57008, 18671, 2536, 28383, 19791, 38596, 14694, 60279, 44692]
+2025-01-21 10:13:52,686 - StockerServer - INFO - [B] Port Barcode Data: [19658, 61644, 349, 8004, 25724, 25162, 44744, 6338, 19339, 36943, 29048, 48352, 30253, 6936, 48468, 22166, 11640, 63777, 59729, 13898, 65301, 4573, 14004, 34112, 18850, 40487, 46468, 5767, 3173, 8546]
+2025-01-21 10:13:52,686 - StockerServer - INFO - 
+=== Gas Type ===
+2025-01-21 10:13:52,686 - StockerServer - INFO - [A] Port 가스 종류: [6, 16, 99, 37, 42]
+2025-01-21 10:13:52,686 - StockerServer - INFO - [B] Port 가스 종류: [7, 70, 59, 69, 82]
+2025-01-21 10:13:52,686 - StockerServer - INFO - 
+=== System Status ===
+2025-01-21 10:13:52,686 - StockerServer - INFO - Stocker Alarm Code: 956
+2025-01-21 10:13:52,686 - StockerServer - INFO - X축 현재값: 636
+2025-01-21 10:13:52,686 - StockerServer - INFO - Z축 현재값: 65
+2025-01-21 10:13:52,686 - StockerServer - INFO - 
+=== A Port Settings ===
+2025-01-21 10:13:52,687 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 37
+2025-01-21 10:13:52,687 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 56
+2025-01-21 10:13:52,687 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 455
+2025-01-21 10:13:52,687 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 866
+2025-01-21 10:13:52,687 - StockerServer - INFO - X축 Cylinder Pos 설정값: 492
+2025-01-21 10:13:52,687 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 169
+2025-01-21 10:13:52,687 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 412
+2025-01-21 10:13:52,687 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 454
+2025-01-21 10:13:52,687 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 697
+2025-01-21 10:13:52,687 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 807
+2025-01-21 10:13:52,688 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 32
+2025-01-21 10:13:52,688 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 912
+2025-01-21 10:13:52,688 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 55
+2025-01-21 10:13:52,688 - StockerServer - INFO - Worker Door Torque 설정값: 889
+2025-01-21 10:13:52,688 - StockerServer - INFO - Bunker Door Torque 설정값: 48
+2025-01-21 10:13:52,688 - StockerServer - INFO - Worker Door Open Pos 설정값: 82
+2025-01-21 10:13:52,688 - StockerServer - INFO - Bunker Door Open Pos 설정값: 770
+2025-01-21 10:13:52,688 - StockerServer - INFO - Worker Door Close Pos 설정값: 798
+2025-01-21 10:13:52,688 - StockerServer - INFO - Bunker Door Close Pos 설정값: 45
+2025-01-21 10:13:52,688 - StockerServer - INFO - Worker Door Torque 현재값: 23
+2025-01-21 10:13:52,688 - StockerServer - INFO - Bunker Door Torque 현재값: 58
+2025-01-21 10:13:52,689 - StockerServer - INFO - Worker Door Pos 현재값: 33
+2025-01-21 10:13:52,689 - StockerServer - INFO - Bunker Door Pos 현재값: 424
+2025-01-21 10:13:52,689 - StockerServer - INFO - 
+=== B Port Settings ===
+2025-01-21 10:13:52,689 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 989
+2025-01-21 10:13:52,689 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 935
+2025-01-21 10:13:52,689 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 29
+2025-01-21 10:13:52,689 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 71
+2025-01-21 10:13:52,689 - StockerServer - INFO - X축 Cylinder Pos 설정값: 848
+2025-01-21 10:13:52,689 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 857
+2025-01-21 10:13:52,689 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 85
+2025-01-21 10:13:52,689 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 88
+2025-01-21 10:13:52,689 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 638
+2025-01-21 10:13:52,689 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 0
+2025-01-21 10:13:52,690 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 0
+2025-01-21 10:13:52,690 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 0
+2025-01-21 10:13:52,690 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 0
+2025-01-21 10:13:52,690 - StockerServer - INFO - Worker Door Torque 설정값: 0
+2025-01-21 10:13:52,690 - StockerServer - INFO - Bunker Door Torque 설정값: 0
+2025-01-21 10:13:52,690 - StockerServer - INFO - Worker Door Open Pos 설정값: 0
+2025-01-21 10:13:52,690 - StockerServer - INFO - Bunker Door Open Pos 설정값: 0
+2025-01-21 10:13:52,690 - StockerServer - INFO - Worker Door Close Pos 설정값: 0
+2025-01-21 10:13:52,690 - StockerServer - INFO - Bunker Door Close Pos 설정값: 0
+2025-01-21 10:13:52,690 - StockerServer - INFO - Worker Door Torque 현재값: 0
+2025-01-21 10:13:52,690 - StockerServer - INFO - Bunker Door Torque 현재값: 0
+2025-01-21 10:13:52,691 - StockerServer - INFO - Worker Door Pos 현재값: 0
+2025-01-21 10:13:52,691 - StockerServer - INFO - Bunker Door Pos 현재값: 0
+2025-01-21 10:13:52,691 - StockerServer - INFO - 
+==================
+2025-01-21 10:13:52,792 - StockerServer - INFO - 
+=== Received Data ===
+2025-01-21 10:13:52,792 - StockerServer - INFO - Bunker ID: 0
+2025-01-21 10:13:52,792 - StockerServer - INFO - Stocker ID: 66
+2025-01-21 10:13:52,792 - StockerServer - INFO - 
+=== Barcode Data ===
+2025-01-21 10:13:52,792 - StockerServer - INFO - [A] Port Barcode Data: [22567, 2453, 25773, 28223, 1841, 41690, 38346, 46347, 11070, 46315, 2365, 45665, 12963, 52384, 18423, 22829, 16484, 33225, 13243, 31887, 51371, 57008, 18671, 2536, 28383, 19791, 38596, 14694, 60279, 44692]
+2025-01-21 10:13:52,792 - StockerServer - INFO - [B] Port Barcode Data: [19658, 61644, 349, 8004, 25724, 25162, 44744, 6338, 19339, 36943, 29048, 48352, 30253, 6936, 48468, 22166, 11640, 63777, 8455, 1259, 8704, 2617, 36119, 36426, 55, 34841, 44982, 27319, 23821, 20720]
+2025-01-21 10:13:52,792 - StockerServer - INFO - 
+=== Gas Type ===
+2025-01-21 10:13:52,792 - StockerServer - INFO - [A] Port 가스 종류: [34, 65, 22, 57, 52]
+2025-01-21 10:13:52,793 - StockerServer - INFO - [B] Port 가스 종류: [14, 57, 85, 90, 84]
+2025-01-21 10:13:52,793 - StockerServer - INFO - 
+=== System Status ===
+2025-01-21 10:13:52,793 - StockerServer - INFO - Stocker Alarm Code: 551
+2025-01-21 10:13:52,793 - StockerServer - INFO - X축 현재값: 239
+2025-01-21 10:13:52,793 - StockerServer - INFO - Z축 현재값: 99
+2025-01-21 10:13:52,793 - StockerServer - INFO - 
+=== A Port Settings ===
+2025-01-21 10:13:52,793 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 56
+2025-01-21 10:13:52,793 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 70
+2025-01-21 10:13:52,793 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 97
+2025-01-21 10:13:52,793 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 869
+2025-01-21 10:13:52,793 - StockerServer - INFO - X축 Cylinder Pos 설정값: 155
+2025-01-21 10:13:52,793 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 104
+2025-01-21 10:13:52,793 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 286
+2025-01-21 10:13:52,793 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 87
+2025-01-21 10:13:52,794 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 969
+2025-01-21 10:13:52,794 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 991
+2025-01-21 10:13:52,794 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 22
+2025-01-21 10:13:52,794 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 670
+2025-01-21 10:13:52,794 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 189
+2025-01-21 10:13:52,794 - StockerServer - INFO - Worker Door Torque 설정값: 379
+2025-01-21 10:13:52,794 - StockerServer - INFO - Bunker Door Torque 설정값: 37
+2025-01-21 10:13:52,794 - StockerServer - INFO - Worker Door Open Pos 설정값: 39
+2025-01-21 10:13:52,794 - StockerServer - INFO - Bunker Door Open Pos 설정값: 508
+2025-01-21 10:13:52,794 - StockerServer - INFO - Worker Door Close Pos 설정값: 477
+2025-01-21 10:13:52,794 - StockerServer - INFO - Bunker Door Close Pos 설정값: 6
+2025-01-21 10:13:52,794 - StockerServer - INFO - Worker Door Torque 현재값: 43
+2025-01-21 10:13:52,794 - StockerServer - INFO - Bunker Door Torque 현재값: 58
+2025-01-21 10:13:52,794 - StockerServer - INFO - Worker Door Pos 현재값: 33
+2025-01-21 10:13:52,795 - StockerServer - INFO - Bunker Door Pos 현재값: 424
+2025-01-21 10:13:52,795 - StockerServer - INFO - 
+=== B Port Settings ===
+2025-01-21 10:13:52,795 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 989
+2025-01-21 10:13:52,795 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 935
+2025-01-21 10:13:52,795 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 29
+2025-01-21 10:13:52,795 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 71
+2025-01-21 10:13:52,795 - StockerServer - INFO - X축 Cylinder Pos 설정값: 848
+2025-01-21 10:13:52,795 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 857
+2025-01-21 10:13:52,795 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 85
+2025-01-21 10:13:52,795 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 88
+2025-01-21 10:13:52,795 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 638
+2025-01-21 10:13:52,795 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 0
+2025-01-21 10:13:52,795 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 0
+2025-01-21 10:13:52,795 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 0
+2025-01-21 10:13:52,796 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 0
+2025-01-21 10:13:52,796 - StockerServer - INFO - Worker Door Torque 설정값: 0
+2025-01-21 10:13:52,796 - StockerServer - INFO - Bunker Door Torque 설정값: 0
+2025-01-21 10:13:52,796 - StockerServer - INFO - Worker Door Open Pos 설정값: 0
+2025-01-21 10:13:52,796 - StockerServer - INFO - Bunker Door Open Pos 설정값: 0
+2025-01-21 10:13:52,796 - StockerServer - INFO - Worker Door Close Pos 설정값: 0
+2025-01-21 10:13:52,796 - StockerServer - INFO - Bunker Door Close Pos 설정값: 0
+2025-01-21 10:13:52,796 - StockerServer - INFO - Worker Door Torque 현재값: 0
+2025-01-21 10:13:52,796 - StockerServer - INFO - Bunker Door Torque 현재값: 0
+2025-01-21 10:13:52,796 - StockerServer - INFO - Worker Door Pos 현재값: 0
+2025-01-21 10:13:52,796 - StockerServer - INFO - Bunker Door Pos 현재값: 0
+2025-01-21 10:13:52,796 - StockerServer - INFO - 
+==================
+2025-01-21 10:13:52,898 - StockerServer - INFO - 
+=== Received Data ===
+2025-01-21 10:13:52,898 - StockerServer - INFO - Bunker ID: 0
+2025-01-21 10:13:52,899 - StockerServer - INFO - Stocker ID: 66
+2025-01-21 10:13:52,899 - StockerServer - INFO - 
+=== Barcode Data ===
+2025-01-21 10:13:52,899 - StockerServer - INFO - [A] Port Barcode Data: [22567, 2453, 25773, 28223, 1841, 41690, 38346, 46347, 11070, 46315, 2365, 45665, 12963, 52384, 18423, 22829, 16484, 33225, 13243, 31887, 51371, 57008, 18671, 2536, 28383, 19791, 38596, 14694, 60279, 44692]
+2025-01-21 10:13:52,899 - StockerServer - INFO - [B] Port Barcode Data: [19658, 61644, 349, 8004, 25724, 25162, 44744, 6338, 19339, 36943, 29048, 48352, 30253, 6936, 48468, 22166, 11640, 63777, 8455, 1259, 8704, 2617, 36119, 36426, 55, 34841, 44982, 27319, 23821, 20720]
+2025-01-21 10:13:52,899 - StockerServer - INFO - 
+=== Gas Type ===
+2025-01-21 10:13:52,899 - StockerServer - INFO - [A] Port 가스 종류: [34, 65, 22, 57, 52]
+2025-01-21 10:13:52,899 - StockerServer - INFO - [B] Port 가스 종류: [14, 57, 85, 90, 84]
+2025-01-21 10:13:52,899 - StockerServer - INFO - 
+=== System Status ===
+2025-01-21 10:13:52,899 - StockerServer - INFO - Stocker Alarm Code: 551
+2025-01-21 10:13:52,900 - StockerServer - INFO - X축 현재값: 239
+2025-01-21 10:13:52,900 - StockerServer - INFO - Z축 현재값: 99
+2025-01-21 10:13:52,900 - StockerServer - INFO - 
+=== A Port Settings ===
+2025-01-21 10:13:52,900 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 56
+2025-01-21 10:13:52,900 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 70
+2025-01-21 10:13:52,900 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 97
+2025-01-21 10:13:52,900 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 869
+2025-01-21 10:13:52,900 - StockerServer - INFO - X축 Cylinder Pos 설정값: 155
+2025-01-21 10:13:52,900 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 104
+2025-01-21 10:13:52,900 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 286
+2025-01-21 10:13:52,900 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 87
+2025-01-21 10:13:52,900 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 969
+2025-01-21 10:13:52,900 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 991
+2025-01-21 10:13:52,900 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 22
+2025-01-21 10:13:52,900 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 670
+2025-01-21 10:13:52,900 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 189
+2025-01-21 10:13:52,901 - StockerServer - INFO - Worker Door Torque 설정값: 379
+2025-01-21 10:13:52,901 - StockerServer - INFO - Bunker Door Torque 설정값: 37
+2025-01-21 10:13:52,901 - StockerServer - INFO - Worker Door Open Pos 설정값: 39
+2025-01-21 10:13:52,901 - StockerServer - INFO - Bunker Door Open Pos 설정값: 508
+2025-01-21 10:13:52,901 - StockerServer - INFO - Worker Door Close Pos 설정값: 477
+2025-01-21 10:13:52,901 - StockerServer - INFO - Bunker Door Close Pos 설정값: 6
+2025-01-21 10:13:52,901 - StockerServer - INFO - Worker Door Torque 현재값: 43
+2025-01-21 10:13:52,901 - StockerServer - INFO - Bunker Door Torque 현재값: 67
+2025-01-21 10:13:52,901 - StockerServer - INFO - Worker Door Pos 현재값: 77
+2025-01-21 10:13:52,901 - StockerServer - INFO - Bunker Door Pos 현재값: 77
+2025-01-21 10:13:52,901 - StockerServer - INFO - 
+=== B Port Settings ===
+2025-01-21 10:13:52,901 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 313
+2025-01-21 10:13:52,901 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 966
+2025-01-21 10:13:52,901 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 30
+2025-01-21 10:13:52,901 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 63
+2025-01-21 10:13:52,901 - StockerServer - INFO - X축 Cylinder Pos 설정값: 245
+2025-01-21 10:13:52,902 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 447
+2025-01-21 10:13:52,902 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 99
+2025-01-21 10:13:52,902 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 83
+2025-01-21 10:13:52,902 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 306
+2025-01-21 10:13:52,902 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 0
+2025-01-21 10:13:52,902 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 0
+2025-01-21 10:13:52,902 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 0
+2025-01-21 10:13:52,902 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 0
+2025-01-21 10:13:52,902 - StockerServer - INFO - Worker Door Torque 설정값: 0
+2025-01-21 10:13:52,902 - StockerServer - INFO - Bunker Door Torque 설정값: 0
+2025-01-21 10:13:52,902 - StockerServer - INFO - Worker Door Open Pos 설정값: 0
+2025-01-21 10:13:52,902 - StockerServer - INFO - Bunker Door Open Pos 설정값: 0
+2025-01-21 10:13:52,902 - StockerServer - INFO - Worker Door Close Pos 설정값: 0
+2025-01-21 10:13:52,902 - StockerServer - INFO - Bunker Door Close Pos 설정값: 0
+2025-01-21 10:13:52,902 - StockerServer - INFO - Worker Door Torque 현재값: 0
+2025-01-21 10:13:52,902 - StockerServer - INFO - Bunker Door Torque 현재값: 0
+2025-01-21 10:13:52,903 - StockerServer - INFO - Worker Door Pos 현재값: 0
+2025-01-21 10:13:52,903 - StockerServer - INFO - Bunker Door Pos 현재값: 0
+2025-01-21 10:13:52,903 - StockerServer - INFO - 
+==================
+2025-01-21 10:13:58,008 - StockerServer - INFO - 
+=== Received Data ===
+2025-01-21 10:13:58,008 - StockerServer - INFO - Bunker ID: 0
+2025-01-21 10:13:58,008 - StockerServer - INFO - Stocker ID: 76
+2025-01-21 10:13:58,008 - StockerServer - INFO - 
+=== Barcode Data ===
+2025-01-21 10:13:58,008 - StockerServer - INFO - [A] Port Barcode Data: [22064, 48336, 541, 41654, 43519, 20157, 27437, 25753, 53854, 42431, 58760, 1456, 52302, 63192, 19558, 13556, 56015, 11376, 26034, 22847, 12107, 61467, 12191, 2305, 47558, 52118, 64096, 34962, 19094, 53943]
+2025-01-21 10:13:58,008 - StockerServer - INFO - [B] Port Barcode Data: [23905, 37406, 19161, 15099, 54488, 35784, 9849, 53745, 51221, 57152, 49853, 30197, 22995, 36392, 34831, 20559, 44111, 24896, 8455, 1259, 8704, 2617, 36119, 36426, 55, 34841, 44982, 27319, 23821, 20720]
+2025-01-21 10:13:58,008 - StockerServer - INFO - 
+=== Gas Type ===
+2025-01-21 10:13:58,008 - StockerServer - INFO - [A] Port 가스 종류: [34, 65, 22, 57, 52]
+2025-01-21 10:13:58,009 - StockerServer - INFO - [B] Port 가스 종류: [14, 57, 85, 90, 84]
+2025-01-21 10:13:58,009 - StockerServer - INFO - 
+=== System Status ===
+2025-01-21 10:13:58,009 - StockerServer - INFO - Stocker Alarm Code: 551
+2025-01-21 10:13:58,009 - StockerServer - INFO - X축 현재값: 239
+2025-01-21 10:13:58,009 - StockerServer - INFO - Z축 현재값: 99
+2025-01-21 10:13:58,009 - StockerServer - INFO - 
+=== A Port Settings ===
+2025-01-21 10:13:58,009 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 56
+2025-01-21 10:13:58,009 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 70
+2025-01-21 10:13:58,009 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 97
+2025-01-21 10:13:58,010 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 869
+2025-01-21 10:13:58,010 - StockerServer - INFO - X축 Cylinder Pos 설정값: 155
+2025-01-21 10:13:58,010 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 104
+2025-01-21 10:13:58,010 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 286
+2025-01-21 10:13:58,010 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 87
+2025-01-21 10:13:58,010 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 969
+2025-01-21 10:13:58,010 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 991
+2025-01-21 10:13:58,010 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 22
+2025-01-21 10:13:58,010 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 670
+2025-01-21 10:13:58,010 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 189
+2025-01-21 10:13:58,010 - StockerServer - INFO - Worker Door Torque 설정값: 379
+2025-01-21 10:13:58,011 - StockerServer - INFO - Bunker Door Torque 설정값: 37
+2025-01-21 10:13:58,011 - StockerServer - INFO - Worker Door Open Pos 설정값: 39
+2025-01-21 10:13:58,011 - StockerServer - INFO - Bunker Door Open Pos 설정값: 508
+2025-01-21 10:13:58,011 - StockerServer - INFO - Worker Door Close Pos 설정값: 477
+2025-01-21 10:13:58,011 - StockerServer - INFO - Bunker Door Close Pos 설정값: 6
+2025-01-21 10:13:58,011 - StockerServer - INFO - Worker Door Torque 현재값: 43
+2025-01-21 10:13:58,011 - StockerServer - INFO - Bunker Door Torque 현재값: 67
+2025-01-21 10:13:58,011 - StockerServer - INFO - Worker Door Pos 현재값: 77
+2025-01-21 10:13:58,011 - StockerServer - INFO - Bunker Door Pos 현재값: 77
+2025-01-21 10:13:58,011 - StockerServer - INFO - 
+=== B Port Settings ===
+2025-01-21 10:13:58,011 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 313
+2025-01-21 10:13:58,012 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 966
+2025-01-21 10:13:58,012 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 30
+2025-01-21 10:13:58,012 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 63
+2025-01-21 10:13:58,012 - StockerServer - INFO - X축 Cylinder Pos 설정값: 245
+2025-01-21 10:13:58,012 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 447
+2025-01-21 10:13:58,012 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 99
+2025-01-21 10:13:58,012 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 83
+2025-01-21 10:13:58,012 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 306
+2025-01-21 10:13:58,012 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 0
+2025-01-21 10:13:58,012 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 0
+2025-01-21 10:13:58,012 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 0
+2025-01-21 10:13:58,013 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 0
+2025-01-21 10:13:58,013 - StockerServer - INFO - Worker Door Torque 설정값: 0
+2025-01-21 10:13:58,013 - StockerServer - INFO - Bunker Door Torque 설정값: 0
+2025-01-21 10:13:58,013 - StockerServer - INFO - Worker Door Open Pos 설정값: 0
+2025-01-21 10:13:58,013 - StockerServer - INFO - Bunker Door Open Pos 설정값: 0
+2025-01-21 10:13:58,013 - StockerServer - INFO - Worker Door Close Pos 설정값: 0
+2025-01-21 10:13:58,013 - StockerServer - INFO - Bunker Door Close Pos 설정값: 0
+2025-01-21 10:13:58,013 - StockerServer - INFO - Worker Door Torque 현재값: 0
+2025-01-21 10:13:58,013 - StockerServer - INFO - Bunker Door Torque 현재값: 0
+2025-01-21 10:13:58,013 - StockerServer - INFO - Worker Door Pos 현재값: 0
+2025-01-21 10:13:58,013 - StockerServer - INFO - Bunker Door Pos 현재값: 0
+2025-01-21 10:13:58,013 - StockerServer - INFO - 
+==================
+2025-01-21 10:13:58,014 - StockerServer - INFO - Waiting for web server socket to be ready...
+2025-01-21 10:14:01,119 - StockerServer - INFO - 
+=== Received Data ===
+2025-01-21 10:14:01,119 - StockerServer - INFO - Bunker ID: 0
+2025-01-21 10:14:01,119 - StockerServer - INFO - Stocker ID: 76
+2025-01-21 10:14:01,119 - StockerServer - INFO - 
+=== Barcode Data ===
+2025-01-21 10:14:01,119 - StockerServer - INFO - [A] Port Barcode Data: [22064, 48336, 541, 41654, 43519, 20157, 27437, 25753, 53854, 42431, 58760, 1456, 52302, 63192, 19558, 13556, 56015, 11376, 26034, 22847, 12107, 61467, 12191, 2305, 47558, 52118, 64096, 34962, 19094, 53943]
+2025-01-21 10:14:01,120 - StockerServer - INFO - [B] Port Barcode Data: [23905, 37406, 19161, 15099, 54488, 35784, 9849, 53745, 51221, 57152, 49853, 30197, 22995, 36392, 34831, 20559, 44111, 24896, 63265, 23025, 4053, 16119, 45327, 38988, 36509, 60554, 13280, 52234, 15063, 9913]
+2025-01-21 10:14:01,120 - StockerServer - INFO - 
+=== Gas Type ===
+2025-01-21 10:14:01,120 - StockerServer - INFO - [A] Port 가스 종류: [90, 12, 75, 71, 46]
+2025-01-21 10:14:01,120 - StockerServer - INFO - [B] Port 가스 종류: [3, 9, 78, 7, 15]
+2025-01-21 10:14:01,120 - StockerServer - INFO - 
+=== System Status ===
+2025-01-21 10:14:01,120 - StockerServer - INFO - Stocker Alarm Code: 984
+2025-01-21 10:14:01,120 - StockerServer - INFO - X축 현재값: 225
+2025-01-21 10:14:01,120 - StockerServer - INFO - Z축 현재값: 4
+2025-01-21 10:14:01,120 - StockerServer - INFO - 
+=== A Port Settings ===
+2025-01-21 10:14:01,121 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 81
+2025-01-21 10:14:01,121 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 95
+2025-01-21 10:14:01,121 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 540
+2025-01-21 10:14:01,121 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 785
+2025-01-21 10:14:01,121 - StockerServer - INFO - X축 Cylinder Pos 설정값: 943
+2025-01-21 10:14:01,121 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 49
+2025-01-21 10:14:01,121 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 669
+2025-01-21 10:14:01,121 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 121
+2025-01-21 10:14:01,121 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 24
+2025-01-21 10:14:01,122 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 948
+2025-01-21 10:14:01,122 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 75
+2025-01-21 10:14:01,122 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 745
+2025-01-21 10:14:01,122 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 126
+2025-01-21 10:14:01,122 - StockerServer - INFO - Worker Door Torque 설정값: 893
+2025-01-21 10:14:01,122 - StockerServer - INFO - Bunker Door Torque 설정값: 88
+2025-01-21 10:14:01,122 - StockerServer - INFO - Worker Door Open Pos 설정값: 88
+2025-01-21 10:14:01,122 - StockerServer - INFO - Bunker Door Open Pos 설정값: 776
+2025-01-21 10:14:01,122 - StockerServer - INFO - Worker Door Close Pos 설정값: 771
+2025-01-21 10:14:01,122 - StockerServer - INFO - Bunker Door Close Pos 설정값: 11
+2025-01-21 10:14:01,122 - StockerServer - INFO - Worker Door Torque 현재값: 1
+2025-01-21 10:14:01,123 - StockerServer - INFO - Bunker Door Torque 현재값: 67
+2025-01-21 10:14:01,123 - StockerServer - INFO - Worker Door Pos 현재값: 77
+2025-01-21 10:14:01,123 - StockerServer - INFO - Bunker Door Pos 현재값: 77
+2025-01-21 10:14:01,123 - StockerServer - INFO - 
+=== B Port Settings ===
+2025-01-21 10:14:01,123 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 설정값: 313
+2025-01-21 10:14:01,123 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 설정값: 966
+2025-01-21 10:14:01,123 - StockerServer - INFO - Cap Unit 축 보호캡 분리 Torque 현재값: 30
+2025-01-21 10:14:01,123 - StockerServer - INFO - Cap Unit 축 보호캡 체결 Torque 현재값: 63
+2025-01-21 10:14:01,123 - StockerServer - INFO - X축 Cylinder Pos 설정값: 245
+2025-01-21 10:14:01,123 - StockerServer - INFO - Z축 Cap Open Down Pos 설정값: 447
+2025-01-21 10:14:01,123 - StockerServer - INFO - Z축 Cap Open Seperate Pos 설정값: 99
+2025-01-21 10:14:01,124 - StockerServer - INFO - Z축 Cap Open Up Pos 설정값: 83
+2025-01-21 10:14:01,124 - StockerServer - INFO - Z축 Cap Close Down Pos 설정값: 306
+2025-01-21 10:14:01,124 - StockerServer - INFO - Z축 Cap Close Screw Pos 설정값: 0
+2025-01-21 10:14:01,124 - StockerServer - INFO - Z축 Cap Close Up Pos 설정값: 0
+2025-01-21 10:14:01,124 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 설정값: 0
+2025-01-21 10:14:01,124 - StockerServer - INFO - Cylinder Gripper축 Barrel Turn Pos 현재값: 0
+2025-01-21 10:14:01,124 - StockerServer - INFO - Worker Door Torque 설정값: 0
+2025-01-21 10:14:01,124 - StockerServer - INFO - Bunker Door Torque 설정값: 0
+2025-01-21 10:14:01,124 - StockerServer - INFO - Worker Door Open Pos 설정값: 0
+2025-01-21 10:14:01,124 - StockerServer - INFO - Bunker Door Open Pos 설정값: 0
+2025-01-21 10:14:01,124 - StockerServer - INFO - Worker Door Close Pos 설정값: 0
+2025-01-21 10:14:01,125 - StockerServer - INFO - Bunker Door Close Pos 설정값: 0
+2025-01-21 10:14:01,125 - StockerServer - INFO - Worker Door Torque 현재값: 0
+2025-01-21 10:14:01,125 - StockerServer - INFO - Bunker Door Torque 현재값: 0
+2025-01-21 10:14:01,125 - StockerServer - INFO - Worker Door Pos 현재값: 0
+2025-01-21 10:14:01,125 - StockerServer - INFO - Bunker Door Pos 현재값: 0
+2025-01-21 10:14:01,125 - StockerServer - INFO - 
+==================
+2025-01-21 10:14:01,125 - StockerServer - INFO - Waiting for web server socket to be ready...
+2025-01-21 10:14:04,197 - StockerServer - INFO - Shutting down server...
+2025-01-21 10:14:04,197 - StockerServer - INFO - Server started successfully
+2025-01-21 10:14:04,197 - StockerServer - INFO - Server shutdown complete
