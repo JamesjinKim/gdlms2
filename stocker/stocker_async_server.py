@@ -19,7 +19,7 @@ logger.addHandler(logging.StreamHandler())
 
 class CustomDataBlock(ModbusSequentialDataBlock):
     def __init__(self):
-        super().__init__(0, [0] * 138)  # Initialize with 138 WORDs to include bit data
+        super().__init__(0, [0] * 200)  # Initialize with 138 WORDs to include bit data
 
     def setValues(self, address, values):
         print(f"\n데이터 수신: address={address}, values={values}")
