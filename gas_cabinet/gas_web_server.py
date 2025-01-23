@@ -129,16 +129,27 @@ html = """
                     basic: {
                         bunker_id: data.plc_data.bunker_id,
                         cabinet_id: data.plc_data.cabinet_id,
-                        gas_type: data.plc_data.gas_type
+                        gas_type: data.plc_data.gas_type,
+                        system_status: data.plc_data.system_status
                     },
                     sensors: data.plc_data.sensors,
                     heaters: data.plc_data.heaters,
-                    status: data.plc_data.status,
                     bitStatus: {
-                        system: data.bit_data.word_200.states,
-                        sensors: data.bit_data.word_201.states,
-                        portA: data.bit_data.port_a,
-                        portB: data.bit_data.port_b
+                        cylinderDoor: data.bit_data.cylinder_door.states,
+                        basicSignals: data.bit_data.basic_signals.states,
+                        valves: data.bit_data.valves.states,
+                        sensorsRelays: data.bit_data.sensors_relays.states,
+                        portStatus: data.bit_data.port_status.states,
+                        portA: {
+                            operation: data.bit_data.port_a.operation.states,
+                            valves: data.bit_data.port_a.valves.states
+                        },
+                        portB: {
+                            operation: data.bit_data.port_b.operation.states,
+                            valves: data.bit_data.port_b.valves.states,
+                            details: data.bit_data.port_b.details.states,
+                            additional: data.bit_data.port_b.additional.states
+                        }
                     }
                 };
                 return JSON.stringify(formatted, null, 2);
@@ -218,6 +229,7 @@ class ModbusDataClient:
             self.connected = False
             await asyncio.sleep(5)
 
+    # 데이터 조회
     async def get_data(self) -> Optional[Dict]:
         """데이터 조회"""
         if not self.connected:
@@ -227,25 +239,25 @@ class ModbusDataClient:
         
         try:
             async with self._lock:
-                # 더 작은 단위로 데이터 읽기
-                results = []
-                for start in range(0, 140, 50):
-                    count = min(50, 140 - start)
+                # PLC 데이터 영역 (0-99) 읽기
+                plc_results = []
+                for start in range(0, 100, 50):  # 0-99 범위의 데이터를 50개씩 나눠서 읽기
+                    count = min(50, 100 - start)
                     result = await self.client.read_holding_registers(
                         address=start,
                         count=count,
                         slave=1
                     )
                     if result and not result.isError():
-                        results.extend(result.registers)
+                        plc_results.extend(result.registers)
                     else:
-                        logger.error(f"레지스터 읽기 실패: {start}-{start+count}")
+                        logger.error(f"PLC 데이터 읽기 실패: {start}-{start+count}")
                         return None
 
-                # 비트 데이터 읽기
+                # 비트 데이터 영역 (100-117) 읽기
                 bit_result = await self.client.read_holding_registers(
-                    address=200,
-                    count=27,
+                    address=100,
+                    count=18,
                     slave=1
                 )
                 
@@ -253,200 +265,276 @@ class ModbusDataClient:
                     logger.error("비트 데이터 읽기 실패")
                     return None
 
-                plc_data = results
+                plc_data = plc_results
                 bit_data = bit_result.registers
 
                 current_data = {
                     "plc_data": {
-                        "bunker_id": plc_data[0] if len(plc_data) > 0 else 0,
-                        "cabinet_id": plc_data[1] if len(plc_data) > 1 else 0,
-                        "gas_type": plc_data[2:7] if len(plc_data) > 6 else [0]*5,
+                        "bunker_id": plc_data[0],
+                        "cabinet_id": plc_data[1],
+                        "gas_type": plc_data[2:7],
+                        "system_status": {
+                            "machine_code": plc_data[7],
+                            "alarm_code": plc_data[8]
+                        },
                         "sensors": {
-                            "pt1a": plc_data[17] if len(plc_data) > 17 else 0,
-                            "pt2a": plc_data[18] if len(plc_data) > 18 else 0,
-                            "pt1b": plc_data[19] if len(plc_data) > 19 else 0,
-                            "pt2b": plc_data[20] if len(plc_data) > 20 else 0,
-                            "pt3": plc_data[21] if len(plc_data) > 21 else 0,
-                            "pt4": plc_data[22] if len(plc_data) > 22 else 0,
-                            "weight_a": plc_data[23] if len(plc_data) > 23 else 0,
-                            "weight_b": plc_data[24] if len(plc_data) > 24 else 0
+                            "pt1a": plc_data[10],
+                            "pt2a": plc_data[11],
+                            "pt1b": plc_data[12],
+                            "pt2b": plc_data[13],
+                            "pt3": plc_data[14],
+                            "pt4": plc_data[15],
+                            "weight_a": plc_data[16],
+                            "weight_b": plc_data[17]
                         },
                         "heaters": {
-                            "jacket_heater_a": plc_data[25] if len(plc_data) > 25 else 0,
-                            "line_heater_a": plc_data[26] if len(plc_data) > 26 else 0,
-                            "jacket_heater_b": plc_data[27] if len(plc_data) > 27 else 0,
-                            "line_heater_b": plc_data[28] if len(plc_data) > 28 else 0
+                            "jacket_heater_a": plc_data[18],
+                            "line_heater_a": plc_data[19],
+                            "jacket_heater_b": plc_data[20],
+                            "line_heater_b": plc_data[21]
                         },
-                        "status": {
-                            "machine_code": plc_data[29] if len(plc_data) > 29 else 0,
-                            "alarm_code": plc_data[30] if len(plc_data) > 30 else 0
+                        "port_a": {
+                            "torque": {
+                                "cga_set": plc_data[24],
+                                "cap_set": plc_data[25],
+                                "cylinder_pos": plc_data[26]
+                            },
+                            "barcode": plc_data[30:60],
+                            "gas_type": plc_data[90:95]
+                        },
+                        "port_b": {
+                            "torque": {
+                                "cga_set": plc_data[27],
+                                "cap_set": plc_data[28],
+                                "cylinder_pos": plc_data[29]
+                            },
+                            "barcode": plc_data[60:90],
+                            "gas_type": plc_data[95:100]
                         }
                     },
                     "bit_data": {
-                        "word_200": {
-                            "raw": bit_data[0] if len(bit_data) > 0 else 0,
-                            "states": self._get_word_200_states(bit_data[0] if len(bit_data) > 0 else 0)
+                        "cylinder_door": {
+                            "raw": bit_data[5],  # word_105는 bit_data의 5번째 인덱스
+                            "states": self._get_word_105_states(bit_data[5])
                         },
-                        "word_201": {
-                            "raw": bit_data[1] if len(bit_data) > 1 else 0,
-                            "states": self._get_word_201_states(bit_data[1] if len(bit_data) > 1 else 0)
+                        "basic_signals": {
+                            "raw": bit_data[0],
+                            "states": self._get_word_200_states(bit_data[0])
+                        },
+                        "valves": {
+                            "raw": bit_data[1],
+                            "states": self._get_word_201_states(bit_data[1])
+                        },
+                        "sensors_relays": {
+                            "raw": bit_data[2],
+                            "states": self._get_word_202_states(bit_data[2])
+                        },
+                        "port_status": {
+                            "raw": bit_data[3],
+                            "states": {
+                                "port_a": {
+                                    "insert_request": bool(bit_data[3] & (1 << 0)),
+                                    "insert_complete": bool(bit_data[3] & (1 << 1)),
+                                    "remove_request": bool(bit_data[3] & (1 << 2)),
+                                    "remove_complete": bool(bit_data[3] & (1 << 3))
+                                },
+                                "port_b": {
+                                    "insert_request": bool(bit_data[3] & (1 << 8)),
+                                    "insert_complete": bool(bit_data[3] & (1 << 9)),
+                                    "remove_request": bool(bit_data[3] & (1 << 10)),
+                                    "remove_complete": bool(bit_data[3] & (1 << 11))
+                                }
+                            }
                         },
                         "port_a": {
-                            "progress": {
-                                "raw": bit_data[10] if len(bit_data) > 10 else 0,
-                                "states": self._get_word_210_states(bit_data[10] if len(bit_data) > 10 else 0)
+                            "operation": {
+                                "raw": bit_data[10],
+                                "states": self._get_word_210_states(bit_data[10])
                             },
                             "valves": {
-                                "raw": bit_data[11] if len(bit_data) > 11 else 0,
-                                "states": self._get_word_211_states(bit_data[11] if len(bit_data) > 11 else 0)
-                            },
-                            "details": {
-                                "raw": bit_data[15] if len(bit_data) > 15 else 0,
-                                "states": self._get_word_215_states(bit_data[15] if len(bit_data) > 15 else 0)
-                            },
-                            "additional": {
-                                "raw": bit_data[16] if len(bit_data) > 16 else 0,
-                                "states": self._get_word_216_states(bit_data[16] if len(bit_data) > 16 else 0)
+                                "raw": bit_data[11],
+                                "states": self._get_word_211_states(bit_data[11])
                             }
                         },
                         "port_b": {
-                            "progress": {
-                                "raw": bit_data[20] if len(bit_data) > 20 else 0,
-                                "states": self._get_word_220_states(bit_data[20] if len(bit_data) > 20 else 0)
+                            "operation": {
+                                "raw": bit_data[15],
+                                "states": self._get_word_220_states(bit_data[15])
                             },
                             "valves": {
-                                "raw": bit_data[21] if len(bit_data) > 21 else 0,
-                                "states": self._get_word_221_states(bit_data[21] if len(bit_data) > 21 else 0)
+                                "raw": bit_data[16],
+                                "states": self._get_word_221_states(bit_data[16])
                             },
                             "details": {
-                                "raw": bit_data[25] if len(bit_data) > 25 else 0,
-                                "states": self._get_word_225_states(bit_data[25] if len(bit_data) > 25 else 0)
+                                "raw": bit_data[16],
+                                "states": self._get_word_225_states(bit_data[16])
                             },
                             "additional": {
-                                "raw": bit_data[26] if len(bit_data) > 26 else 0,
-                                "states": self._get_word_226_states(bit_data[26] if len(bit_data) > 26 else 0)
+                                "raw": bit_data[17],
+                                "states": self._get_word_226_states(bit_data[17])
                             }
                         }
                     }
                 }
 
                 # 데이터가 변경되었는지 확인
-                if self.last_data != current_data:
-                    self.last_data = current_data
-                    return current_data
-                return None
+                # if self.last_data != current_data:
+                #     self.last_data = current_data
+                return current_data
+                # return None
 
         except Exception as e:
             logger.error(f"데이터 수신 오류: {e}")
             self.connected = False
             return None
+    
+    def _get_word_105_states(self, word: int) -> Dict[str, bool]:
+        return {
+            "port_a_cylinder": bool(word & (1 << 0)),  # [A] Port 실린더 유무
+            "port_b_cylinder": bool(word & (1 << 1)),  # [B] Port 실린더 유무
+            "door_open": bool(word & (1 << 2)),        # Door Open 완료
+            "door_close": bool(word & (1 << 3))        # Door Close 완료
+        }
 
     def _get_word_200_states(self, word: int) -> Dict[str, bool]:
-        """word_200 상태 비트 해석"""
+        """기본 신호 상태 해석 (100.00-100.07)"""
         return {
-            "emg_signal": bool(word & (1 << 0)),
-            "heart_bit": bool(word & (1 << 1)),
-            "run_stop_signal": bool(word & (1 << 2)),
-            "server_connected": bool(word & (1 << 3)),
-            "port_a_cylinder": bool(word & (1 << 4)),
-            "port_b_cylinder": bool(word & (1 << 5)),
-            "port_a_manual": bool(word & (1 << 6)),
-            "port_b_manual": bool(word & (1 << 7)),
-            "door_open": bool(word & (1 << 8)),
-            "door_close": bool(word & (1 << 9))
+            "emg_signal": bool(word & (1 << 0)),        # EMG Signal
+            "heart_bit": bool(word & (1 << 1)),         # Heart Bit
+            "run_stop_signal": bool(word & (1 << 2)),   # Run/Stop Signal
+            "server_connected": bool(word & (1 << 3)),   # Server Connected Bit
+            "t_lamp_red": bool(word & (1 << 4)),        # T-LAMP RED
+            "t_lamp_yellow": bool(word & (1 << 5)),     # T-LAMP YELLOW
+            "t_lamp_green": bool(word & (1 << 6)),      # T-LAMP GREEN
+            "touch_manual": bool(word & (1 << 7))       # Touch 수동동작中 Signal
         }
 
     def _get_word_201_states(self, word: int) -> Dict[str, bool]:
-        """word_201 상태 비트 해석"""
+        """밸브 상태 해석 (101.00-101.12)"""
         return {
-            "lamp_red": bool(word & (1 << 0)),
-            "lamp_yellow": bool(word & (1 << 1)),
-            "lamp_green": bool(word & (1 << 2)),
-            "jacket_heater_a": bool(word & (1 << 3)),
-            "line_heater_a": bool(word & (1 << 4)),
-            "jacket_heater_b": bool(word & (1 << 5)),
-            "line_heater_b": bool(word & (1 << 6)),
-            "gas_leak_shutdown": bool(word & (1 << 7)),
-            "vmb_stop": bool(word & (1 << 8)),
-            "uv_ir_sensor": bool(word & (1 << 9)),
-            "high_temp_sensor": bool(word & (1 << 10)),
-            "smoke_sensor": bool(word & (1 << 11))
+            "av1a": bool(word & (1 << 0)),
+            "av2a": bool(word & (1 << 1)),
+            "av3a": bool(word & (1 << 2)),
+            "av4a": bool(word & (1 << 3)),
+            "av5a": bool(word & (1 << 4)),
+            "av1b": bool(word & (1 << 5)),
+            "av2b": bool(word & (1 << 6)),
+            "av3b": bool(word & (1 << 7)),
+            "av4b": bool(word & (1 << 8)),
+            "av5b": bool(word & (1 << 9)),
+            "av7": bool(word & (1 << 10)),
+            "av8": bool(word & (1 << 11)),
+            "av9": bool(word & (1 << 12))
+        }
+
+    def _get_word_202_states(self, word: int) -> Dict[str, bool]:
+        """센서 및 릴레이 상태 해석 (102.00-102.08)"""
+        return {
+            "jacket_heater_a": bool(word & (1 << 0)),   # JACKET HEATER A RELAY
+            "line_heater_a": bool(word & (1 << 1)),     # LINE HEATER A RELAY
+            "jacket_heater_b": bool(word & (1 << 2)),   # JACKET HEATER B RELAY
+            "line_heater_b": bool(word & (1 << 3)),     # LINE HEATER B RELAY
+            "gas_leak_shutdown": bool(word & (1 << 4)), # GAS LEAK SHUT DOWN
+            "vmb_stop": bool(word & (1 << 5)),         # VMB STOP SIGNAL
+            "uv_ir_sensor": bool(word & (1 << 6)),     # UV/IR SENSOR
+            "high_temp_sensor": bool(word & (1 << 7)), # HIGH TEMP SENSOR
+            "smoke_sensor": bool(word & (1 << 8))      # SMOKE SENSOR
         }
 
     def _get_word_210_states(self, word: int) -> Dict[str, bool]:
-        """[A] Port 진행 상태 해석"""
-        states = [
-            "close_cylinder", "purge_1st_before", "decompression_test",
-            "purge_2nd_before", "exchange_cylinder", "purge_1st_after",
-            "pressure_test", "purge_2nd_after", "purge_completed",
-            "prepare_supply", "av3_control", "gas_supply", "ready_supply"
-        ]
-        return {state: bool(word & (1 << i)) for i, state in enumerate(states)}
+        """A Port 작업 상태 해석 (110.00-110.12)"""
+        return {
+            "close_cylinder": bool(word & (1 << 0)),
+            "first_purge_before": bool(word & (1 << 1)),
+            "decompression_test": bool(word & (1 << 2)),
+            "second_purge_before": bool(word & (1 << 3)),
+            "exchange_cylinder": bool(word & (1 << 4)),
+            "first_purge_after": bool(word & (1 << 5)),
+            "pressure_test": bool(word & (1 << 6)),
+            "second_purge_after": bool(word & (1 << 7)),
+            "purge_completed": bool(word & (1 << 8)),
+            "prepare_supply": bool(word & (1 << 9)),
+            "av3_control": bool(word & (1 << 10)),
+            "gas_supply": bool(word & (1 << 11)),
+            "ready_supply": bool(word & (1 << 12))
+        }
 
     def _get_word_211_states(self, word: int) -> Dict[str, bool]:
-        """A Port 밸브 상태 해석"""
-        return {f"av{i+1}a": bool(word & (1 << i)) for i in range(5)}
-
-    def _get_word_215_states(self, word: int) -> Dict[str, bool]:
-        """[A] Port 상세 상태 해석"""
-        states = [
-            "cylinder_ready", "cga_disconnected", "cga_connected",
-            "valve_open_complete", "valve_close_complete", "valve_open_status",
-            "lift_ready", "lift_up_progress", "lift_down_progress",
-            "cga_disconnecting", "cga_connecting", "cap_removing",
-            "valve_opening", "valve_closing", "cylinder_aligning",
-            "lift_rotating"
-        ]
-        return {state: bool(word & (1 << i)) for i, state in enumerate(states)}
-
-    def _get_word_216_states(self, word: int) -> Dict[str, bool]:
-        """[A] Port 추가 상태 해석"""
-        states = [
-            "lift_rotation_complete", "clamp_close_complete", "cga_connection_complete",
-            "port_input_request", "port_input_complete", "port_output_request",
-            "port_output_complete"
-        ]
-        return {state: bool(word & (1 << i)) for i, state in enumerate(states)}
+        """A Port 밸브 상태 해석 (111.00-111.15)"""
+        return {
+            "cylinder_ready": bool(word & (1 << 0)),
+            "cga_disconnect": bool(word & (1 << 1)),
+            "cga_connect": bool(word & (1 << 2)),
+            "valve_open_complete": bool(word & (1 << 3)),
+            "valve_close_complete": bool(word & (1 << 4)),
+            "valve_open_status": bool(word & (1 << 5)),
+            "lift_ready": bool(word & (1 << 6)),
+            "lift_moving_up": bool(word & (1 << 7)),
+            "lift_moving_down": bool(word & (1 << 8)),
+            "cga_separating": bool(word & (1 << 9)),
+            "cga_connecting": bool(word & (1 << 10)),
+            "cap_separating": bool(word & (1 << 11)),
+            "valve_opening": bool(word & (1 << 12)),
+            "valve_closing": bool(word & (1 << 13)),
+            "cylinder_aligning": bool(word & (1 << 14)),
+            "cylinder_turning": bool(word & (1 << 15))
+        }
 
     def _get_word_220_states(self, word: int) -> Dict[str, bool]:
-        """[B] Port 진행 상태 해석"""
-        states = [
-            "close_cylinder", "purge_1st_before", "decompression_test",
-            "purge_2nd_before", "exchange_cylinder", "purge_1st_after",
-            "pressure_test", "purge_2nd_after", "purge_completed",
-            "prepare_supply", "av3_control", "gas_supply", "ready_supply"
-        ]
-        return {state: bool(word & (1 << i)) for i, state in enumerate(states)}
+        """B Port 작업 상태 해석 (115.00-115.12)"""
+        return {
+            "close_cylinder": bool(word & (1 << 0)),
+            "first_purge_before": bool(word & (1 << 1)),
+            "decompression_test": bool(word & (1 << 2)),
+            "second_purge_before": bool(word & (1 << 3)),
+            "exchange_cylinder": bool(word & (1 << 4)),
+            "first_purge_after": bool(word & (1 << 5)),
+            "pressure_test": bool(word & (1 << 6)),
+            "second_purge_after": bool(word & (1 << 7)),
+            "purge_completed": bool(word & (1 << 8)),
+            "prepare_supply": bool(word & (1 << 9)),
+            "av3_control": bool(word & (1 << 10)),
+            "gas_supply": bool(word & (1 << 11)),
+            "ready_supply": bool(word & (1 << 12))
+        }
 
     def _get_word_221_states(self, word: int) -> Dict[str, bool]:
-        """B Port 밸브 상태 해석"""
-        states = {f"av{i+1}b": bool(word & (1 << i)) for i in range(5)}
-        # AV7-AV9 (13-15)
+        """B Port 밸브 상태 해석 (221.00-221.15)"""
+        states = {f"av{i+1}b": bool(word & (1 << i)) for i in range(5)}  # AV1B-AV5B
+        # AV7-AV9 (13-15 비트)
         for i, num in enumerate(range(13, 16)):
             states[f"av{7+i}"] = bool(word & (1 << num))
         return states
 
     def _get_word_225_states(self, word: int) -> Dict[str, bool]:
-        """[B] Port 상세 상태 해석"""
-        states = [
-            "cylinder_ready", "cga_disconnected", "cga_connected",
-            "valve_open_complete", "valve_close_complete", "valve_open_status",
-            "lift_ready", "lift_up_progress", "lift_down_progress",
-            "cga_disconnecting", "cga_connecting", "cap_removing",
-            "valve_opening", "valve_closing", "cylinder_aligning",
-            "lift_rotating"
-        ]
-        return {state: bool(word & (1 << i)) for i, state in enumerate(states)}
+        """B Port 상세 상태 해석 (116.00-116.15)"""
+        return {
+            "cylinder_ready": bool(word & (1 << 0)),
+            "cga_disconnect": bool(word & (1 << 1)),
+            "cga_connect": bool(word & (1 << 2)),
+            "valve_open_complete": bool(word & (1 << 3)),
+            "valve_close_complete": bool(word & (1 << 4)),
+            "valve_open_status": bool(word & (1 << 5)),
+            "lift_ready": bool(word & (1 << 6)),
+            "lift_moving_up": bool(word & (1 << 7)),
+            "lift_moving_down": bool(word & (1 << 8)),
+            "cga_separating": bool(word & (1 << 9)),
+            "cga_connecting": bool(word & (1 << 10)),
+            "cap_separating": bool(word & (1 << 11)),
+            "valve_opening": bool(word & (1 << 12)),
+            "valve_closing": bool(word & (1 << 13)),
+            "cylinder_aligning": bool(word & (1 << 14)),
+            "cylinder_turning": bool(word & (1 << 15))
+        }
 
     def _get_word_226_states(self, word: int) -> Dict[str, bool]:
-        """[B] Port 추가 상태 해석"""
-        states = [
-            "lift_rotation_complete", "clamp_close_complete", "cga_connection_complete",
-            "port_input_request", "port_input_complete", "port_output_request",
-            "port_output_complete"
-        ]
-        return {state: bool(word & (1 << i)) for i, state in enumerate(states)}
-    
+        """B Port 추가 상태 해석 (117.00-117.02)"""
+        return {
+            "cylinder_turn_complete": bool(word & (1 << 0)),
+            "cylinder_clamp_complete": bool(word & (1 << 1)),
+            "cga_connect_status": bool(word & (1 << 2))
+        }
+        
     async def close(self):
         try:
             self.running = False  # 실행 상태 플래그 해제
@@ -458,17 +546,6 @@ class ModbusDataClient:
             print(f"Modbus 클라이언트 종료 중 오류: {e}")
         finally:
             self.client = None
-
-    async def update_client_data(modbus_client):
-        while modbus_client.running:  # running 플래그 확인
-            try:
-                data = await modbus_client.get_data()
-                if data:
-                    await manager.broadcast(data)
-                await asyncio.sleep(0.5)
-            except Exception as e:
-                print(f"데이터 업데이트 오류: {e}")
-                await asyncio.sleep(1)
 
 class ConnectionManager:
     def __init__(self):

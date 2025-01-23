@@ -11,160 +11,140 @@ logging.basicConfig(
 )
 
 def generate_plc_data():
-    """PLC 데이터 생성 함수 - 모든 값을 0-255 범위로 제한"""
+    """PLC 데이터 생성 함수 - Data area (0-99) 데이터 생성"""
     data = []
 
     # Basic Information (0-6)
-    data.append(1)  # Bunker ID (0)
+    data.append(random.randint(1, 10))  # Bunker ID (0)
     data.append(random.randint(1, 26))  # Gas Cabinet ID (1)
-    data.extend([random.randint(1, 50) for _ in range(5)])  # Gas Type (2-6)
+    data.extend([random.randint(1, 50) for _ in range(5)])  # Gas Cabinet 가스 종류 (2-6)
 
-    # Empty space (7-16)
-    data.extend([0 for _ in range(10)])  # 주석 해제
+    # Machine Code and Alarm Code (7-8)
+    data.append(random.randint(0, 255))  # SEND AND RECEIVE FOR MACHINE CODE (7)
+    data.append(random.randint(0, 255))  # Gas Cabinet Alarm Code (8)
+    data.append(0)  # Empty (9)
 
-    # Pressure Sensors (17-24)
-    for _ in range(8):  # PT1A - WB
-        data.append(random.randint(0, 255))
+    # Pressure Sensors (10-17)
+    data.append(random.randint(0, 1000))  # PT1A
+    data.append(random.randint(0, 1000))  # PT2A
+    data.append(random.randint(0, 1000))  # PT1B
+    data.append(random.randint(0, 1000))  # PT2B
+    data.append(random.randint(0, 1000))  # PT3
+    data.append(random.randint(0, 1000))  # PT4
+    data.append(random.randint(0, 100))   # WA (Weight A)
+    data.append(random.randint(0, 100))   # WB (Weight B)
 
-    # Heater Values (25-28)
-    for _ in range(4):
-        data.append(random.randint(0, 100))
+    # Heater Values (18-21)
+    data.append(random.randint(0, 100))  # [A] JACKET HEATER
+    data.append(random.randint(0, 100))  # [A] LINE HEATER
+    data.append(random.randint(0, 100))  # [B] JACKET HEATER
+    data.append(random.randint(0, 100))  # [B] LINE HEATER
 
-    # Status Codes (29-30)
-    data.append(random.randint(0, 22))  # Machine Code
-    data.append(random.randint(0, 22))  # Alarm Code
+    # Empty space (22-23)
+    data.extend([0, 0])
 
-    # Empty space (31-39)
-    data.extend([0 for _ in range(9)])  # 주석 해제
+    # Torque and Position Values (24-29)
+    data.append(random.randint(0, 100))  # [A] CGA 체결 Torque 설정값
+    data.append(random.randint(0, 100))  # [A] CAP 체결 Torque 설정값
+    data.append(random.randint(0, 255))  # [A] 실린더 Up/Down Pos 현재값
+    data.append(random.randint(0, 100))  # [B] CGA 체결 Torque 설정값
+    data.append(random.randint(0, 100))  # [B] CAP 체결 Torque 설정값
+    data.append(random.randint(0, 255))  # [B] 실린더 Up/Down Pos 현재값
 
-    # A Port CGA Torque Data (40-43)
-    for _ in range(4):
-        data.append(random.randint(0, 100))
+    # Barcode Data (30-89)
+    data.extend([random.randint(32, 126) for _ in range(30)])  # [A] Port Barcode Data #1~#30
+    data.extend([random.randint(32, 126) for _ in range(30)])  # [B] Port Barcode Data #1~#30
 
-    # Empty space (44)
-    data.append(0)  # 주석 해제
+    # Gas Types (90-99)
+    data.extend([random.randint(1, 50) for _ in range(5)])  # [A] Port 가스 종류
+    data.extend([random.randint(1, 50) for _ in range(5)])  # [B] Port 가스 종류
 
-    # A Port Cylinder Position Data (45-47)
-    for _ in range(3):
-        data.append(random.randint(0, 255))
-
-    # Empty space (48-49)
-    data.extend([0 for _ in range(2)])  # 주석 해제
-
-    # A Port Cylinder Barcode Data (50-79)
-    data.extend([random.randint(0, 255) for _ in range(30)])
-
-    # Empty space (80-99)
-    data.extend([0 for _ in range(20)])  # 주석 해제
-
-    # B Port CGA Torque Data (100-103)
-    for _ in range(4):
-        data.append(random.randint(0, 100))
-
-    # Empty space (104)
-    data.append(0)  # 주석 해제
-
-    # B Port Cylinder Position Data (105-107)
-    for _ in range(3):
-        data.append(random.randint(0, 255))
-
-    # Empty space (108-109)
-    data.extend([0 for _ in range(2)])  # 주석 해제
-
-    # B Port Cylinder Barcode Data (110-139)
-    data.extend([random.randint(0, 255) for _ in range(30)])
-
-    # 데이터 길이 확인
-    if len(data) != 140:
-        print(f"Warning: 잘못된 데이터 길이: {len(data)}")
-    
     return data
 
 def generate_bit_data():
-    """PLC Bit area 데이터 생성 함수"""
+    """PLC Bit area 데이터 생성 함수 - (100-117) 워드 생성"""
     bit_data = []
 
-    # 200.00 - 200.09 (기본 상태 비트)
-    word_200 = 0
-    word_200 |= random.choice([0, 1]) << 0  # EMG Signal
-    word_200 |= random.choice([0, 1]) << 1  # Heart Bit
-    word_200 |= random.choice([0, 1]) << 2  # Run/Stop Signal
-    word_200 |= random.choice([0, 1]) << 3  # Server Connected Bit
-    word_200 |= random.choice([0, 1]) << 4  # A Port 실린더 유무
-    word_200 |= random.choice([0, 1]) << 5  # B Port 실린더 유무
-    word_200 |= random.choice([0, 1]) << 6  # [A] Touch 수동동작中 Signal
-    word_200 |= random.choice([0, 1]) << 7  # [B] Touch 수동동작中 Signal
-    word_200 |= random.choice([0, 1]) << 8  # Door Open 완료
-    word_200 |= random.choice([0, 1]) << 9  # Door Close 완료
-    bit_data.append(word_200)
+    # Word 100 (Basic signals)
+    word_100 = 0
+    word_100 |= random.choice([0, 1]) << 0  # EMG Signal
+    word_100 |= random.choice([0, 1]) << 1  # Heart Bit
+    word_100 |= random.choice([0, 1]) << 2  # Run/Stop Signal
+    word_100 |= random.choice([0, 1]) << 3  # Server Connected Bit
+    word_100 |= random.choice([0, 1]) << 4  # T-LAMP RED
+    word_100 |= random.choice([0, 1]) << 5  # T-LAMP YELLOW
+    word_100 |= random.choice([0, 1]) << 6  # T-LAMP GREEN
+    word_100 |= random.choice([0, 1]) << 7  # Touch 수동동작中 Signal
+    bit_data.append(word_100)
 
-    # 201.00 - 201.11 (센서 및 릴레이 상태)
-    word_201 = 0
-    word_201 |= random.choice([0, 1]) << 0  # T-LAMP RED
-    word_201 |= random.choice([0, 1]) << 1  # T-LAMP YELLOW
-    word_201 |= random.choice([0, 1]) << 2  # T-LAMP GREEN
-    word_201 |= random.choice([0, 1]) << 3  # JACKET HEATER A RELAY
-    word_201 |= random.choice([0, 1]) << 4  # LINE HEATER A RELAY
-    word_201 |= random.choice([0, 1]) << 5  # JACKET HEATER B RELAY
-    word_201 |= random.choice([0, 1]) << 6  # LINE HEATER B RELAY
-    word_201 |= random.choice([0, 1]) << 7  # GAS LEAK SHUT DOWN
-    word_201 |= random.choice([0, 1]) << 8  # VMB STOP SIGNAL
-    word_201 |= random.choice([0, 1]) << 9  # UV/IR SENSOR
-    word_201 |= random.choice([0, 1]) << 10  # HIGH TEMP SENSOR
-    word_201 |= random.choice([0, 1]) << 11  # SMOKE SENSOR
-    bit_data.append(word_201)
+    # Word 101 (Valve status)
+    word_101 = 0
+    for i in range(13):  # AV1A ~ AV9
+        word_101 |= random.choice([0, 1]) << i
+    bit_data.append(word_101)
 
-    # 210.00 - 210.12 ([A] Port 진행 상태)
-    word_210 = 0
-    for i in range(13):  # 13개 비트 사용
-        word_210 |= random.choice([0, 1]) << i
-    bit_data.append(word_210)
+    # Word 102 (Heater and sensor status)
+    word_102 = 0
+    for i in range(9):  # Various sensors and relays
+        word_102 |= random.choice([0, 1]) << i
+    bit_data.append(word_102)
 
-    # 211.00 - 211.04 (AV1A-AV5A 밸브 상태)
-    word_211 = 0
-    for i in range(5):  # 5개 비트 사용
-        word_211 |= random.choice([0, 1]) << i
-    bit_data.append(word_211)
+    # Word 103 (Port requests and completions)
+    word_103 = 0
+    for i in range(12):  # Port insert/remove requests and completions
+        word_103 |= random.choice([0, 1]) << i
+    bit_data.append(word_103)
 
-    # 215.00 - 215.15 ([A] Port 상세 상태)
-    word_215 = 0
-    for i in range(16):  # 16개 비트 모두 사용
-        word_215 |= random.choice([0, 1]) << i
-    bit_data.append(word_215)
+    # Word 104 (Empty)
+    bit_data.append(0)
 
-    # 216.00 - 216.06 ([A] Port 추가 상태)
-    word_216 = 0
-    for i in range(7):  # 7개 비트 사용
-        word_216 |= random.choice([0, 1]) << i
-    bit_data.append(word_216)
+    # Word 105 (Door and cylinder status)
+    word_105 = 0
+    for i in range(4):  # Cylinder presence and door status
+        word_105 |= random.choice([0, 1]) << i
+    bit_data.append(word_105)
 
-    # 220.00 - 220.12 ([B] Port 진행 상태)
-    word_220 = 0
-    for i in range(13):  # 13개 비트 사용
-        word_220 |= random.choice([0, 1]) << i
-    bit_data.append(word_220)
+    # Words 106-109 (Empty)
+    bit_data.extend([0] * 4)
 
-    # 221.00 - 221.15 (B Port 밸브 상태)
-    word_221 = 0
-    # AV1B-AV5B (0-4)
-    for i in range(5):
-        word_221 |= random.choice([0, 1]) << i
-    # AV7-AV9 (13-15)
-    for i in range(13, 16):
-        word_221 |= random.choice([0, 1]) << i
-    bit_data.append(word_221)
+    # Word 110 ([A] Port operation status)
+    word_110 = 0
+    for i in range(13):  # A Port operation flags
+        word_110 |= random.choice([0, 1]) << i
+    bit_data.append(word_110)
 
-    # 225.00 - 225.15 ([B] Port 상세 상태)
-    word_225 = 0
-    for i in range(16):  # 16개 비트 모두 사용
-        word_225 |= random.choice([0, 1]) << i
-    bit_data.append(word_225)
+    # Word 111 ([A] Port detailed status)
+    word_111 = 0
+    for i in range(16):  # A Port detailed status flags
+        word_111 |= random.choice([0, 1]) << i
+    bit_data.append(word_111)
 
-    # 226.00 - 226.06 ([B] Port 추가 상태)
-    word_226 = 0
-    for i in range(7):  # 7개 비트 사용
-        word_226 |= random.choice([0, 1]) << i
-    bit_data.append(word_226)
+    # Word 112 ([A] Port additional status)
+    word_112 = 0
+    for i in range(3):  # A Port additional status flags
+        word_112 |= random.choice([0, 1]) << i
+    bit_data.append(word_112)
+
+    # Words 113-114 (Empty)
+    bit_data.extend([0] * 2)
+
+    # Word 115 ([B] Port operation status)
+    word_115 = 0
+    for i in range(13):  # B Port operation flags
+        word_115 |= random.choice([0, 1]) << i
+    bit_data.append(word_115)
+
+    # Word 116 ([B] Port detailed status)
+    word_116 = 0
+    for i in range(16):  # B Port detailed status flags
+        word_116 |= random.choice([0, 1]) << i
+    bit_data.append(word_116)
+
+    # Word 117 ([B] Port additional status)
+    word_117 = 0
+    for i in range(3):  # B Port additional status flags
+        word_117 |= random.choice([0, 1]) << i
+    bit_data.append(word_117)
 
     return bit_data
 
@@ -214,6 +194,7 @@ async def run_client():
             return False
 
     async def send_data():
+        """데이터 전송 함수"""
         if not await connect_client():
             print("서버에 연결할 수 없습니다. 재시도 중...")
             return
@@ -222,19 +203,19 @@ async def run_client():
             # 시간 동기화 데이터 읽기
             await read_time_sync_data()
 
-            # Data area (0-199) 데이터 전송
+            # Data area (0-99) 데이터 전송
             data = generate_plc_data()
-            print("\n=== 생성된 PLC 데이터 ===")  # 추가
-            print(f"Bunker ID: {data[0]}")      # 추가
-            print(f"Cabinet ID: {data[1]}")     # 추가
-            #print(f"첫 10개 값: {data[:10]}")
+            print("\n=== 생성된 PLC 데이터 ===")
+            print(f"Bunker ID: {data[0]}")
+            print(f"Cabinet ID: {data[1]}")
+            print(f"Gas Type: {data[2:7]}")
             
             # 각 레지스터를 개별적으로 전송
             for i, value in enumerate(data):
                 try:
                     if client and client.connected:
                         result = await client.write_register(
-                            address=i,
+                            address=i,      # 0-99 범위의 주소
                             value=value,
                             slave=1
                         )
@@ -246,7 +227,7 @@ async def run_client():
                 except Exception as e:
                     print(f"레지스터 쓰기 오류 - address={i}: {e}")
 
-            # Bit area (200-226) 데이터 전송
+            # Bit area (100-117) 데이터 전송
             bit_data = generate_bit_data()
             print(f"\n=== 생성된 Bit 데이터 ===")
             print(f"Bit data length: {len(bit_data)}")
@@ -256,17 +237,17 @@ async def run_client():
                 try:
                     if client and client.connected:
                         result = await client.write_register(
-                            address=200 + i,
+                            address=100 + i,    # 100-117 범위의 주소
                             value=value,
                             slave=1
                         )
                         if result and hasattr(result, 'isError') and result.isError():
-                            print(f"비트 데이터 전송 실패: address={200+i}, value={value}")
+                            print(f"비트 데이터 전송 실패: address={100+i}, value={value}")
                     else:
                         print("클라이언트 연결이 끊어졌습니다.")
                         break
                 except Exception as e:
-                    print(f"비트 레지스터 쓰기 오류 - address={200+i}: {e}")
+                    print(f"비트 레지스터 쓰기 오류 - address={100+i}: {e}")
 
         except Exception as e:
             print(f"데이터 전송 중 오류 발생: {e}")

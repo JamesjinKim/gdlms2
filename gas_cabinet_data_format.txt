@@ -1,0 +1,176 @@
+{
+  "basic": {
+    "bunker_id": 1,
+    "cabinet_id": 1,
+    "gas_type": [
+      22,
+      35,
+      11,
+      20,
+      18
+    ],
+    "system_status": {
+      "machine_code": 98,
+      "alarm_code": 231
+    }
+  },
+  "sensors": {
+    "pt1a": 731,
+    "pt2a": 931,
+    "pt1b": 620,
+    "pt2b": 208,
+    "pt3": 739,
+    "pt4": 950,
+    "weight_a": 44,
+    "weight_b": 7
+  },
+  "heaters": {
+    "jacket_heater_a": 82,
+    "line_heater_a": 4,
+    "jacket_heater_b": 17,
+    "line_heater_b": 65
+  },
+  "bitStatus": {
+    "cylinderDoor": {
+      "port_a_cylinder": false,
+      "port_b_cylinder": true,
+      "door_open": false,
+      "door_close": false
+    },
+    "basicSignals": {
+      "emg_signal": true,
+      "heart_bit": false,
+      "run_stop_signal": false,
+      "server_connected": true,
+      "t_lamp_red": false,
+      "t_lamp_yellow": true,
+      "t_lamp_green": false,
+      "touch_manual": false
+    },
+    "valves": {
+      "av1a": false,
+      "av2a": true,
+      "av3a": true,
+      "av4a": false,
+      "av5a": true,
+      "av1b": false,
+      "av2b": false,
+      "av3b": true,
+      "av4b": false,
+      "av5b": true,
+      "av7": true,
+      "av8": false,
+      "av9": false
+    },
+    "sensorsRelays": {
+      "jacket_heater_a": false,
+      "line_heater_a": false,
+      "jacket_heater_b": false,
+      "line_heater_b": true,
+      "gas_leak_shutdown": true,
+      "vmb_stop": false,
+      "uv_ir_sensor": false,
+      "high_temp_sensor": true,
+      "smoke_sensor": true
+    },
+    "portStatus": {
+      "port_a": {
+        "insert_request": false,
+        "insert_complete": true,
+        "remove_request": false,
+        "remove_complete": true
+      },
+      "port_b": {
+        "insert_request": true,
+        "insert_complete": true,
+        "remove_request": false,
+        "remove_complete": false
+      }
+    },
+    "portA": {
+      "operation": {
+        "close_cylinder": false,
+        "first_purge_before": true,
+        "decompression_test": true,
+        "second_purge_before": false,
+        "exchange_cylinder": false,
+        "first_purge_after": false,
+        "pressure_test": true,
+        "second_purge_after": false,
+        "purge_completed": true,
+        "prepare_supply": false,
+        "av3_control": false,
+        "gas_supply": false,
+        "ready_supply": true
+      },
+      "valves": {
+        "cylinder_ready": true,
+        "cga_disconnect": true,
+        "cga_connect": false,
+        "valve_open_complete": true,
+        "valve_close_complete": false,
+        "valve_open_status": true,
+        "lift_ready": false,
+        "lift_moving_up": false,
+        "lift_moving_down": true,
+        "cga_separating": false,
+        "cga_connecting": false,
+        "cap_separating": true,
+        "valve_opening": false,
+        "valve_closing": false,
+        "cylinder_aligning": true,
+        "cylinder_turning": true
+      }
+    },
+    "portB": {
+      "operation": {
+        "close_cylinder": true,
+        "first_purge_before": true,
+        "decompression_test": false,
+        "second_purge_before": true,
+        "exchange_cylinder": true,
+        "first_purge_after": true,
+        "pressure_test": true,
+        "second_purge_after": true,
+        "purge_completed": true,
+        "prepare_supply": false,
+        "av3_control": true,
+        "gas_supply": false,
+        "ready_supply": false
+      },
+      "valves": {
+        "av1b": false,
+        "av2b": false,
+        "av3b": false,
+        "av4b": false,
+        "av5b": true,
+        "av7": true,
+        "av8": false,
+        "av9": false
+      },
+      "details": {
+        "cylinder_ready": false,
+        "cga_disconnect": false,
+        "cga_connect": false,
+        "valve_open_complete": false,
+        "valve_close_complete": true,
+        "valve_open_status": true,
+        "lift_ready": true,
+        "lift_moving_up": true,
+        "lift_moving_down": true,
+        "cga_separating": true,
+        "cga_connecting": false,
+        "cap_separating": false,
+        "valve_opening": true,
+        "valve_closing": true,
+        "cylinder_aligning": false,
+        "cylinder_turning": false
+      },
+      "additional": {
+        "cylinder_turn_complete": false,
+        "cylinder_clamp_complete": true,
+        "cga_connect_status": false
+      }
+    }
+  }
+}
