@@ -52,8 +52,12 @@ def generate_plc_data():
     data.append(random.randint(0, 255))  # [B] 실린더 Up/Down Pos 현재값
 
     # Barcode Data (30-89)
-    data.extend([random.randint(32, 126) for _ in range(30)])  # [A] Port Barcode Data #1~#30
-    data.extend([random.randint(32, 126) for _ in range(30)])  # [B] Port Barcode Data #1~#30
+    # [A] Port Barcode Data #1~#30
+    data.extend([ord(random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')) for _ in range(30)])
+    #data.extend([random.randint(32, 126) for _ in range(30)])
+    # [B] Port Barcode Data #1~#30
+    data.extend([ord(random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')) for _ in range(30)])  
+    #data.extend([random.randint(32, 126) for _ in range(30)])  
 
     # Gas Types (90-99)
     data.extend([random.randint(1, 50) for _ in range(5)])  # [A] Port 가스 종류

@@ -1,0 +1,50 @@
+{
+  "data_area": {
+    "bunker_id": 1,
+    "stocker_id": 1,
+    "gas_types": [
+      72,
+      4,
+      9,
+      10,
+      7
+    ],
+    "stocker_alarm_code": 0,
+    "axis_position": {
+      "x": 0,
+      "z": 921
+    },
+    "port_a": {
+      "barcode": "\u0000FWN;G?27J=9IBTR6YJRUVLICGM7TU",
+      "gas_types": [
+        61,
+        7,
+        2,
+        9,
+        3
+      ]
+    },
+    "port_b": {
+      "barcode": "GU>YA27X03WG=<XT5K293QK>72:89K",
+      "gas_types": [
+        8,
+        5,
+        10,
+        6,
+        9
+      ]
+    }
+  },
+  "bit_area": {
+    "system_bits": 6,
+    "port_status": 0,
+    "port_a_status": {
+      "operation": 0,
+      "progress": 0
+    },
+    "port_b_status": {
+      "operation": 0,
+      "progress": 0
+    }
+  }
+}
