@@ -1,43 +1,66 @@
-import logging
-import os
 from pymodbus.server import StartAsyncTcpServer
 from pymodbus.datastore import ModbusSequentialDataBlock, ModbusSlaveContext, ModbusServerContext
+import logging
 import asyncio
+import os
+import socket
+import json
+import time
+from stocker_alarm_codes import stocker_alarm_code
+from logging.handlers import TimedRotatingFileHandler
+from datetime import datetime
+
 
 # Ensure the log directory exists
 log_dir = "./log"
 os.makedirs(log_dir, exist_ok=True)
 log_file = os.path.join(log_dir, "stocker.log")
 
-# Configure logging
+# 로깅 설정
+log_handler = TimedRotatingFileHandler(
+    log_file, when="M", interval=1, backupCount=10
+)
+log_handler.suffix = "%Y%m%d%H%M"
+log_handler.setFormatter(logging.Formatter('%(asctime)s %(message)s'))
+log_handler.setLevel(logging.INFO)
+
+# 로거 설정
 logger = logging.getLogger("StockerLogger")
 logger.setLevel(logging.INFO)
-file_handler = logging.FileHandler(log_file)
-file_handler.setFormatter(logging.Formatter('%(asctime)s %(message)s'))
-logger.addHandler(file_handler)
+logger.addHandler(log_handler)
 logger.addHandler(logging.StreamHandler())
 
 class CustomDataBlock(ModbusSequentialDataBlock):
     def __init__(self):
-        super().__init__(0, [0] * 200)  # Initialize with 138 WORDs to include bit data
+        super().__init__(0, [0] * 1000)  # Initialize with 138 WORDs
+        self.last_log_time = 0
+        self.LOG_INTERVAL = 1  # 1초 간격으로 로깅
+        self._buffer = []  # 데이터 버퍼 추가
 
     def setValues(self, address, values):
-        print(f"\n데이터 수신: address={address}, values={values}")
+        # 변경된 데이터를 버퍼에 추가
+        self._buffer.append((address, values))
         super().setValues(address, values)
-
-        # PLC 데이터 영역 (0-99)
-        if 0 <= address < 100:
-            all_values = self.getValues(0, 100)  # 전체 PLC 데이터 영역 읽기
-            self.log_plc_data(all_values)
-
-        # 비트 데이터 영역 (100-117)
-        elif 100 <= address <= 117:
-            bit_values = self.getValues(100, 18)  # 비트 데이터 영역 읽기
-            self.log_bit_data(bit_values)
+        
+        current_time = time.time()
+        if current_time - self.last_log_time >= self.LOG_INTERVAL:
+            self.last_log_time = current_time
+            self.log_all_data()
+            self._buffer.clear()  # 버퍼 초기화
+    
+    def log_all_data(self):
+        """모든 데이터 로깅"""
+        # PLC 데이터 영역 로깅
+        all_values = self.getValues(0, 100)
+        self.log_plc_data(all_values)
+        
+        # 비트 데이터 영역 로깅
+        bit_values = self.getValues(100, 18)
+        self.log_bit_data(bit_values)
     
     def log_plc_data(self, all_values):
         """PLC data logging (addresses 0-99)"""
-        logger.info("=== PLC Data Area ===")
+        logger.info("\n=== Stocker PLC Data Area ===")
 
         # Basic Information (0-1)
         logger.info(f"Bunker ID: {all_values[0]}")
@@ -74,7 +97,7 @@ class CustomDataBlock(ModbusSequentialDataBlock):
         
     def log_bit_data(self, bit_values):
         """Bit data logging (addresses 100-117)"""
-        logger.info("\n=== Bit Area Data ===")
+        logger.info("\n=== Stocker Bit Area Data ===")
 
         # Word 100 (Basic signals)
         word_100 = bit_values[0]
@@ -169,111 +192,273 @@ class ModbusServer:
         )
         self.context = ModbusServerContext(slaves=store, single=True)
 
-    async def run(self):
+        # 소켓 통신 관련 초기화
+        self.socket_path = '/tmp/modbus_data.sock'
+        if os.path.exists(self.socket_path):
+            os.unlink(self.socket_path)
+        self.data_socket = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+        self.data_socket.bind(self.socket_path)
+        self.data_socket.listen(1)
+        self.data_socket.setblocking(False)
+
+    async def send_time_sync(self):
+        """현재 시간을 클라이언트로 전송"""
+        now = datetime.now()
+        time_data = [
+            now.year,   # Address 0: 년
+            now.month,  # Address 1: 월
+            now.day,    # Address 2: 일
+            now.hour,   # Address 3: 시
+            now.minute, # Address 4: 분
+            now.second  # Address 5: 초
+        ]
+        
+        async with self.data_lock:
+            self.datablock.setValues(0, time_data)
+            # 디버그 메시지는 클라이언트가 연결된 경우에만 출력
+            if len(self.clients) > 0:
+                print(f"시간 동기화 데이터 클라이언트로 전송: {time_data}")
+    
+    async def handle_socket_client(self, client, addr):
+        """소켓 클라이언트 처리"""
         try:
-            logger.info("\n=== Modbus Server Starting... ===")
-            await StartAsyncTcpServer(
-                context=self.context,
-                address=('127.0.0.1', 5020)
-            )
-            logger.info("Server started successfully")
+            while True:
+                # 데이터 요청을 받으면 현재 데이터 전송
+                data = await self.get_current_data()
+                await self.send_socket_data(client, data)
+                await asyncio.sleep(0.1)
         except Exception as e:
-            logger.error(f"Server error: {e}")
+            print(f"Socket client error: {e}")
         finally:
-            self.running = False
-            logger.info("Server shutdown complete")
+            client.close()
+
+    async def send_socket_data(self, client, data):
+        """소켓을 통해 데이터 전송"""
+        try:
+            json_data = json.dumps(data)
+            #client.send(json_data.encode('utf-8'))
+            await asyncio.get_event_loop().sock_sendall(client, json_data.encode('utf-8'))
+        except Exception as e:
+            print(f"Socket send error: {e}")
+
+    async def accept_socket_clients(self):
+        """소켓 클라이언트 연결 수락"""
+        while self.running:  # 실행 상태 확인
+            try:
+                client, addr = await asyncio.get_event_loop().sock_accept(self.data_socket)
+                print(f"Socket client connected: {addr}")
+                asyncio.create_task(self.handle_socket_client(client, addr))
+            except Exception as e:
+                if self.running:  # 정상 실행 중일 때만 에러 출력
+                    print(f"Socket accept error: {e}")
+                await asyncio.sleep(1)
+
+    async def get_current_data(self):
+        """현재 모든 데이터 조회"""
+        async with self.data_lock:
+            # PLC 데이터 영역 (0-99)
+            plc_data = self.datablock.getValues(0, 140)
+            # 비트 데이터 영역 (100-117)
+            bit_data = self.datablock.getValues(100, 20)
+            
+            print("\n=== 서버 데이터 읽기 ===")
+            print(f"PLC 데이터 첫 10개: {plc_data[:10]}")
+            print(f"Bit 데이터 첫 5개: {bit_data[:5]}")
+
+            return {
+                "plc_data": {
+                    "bunker_id": plc_data[0],
+                    "stocker_id": plc_data[1], 
+                    "gas_type": plc_data[2:7],
+                    "system_status": {
+                        "alarm_code": plc_data[8],
+                        "alarm_message": self._get_alarm_message(plc_data[8])
+                    },
+                    "position": {
+                        "x_axis": plc_data[10],
+                        "z_axis": plc_data[11]
+                    },
+                    "torque": {
+                        "cap_open": plc_data[12],
+                        "cap_close": plc_data[13]
+                    },
+                    "port_a": {
+                        "barcode": ''.join([chr(x) if 32 <= x <= 126 else '?' for x in plc_data[30:60]]),
+                        "gas_type": plc_data[90:95]
+                    },
+                    "port_b": {
+                        "barcode": ''.join([chr(x) if 32 <= x <= 126 else '?' for x in plc_data[60:90]]),
+                        "gas_type": plc_data[95:100]
+                    }
+                },
+                "bit_data": {
+                    "word_100": {
+                        "raw": bit_data[0],
+                        "states": {
+                            "emg_signal": bool(bit_data[0] & (1 << 0)),
+                            "heart_bit": bool(bit_data[0] & (1 << 1)),
+                            "run_stop_signal": bool(bit_data[0] & (1 << 2)),
+                            "server_connected": bool(bit_data[0] & (1 << 3)),
+                            "t_lamp_red": bool(bit_data[0] & (1 << 4)),
+                            "t_lamp_yellow": bool(bit_data[0] & (1 << 5)), 
+                            "t_lamp_green": bool(bit_data[0] & (1 << 6)),
+                            "touch_manual": bool(bit_data[0] & (1 << 7))
+                        }
+                    },
+                    "word_105": {
+                        "raw": bit_data[5],
+                        "states": {
+                            "[A]_cylinder": bool(bit_data[5] & (1 << 0)),
+                            "[B]_cylinder": bool(bit_data[5] & (1 << 1)),
+                            "[A]_worker_door_open": bool(bit_data[5] & (1 << 2)),
+                            "[A]_worker_door_close": bool(bit_data[5] & (1 << 3)),
+                            "[A]_bunker_door_open": bool(bit_data[5] & (1 << 4)),
+                            "[A]_bunker_door_close": bool(bit_data[5] & (1 << 5)),
+                            "[B]_worker_door_open": bool(bit_data[5] & (1 << 6)),
+                            "[B]_worker_door_close": bool(bit_data[5] & (1 << 7)),
+                            "[B]_bunker_door_open": bool(bit_data[5] & (1 << 8)),
+                            "[B]_bunker_door_close": bool(bit_data[5] & (1 << 9))
+                        }
+                    },
+                    "word_110": {
+                        "raw": bit_data[10],
+                        "states": {
+                            "[A]_cap_open_complete": bool(bit_data[10] & (1 << 0)),
+                            "[A]_cap_close_complete": bool(bit_data[10] & (1 << 1)),
+                            "[A]_worker_door_open_complete": bool(bit_data[10] & (1 << 2)),
+                            "[A]_worker_door_close_complete": bool(bit_data[10] & (1 << 3)),
+                            "[A]_worker_input_ready": bool(bit_data[10] & (1 << 4)),
+                            "[A]_worker_input_complete": bool(bit_data[10] & (1 << 5)),
+                            "[A]_worker_output_ready": bool(bit_data[10] & (1 << 6)),
+                            "[A]_worker_output_complete": bool(bit_data[10] & (1 << 7)),
+                            "[A]_bunker_door_open_complete": bool(bit_data[10] & (1 << 8)),
+                            "[A]_bunker_door_close_complete": bool(bit_data[10] & (1 << 9)),
+                            "[A]_bunker_input_ready": bool(bit_data[10] & (1 << 10)),
+                            "[A]_bunker_input_complete": bool(bit_data[10] & (1 << 11)),
+                            "[A]_bunker_output_ready": bool(bit_data[10] & (1 << 12)),
+                            "[A]_bunker_output_complete": bool(bit_data[10] & (1 << 13)),
+                            "[A]_cylinder_align_in_progress": bool(bit_data[10] & (1 << 14)),
+                            "[A]_cylinder_align_complete": bool(bit_data[10] & (1 << 15))
+                        }
+                    },
+                    "word_111": {
+                        "raw": bit_data[11],
+                        "states": {
+                            "[A]_cap_opening": bool(bit_data[11] & (1 << 0)),
+                            "[A]_cap_closing": bool(bit_data[11] & (1 << 1)),
+                            "[A]_x_axis_moving": bool(bit_data[11] & (1 << 2)),
+                            "[A]_x_axis_complete": bool(bit_data[11] & (1 << 3)),
+                            "[A]_finding_cap": bool(bit_data[11] & (1 << 4)),
+                            "[A]_finding_cylinder_neck": bool(bit_data[11] & (1 << 5)),
+                            "[A]_worker_door_opening": bool(bit_data[11] & (1 << 6)),
+                            "[A]_worker_door_closing": bool(bit_data[11] & (1 << 7)),
+                            "[A]_bunker_door_opening": bool(bit_data[11] & (1 << 8)),
+                            "[A]_bunker_door_closing": bool(bit_data[11] & (1 << 9))
+                        }
+                    },
+                    "word_115": {
+                        "raw": bit_data[15],
+                        "states": {
+                            "[B]_cap_open_complete": bool(bit_data[15] & (1 << 0)),
+                            "[B]_cap_close_complete": bool(bit_data[15] & (1 << 1)),
+                            "[B]_worker_door_open_complete": bool(bit_data[15] & (1 << 2)),
+                            "[B]_worker_door_close_complete": bool(bit_data[15] & (1 << 3)),
+                            "[B]_worker_input_ready": bool(bit_data[15] & (1 << 4)),
+                            "[B]_worker_input_complete": bool(bit_data[15] & (1 << 5)),
+                            "[B]_worker_output_ready": bool(bit_data[15] & (1 << 6)),
+                            "[B]_worker_output_complete": bool(bit_data[15] & (1 << 7)),
+                            "[B]_bunker_door_open_complete": bool(bit_data[15] & (1 << 8)),
+                            "[B]_bunker_door_close_complete": bool(bit_data[15] & (1 << 9)),
+                            "[B]_bunker_input_ready": bool(bit_data[15] & (1 << 10)),
+                            "[B]_bunker_input_complete": bool(bit_data[15] & (1 << 11)),
+                            "[B]_bunker_output_ready": bool(bit_data[15] & (1 << 12)),
+                            "[B]_bunker_output_complete": bool(bit_data[15] & (1 << 13)),
+                            "[B]_cylinder_align_in_progress": bool(bit_data[15] & (1 << 14)),
+                            "[B]_cylinder_align_complete": bool(bit_data[15] & (1 << 15))
+                        }
+                    },
+                    "word_116": {
+                        "raw": bit_data[16],
+                        "states": {
+                            "[B]_cap_opening": bool(bit_data[16] & (1 << 0)),
+                            "[B]_cap_closing": bool(bit_data[16] & (1 << 1)), 
+                            "[B]_x_axis_moving": bool(bit_data[16] & (1 << 2)),
+                            "[B]_x_axis_complete": bool(bit_data[16] & (1 << 3)),
+                            "[B]_finding_cap": bool(bit_data[16] & (1 << 4)),
+                            "[B]_finding_cylinder_neck": bool(bit_data[16] & (1 << 5)),
+                            "[B]_worker_door_opening": bool(bit_data[16] & (1 << 6)),
+                            "[B]_worker_door_closing": bool(bit_data[16] & (1 << 7)),
+                            "[B]_bunker_door_opening": bool(bit_data[16] & (1 << 8)),
+                            "[B]_bunker_door_closing": bool(bit_data[16] & (1 << 9))
+                        }
+                    }
+                }
+            }
+        
+    async def handle_client(self, client):
+        self.clients.add(client)
+        try:
+            while True:
+                await asyncio.sleep(0.1)  
+                if client.is_closing():
+                    break
+        finally:
+            self.clients.remove(client)
+
+    async def update_values(self, address, values):
+        async with self.data_lock:
+            self.datablock.setValues(address, values)
+
+    async def on_client_connect(self, client_socket):
+        """클라이언트 연결 시 호출되는 콜백"""
+        print(f"새로운 클라이언트 연결됨: {client_socket.getpeername()}")
+        await self.send_time_sync()  # 시간 동기화 데이터 전송
+
+    def __del__(self):
+        """소멸자: 소켓 파일 정리"""
+        if hasattr(self, 'data_socket'):
+            self.data_socket.close()
+        if os.path.exists(self.socket_path):
+            os.unlink(self.socket_path)
+
+    async def run_server(self):
+        """서버 실행"""
+        server = None
+        try:
+            print("\n=== Modbus 서버 시작 중... ===")
+            self.running = True # 서버 실행 상태 설정
+
+            # Modbus 서버 시작 시 클라이언트 연결 핸들러 추가
+            server = await StartAsyncTcpServer(
+                context=self.context,
+                address=("127.0.0.1", 5020),
+            )
+            print("\n=== Modbus 서버가 시작되었습니다! ===")
+            print("클라이언트 연결 대기 중...")
+
+            await server.serve_forever()
+
+        except KeyboardInterrupt:
+            print("\n=== 서버 종료 요청됨 ===")
+        except Exception as e:
+            print(f"Server error: {e}")
+        finally:
+            self.running = False  # 실행 상태 플래그 해제
+            if server:
+                await server.shutdown()
+            self.data_socket.close()
+            if os.path.exists(self.socket_path):
+                os.unlink(self.socket_path)
+            print("\n=== 서버가 종료되었습니다 ===")
 
 async def main():
     server = ModbusServer()
-    await server.run()
+    try:
+       await server.run_server()
+    except KeyboardInterrupt:
+        logging.info("\n프로그램이 사용자에 의해 중단되었습니다.")
+    except Exception as e:
+        logging.error(f"예기치 않은 오류 발생: {e}")
 
 if __name__ == "__main__":
-    try:
-        asyncio.run(main())
-    except KeyboardInterrupt:
-        logger.info("사용자가 서버를 중단했습니다.")
-    except Exception as e:
-        logger.error(f"예기치 않은 오류 발생: {e}")
-
-
-#Word 100 (Basic signals):
-# EMG Signal: word_100 |= random.choice([0, 1]) << 0
-# Heart Bit: word_100 |= random.choice([0, 1]) << 1
-# Run/Stop Signal: word_100 |= random.choice([0, 1]) << 2
-# Server Connected Bit: word_100 |= random.choice([0, 1]) << 3
-# T-LAMP RED: word_100 |= random.choice([0, 1]) << 4
-# T-LAMP YELLOW: word_100 |= random.choice([0, 1]) << 5
-# T-LAMP GREEN: word_100 |= random.choice([0, 1]) << 6
-# Touch 수동동작中 Signal: word_100 |= random.choice([0, 1]) << 7
-
-#Word 105 (Door and cylinder status):
-# [A] Port 실린더 유무: word_105 |= random.choice([0, 1]) << 0
-# [B] Port 실린더 유무: word_105 |= random.choice([0, 1]) << 1
-# [A] Worker Door Open: word_105 |= random.choice([0, 1]) << 2
-# [A] Worker Door Close: word_105 |= random.choice([0, 1]) << 3
-# [A] Bunker Door Open: word_105 |= random.choice([0, 1]) << 4
-# [A] Bunker Door Close: word_105 |= random.choice([0, 1]) << 5
-# [B] Worker Door Open: word_105 |= random.choice([0, 1]) << 6
-# [B] Worker Door Close: word_105 |= random.choice([0, 1]) << 7
-# [B] Bunker Door Open: word_105 |= random.choice([0, 1]) << 8
-# [B] Bunker Door Close: word_105 |= random.choice([0, 1]) << 9
-
-#Word 110 ([A] Port operation status):
-# [A] Port 보호캡 분리 완료: word_110 |= random.choice([0, 1]) << 0
-# [A] Port 보호캡 체결 완료: word_110 |= random.choice([0, 1]) << 1
-# [A] Worker Door Open 완료: word_110 |= random.choice([0, 1]) << 2
-# [A] Worker Door Close 완료: word_110 |= random.choice([0, 1]) << 3
-# [A] Worker 투입 Ready: word_110 |= random.choice([0, 1]) << 4
-# [A] Worker 투입 Complete: word_110 |= random.choice([0, 1]) << 5
-# [A] Worker 배출 Ready: word_110 |= random.choice([0, 1]) << 6
-# [A] Worker 배출 Comlete: word_110 |= random.choice([0, 1]) << 7
-# [A] Bunker Door Open 완료: word_110 |= random.choice([0, 1]) << 8
-# [A] Bunker Door Close 완료: word_110 |= random.choice([0, 1]) << 9
-# [A] Bunker 투입 Ready: word_110 |= random.choice([0, 1]) << 10
-# [A] Bunker 투입 Complete: word_110 |= random.choice([0, 1]) << 11
-# [A] Bunker 배출 Ready: word_110 |= random.choice([0, 1]) << 12
-# [A] Bunker 배출 Comlete: word_110 |= random.choice([0, 1]) << 13
-# [A] Cylinder Align 진행중: word_110 |= random.choice([0, 1]) << 14
-# [A] Cylinder Align 완료: word_110 |= random.choice([0, 1]) << 15
-
-#Word 111 ([A] Port detailed status):
-# [A] Cap Open 진행중: word_111 |= random.choice([0, 1]) << 0
-# [A] Cap Close 진행중: word_111 |= random.choice([0, 1]) << 1
-# [A] Cylinder 위치로 X축 이동중: word_111 |= random.choice([0, 1]) << 2
-# [A] Cylinder 위치로 X축 이동완료: word_111 |= random.choice([0, 1]) << 3
-# [A] Cap 위치 찾는중: word_111 |= random.choice([0, 1]) << 4
-# [A] Cylinder Neck 위치 찾는중: word_111 |= random.choice([0, 1]) << 5
-# [A] Worker door Open 진행중: word_111 |= random.choice([0, 1]) << 6
-# [A] Worker door Close 진행중: word_111 |= random.choice([0, 1]) << 7
-# [A] Bunker door Open 진행중: word_111 |= random.choice([0, 1]) << 8
-# [A] Bunker door Close 진행중: word_111 |= random.choice([0, 1]) << 9
-
-# Word 115 ([B] Port operation status):
-# [B] Port 보호캡 분리 완료: word_115 |= random.choice([0, 1]) << 0
-# [B] Port 보호캡 체결 완료: word_115 |= random.choice([0, 1]) << 1
-# [B] Worker Door Open 완료: word_115 |= random.choice([0, 1]) << 2
-# [B] Worker Door Close 완료: word_115 |= random.choice([0, 1]) << 3
-# [B] Worker 투입 Ready: word_115 |= random.choice([0, 1]) << 4
-# [B] Worker 투입 Complete: word_115 |= random.choice([0, 1]) << 5
-# [B] Worker 배출 Ready: word_115 |= random.choice([0, 1]) << 6
-# [B] Worker 배출 Comlete: word_115 |= random.choice([0, 1]) << 7
-# [B] Bunker Door Open 완료: word_115 |= random.choice([0, 1]) << 8
-# [B] Bunker Door Close 완료: word_115 |= random.choice([0, 1]) << 9
-# [B] Bunker 투입 Ready: word_115 |= random.choice([0, 1]) << 10
-# [B] Bunker 투입 Complete: word_115 |= random.choice([0, 1]) << 11
-# [B] Bunker 배출 Ready: word_115 |= random.choice([0, 1]) << 12
-# [B] Bunker 배출 Comlete: word_115 |= random.choice([0, 1]) << 13
-# [B] Cylinder Align 진행중: word_115 |= random.choice([0, 1]) << 14
-# [B] Cylinder Align 완료: word_115 |= random.choice([0, 1]) << 15
-
-# Word 116 ([B] Port detailed status):
-# [B] Cap Open 진행중: word_116 |= random.choice([0, 1]) << 0
-# [B] Cap Close 진행중: word_116 |= random.choice([0, 1]) << 1
-# [B] Cylinder 위치로 X축 이동중: word_116 |= random.choice([0, 1]) << 2
-# [B] Cylinder 위치로 X축 이동완료: word_116 |= random.choice([0, 1]) << 3
-# [B] Cap 위치 찾는중: word_116 |= random.choice([0, 1]) << 4
-# [B] Cylinder Neck 위치 찾는중: word_116 |= random.choice([0, 1]) << 5
-# [B] Worker door Open 진행중: word_116 |= random.choice([0, 1]) << 6
-# [B] Worker door Close 진행중: word_116 |= random.choice([0, 1]) << 7
-# [B] Bunker door Open 진행중: word_116 |= random.choice([0, 1]) << 8
-# [B] Bunker door Close 진행중: word_116 |= random.choice([0, 1]) << 9
+    asyncio.run(main())

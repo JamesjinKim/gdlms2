@@ -1,20 +1,21 @@
 from pymodbus.server import StartAsyncTcpServer
-from pymodbus.datastore import ModbusSequentialDataBlock, ModbusSlaveContext, ModbusServerContext
+from pymodbus.datastore import ModbusSequentialDataBlock
+from pymodbus.datastore import ModbusSlaveContext, ModbusServerContext
 import logging
 import asyncio
 import os
 import socket
 import json
-import time
 from gas_cabinet_alarm_code import gas_cabinet_alarm_code
 from logging.handlers import TimedRotatingFileHandler
 from datetime import datetime
 
 # 로그 파일 경로 설정
 log_dir = "./log"
+log_file = os.path.join(log_dir, "gas_cabinet.log")
+
 # 로그 디렉토리 생성
 os.makedirs(log_dir, exist_ok=True)
-log_file = os.path.join(log_dir, "gas_cabinet.log")
 
 # 로깅 설정
 log_handler = TimedRotatingFileHandler(
@@ -30,38 +31,24 @@ logger.setLevel(logging.INFO)
 logger.addHandler(log_handler)
 logger.addHandler(logging.StreamHandler())
 
-class CustomDataBlock(ModbusSequentialDataBlock): 
-    def __init__(self):
-        super().__init__(0, [0] * 1000) # 300개의 데이터를 0으로 초기화 버퍼는 1000개로 설정
-        self.last_log_time = 0
-        self.LOG_INTERVAL = 1  # 1초 간격으로 로깅
-        self._buffer = []  # 데이터 버퍼 추가
-
+class CustomDataBlock(ModbusSequentialDataBlock):    
     def setValues(self, address, values):
-        # 변경된 데이터를 버퍼에 추가
-        self._buffer.append((address, values))
+        print(f"\n데이터 수신: address={address}, values={values}")
         super().setValues(address, values)
         
-        current_time = time.time()
-        if current_time - self.last_log_time >= self.LOG_INTERVAL:
-            if self._buffer:  # 버퍼에 데이터가 있는 경우만 로깅
-                self.last_log_time = current_time
-                self.log_all_data()
-                self._buffer.clear()  # 버퍼 초기화
-
-    def log_all_data(self):
-        """모든 데이터 로깅"""
-        # PLC 데이터 영역 로깅
-        all_values = self.getValues(0, 100)
-        self.log_plc_data(all_values)
-        
-        # 비트 데이터 영역 로깅
-        bit_values = self.getValues(100, 18)
-        self.log_bit_data(bit_values)
-
+        # PLC 데이터 영역 (0-99)
+        if 0 <= address < 100:
+            all_values = self.getValues(0, 100)  # 전체 PLC 데이터 영역 읽기
+            self.log_plc_data(all_values)
+            
+        # 비트 데이터 영역 (100-117)
+        elif 100 <= address <= 117:
+            bit_values = self.getValues(100, 18)  # 비트 데이터 영역 읽기
+            self.log_bit_data(bit_values)
+            
     def log_plc_data(self, all_values):
         """PLC 데이터 로깅 (0-99 주소)"""
-        logger.info("\n=== Gas Cabinet PLC Data Area ===")
+        logger.info("=== Gas Cabinet PLC Data Area ===")
         
         # 기본 정보 (0-6)
         logger.info(f"Bunker ID: {all_values[0]}")
@@ -117,7 +104,7 @@ class CustomDataBlock(ModbusSequentialDataBlock):
     def log_bit_data(self, bit_values):
         """비트 데이터 로깅 (100-117 주소)"""
         logger.info("\n=== Gas Cabinet Bit Area Data ===")
-        print(f"비트 데이터: {bit_values}")
+        
         # 기본 신호 (100)
         word_100 = bit_values[0]
         logger.info("\n[100] 기본 신호:")
@@ -230,15 +217,18 @@ class CustomDataBlock(ModbusSequentialDataBlock):
 
 class ModbusServer:
     def __init__(self):
-        self.running = True
-        self.datablock = CustomDataBlock()
+        self.clients = set()
+        self.data_lock = asyncio.Lock()
+        self.running = True  # 서버 실행 상태 플래그 추가
+
+        
+        # 데이터 블록 초기화 시 시간 동기화 영역 추가 (0-5 주소)
+        self.datablock = CustomDataBlock(0, [0] * 1000)  # 더 큰 범위로 수정
         store = ModbusSlaveContext(
-            di=self.datablock,  # discrete inputs
-            co=self.datablock,  # coils
-            hr=self.datablock,  # holding registers
-            ir=self.datablock   # input registers
+            hr=self.datablock,
+            ir=self.datablock
         )
-        self.context = ModbusServerContext(slaves=store, single=True)
+        self.context = ModbusServerContext(slaves={1: store}, single=False)
 
         # 소켓 통신 관련 초기화
         self.socket_path = '/tmp/modbus_data.sock'
@@ -265,14 +255,14 @@ class ModbusServer:
             self.datablock.setValues(0, time_data)
             # 디버그 메시지는 클라이언트가 연결된 경우에만 출력
             if len(self.clients) > 0:
-                print(f"시간 동기화 데이터 클라이언트로 전송: {time_data}")
+                print(f"시간 동기화 데이터 전송: {time_data}")
     
-    # async def update_time_periodically(self):
-    #     """주기적으로 시간 업데이트"""
-    #     while self.running:  # 실행 상태 확인
-    #         await self.send_time_sync()
-    #         await asyncio.sleep(1)   
-    
+    async def update_time_periodically(self):
+        """주기적으로 시간 업데이트"""
+        while self.running:  # 실행 상태 확인
+            await self.send_time_sync()
+            await asyncio.sleep(1)
+
     async def handle_socket_client(self, client, addr):
         """소켓 클라이언트 처리"""
         try:
@@ -307,31 +297,30 @@ class ModbusServer:
                     print(f"Socket accept error: {e}")
                 await asyncio.sleep(1)
 
-    # 가스 공급 중지 명령 현재 사용 안함. 별도의 Command Server 구현 할 예정.
-    # async def stop_gas_supply(self, cabinet_id):  # 수정
-    #     try:
-    #         async with self.data_lock:
-    #             # 예: 특정 주소에 가스 공급 중지 명령 쓰기
-    #             self.datablock.setValues(211, [0])  # A Port 밸브 닫기
-    #             self.datablock.setValues(221, [0])  # B Port 밸브 닫기
-    #         return True
-    #     except Exception as e:
-    #         logging.error(f"가스 공급 중지 중 오류: {str(e)}")
-    #         return False
+    async def stop_gas_supply(self, cabinet_id):  # 수정
+        try:
+            async with self.data_lock:
+                # 예: 특정 주소에 가스 공급 중지 명령 쓰기
+                self.datablock.setValues(211, [0])  # A Port 밸브 닫기
+                self.datablock.setValues(221, [0])  # B Port 밸브 닫기
+            return True
+        except Exception as e:
+            logging.error(f"가스 공급 중지 중 오류: {str(e)}")
+            return False
 
-    # async def emergency_stop_all(self):
-    #     """모든 캐비닛 긴급 정지"""
-    #     try:
-    #         async with self.data_lock:
-    #             # EMG Signal 설정 (200번 워드의 0번 비트)
-    #             self.datablock.setValues(200, [1])  # EMG 비트 설정
-    #             # 모든 밸브 닫기
-    #             self.datablock.setValues(211, [0])  # A Port
-    #             self.datablock.setValues(221, [0])  # B Port
-    #         return True
-    #     except Exception as e:
-    #         logging.error(f"긴급 정지 중 오류: {str(e)}")
-    #         return False
+    async def emergency_stop_all(self):
+        """모든 캐비닛 긴급 정지"""
+        try:
+            async with self.data_lock:
+                # EMG Signal 설정 (200번 워드의 0번 비트)
+                self.datablock.setValues(200, [1])  # EMG 비트 설정
+                # 모든 밸브 닫기
+                self.datablock.setValues(211, [0])  # A Port
+                self.datablock.setValues(221, [0])  # B Port
+            return True
+        except Exception as e:
+            logging.error(f"긴급 정지 중 오류: {str(e)}")
+            return False
 
     #Gas Cabinet의 전체 상태 데이터를 JSON 형식으로 구조화 
     # 현재 상태를 Web 시스템에 제공하는 데이터 인터페이스 역할 제공    
@@ -544,27 +533,15 @@ class ModbusServer:
     async def update_values(self, address, values):
         async with self.data_lock:
             self.datablock.setValues(address, values)
-        # await self.broadcast_update(address, values)
+        await self.broadcast_update(address, values)
 
-    # async def broadcast_update(self, address, value):
-    #     for client in self.clients:
-    #         try:
-    #             pass  # 실제 브로드캐스트 로직 구현 필요
-    #             #await self.send_socket_data(client, data)
-    #         except Exception as e:
-    #             logging.error(f"브로드캐스트 오류: {e}")
-
-    async def on_client_connect(self, client_socket):
-        """클라이언트 연결 시 호출되는 콜백"""
-        print(f"새로운 클라이언트 연결됨: {client_socket.getpeername()}")
-        await self.send_time_sync()  # 시간 동기화 데이터 전송
-
-    def __del__(self):
-        """소멸자: 소켓 파일 정리"""
-        if hasattr(self, 'data_socket'):
-            self.data_socket.close()
-        if os.path.exists(self.socket_path):
-            os.unlink(self.socket_path)
+    async def broadcast_update(self, address, value):
+        for client in self.clients:
+            try:
+                pass  # 실제 브로드캐스트 로직 구현 필요
+                #await self.send_socket_data(client, data)
+            except Exception as e:
+                logging.error(f"브로드캐스트 오류: {e}")
 
     async def run_server(self):
         """서버 실행"""
@@ -578,8 +555,13 @@ class ModbusServer:
                 context=self.context,
                 address=("127.0.0.1", 5020),
             )
+            
             print("\n=== Modbus 서버가 시작되었습니다! ===")
             print("클라이언트 연결 대기 중...")
+
+            # 시간 업데이트 태스크 시작
+            time_update_task = asyncio.create_task(self.update_time_periodically())
+            socket_task = asyncio.create_task(self.accept_socket_clients())
             
             await server.serve_forever()
 
@@ -595,6 +577,18 @@ class ModbusServer:
             if os.path.exists(self.socket_path):
                 os.unlink(self.socket_path)
             print("\n=== 서버가 종료되었습니다 ===")
+
+    async def on_client_connect(self, client_socket):
+        """클라이언트 연결 시 호출되는 콜백"""
+        print(f"새로운 클라이언트 연결됨: {client_socket.getpeername()}")
+        await self.send_time_sync()  # 시간 동기화 데이터 전송
+
+    def __del__(self):
+        """소멸자: 소켓 파일 정리"""
+        if hasattr(self, 'data_socket'):
+            self.data_socket.close()
+        if os.path.exists(self.socket_path):
+            os.unlink(self.socket_path)
 
 async def main():
    server = ModbusServer()

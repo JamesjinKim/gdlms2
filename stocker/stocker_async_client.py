@@ -24,10 +24,10 @@ def generate_plc_data() -> list:
     data[11] = random.randint(0, 1000)  # Z축 현재값
     data[12] = random.randint(0, 100)  # Cap Unit 축 보호캡 분리 Torque 설정값
     data[13] = random.randint(0, 100)  # Cap Unit 축 보호캡 체결 Torque 설정값
-    for i in range(30, 60):  # [A] Port Barcode Data #1~#30
-        data[i] = random.randint(0, 30)
-    for i in range(60, 90):  # [B] Port Barcode Data #1~#30
-        data[i] = random.randint(0, 30)
+
+    data[30:60] = [ord(random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')) for _ in range(30)]
+    data[60:90] = [ord(random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')) for _ in range(30)]
+    
     for i in range(90, 95):  # [A] Port 가스 종류
         data[i] = random.randint(1, 10)
     for i in range(95, 100):  # [B] Port 가스 종류
