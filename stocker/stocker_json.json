@@ -1,0 +1,131 @@
+{
+    "Stocker PLC Data": {
+      "기본 정보": {
+        "Bunker ID": 87,
+        "Stocker ID": 80,
+        "가스 종류": [
+          2,
+          8,
+          5,
+          3,
+          4
+        ]
+      },
+      "시스템 상태": {
+        "알람 코드": 53,
+        "알람 메시지": "Rgv LD Door Open Check 동작 중 LD Door Open 이상 감지"
+      },
+      "위치 정보": {
+        "X축 위치": 387,
+        "Z축 위치": 398
+      },
+      "토크 설정": {
+        "Cap 분리": 20,
+        "Cap 체결": 48
+      },
+      "Port A": {
+        "바코드": "N8VSRQQ23N45L3Q8XZJWFGM0MF12PU",
+        "가스 종류": [
+          5,
+          8,
+          2,
+          3,
+          3
+        ]
+      },
+      "Port B": {
+        "바코드": "SK7FDRSRGUZOCCE5EUVRP7E1EC3HHU",
+        "가스 종류": [
+          2,
+          1,
+          8,
+          2,
+          3
+        ]
+      }
+    },
+    "Stocker Bit Data": {
+      "[100] 기본 신호": {
+        "emg_signal": false,
+        "heart_bit": false,
+        "run_stop_signal": false,
+        "server_connected": false,
+        "t_lamp_red": false,
+        "t_lamp_yellow": false,
+        "t_lamp_green": false,
+        "touch_manual": false
+      },
+      "[105] 도어/실린더 상태": {
+        "port_a_cylinder": false,
+        "port_b_cylinder": false,
+        "port_a_worker_door_open": false,
+        "port_a_worker_door_close": false,
+        "port_a_bunker_door_open": false,
+        "port_a_bunker_door_close": false,
+        "port_b_worker_door_open": false,
+        "port_b_worker_door_close": false,
+        "port_b_bunker_door_open": false,
+        "port_b_bunker_door_close": false
+      },
+      "[110] A Port 작업 상태": {
+        "port_a_cap_open_complete": false,
+        "port_a_cap_close_complete": false,
+        "port_a_worker_door_open_complete": false,
+        "port_a_worker_door_close_complete": false,
+        "port_a_worker_input_ready": false,
+        "port_a_worker_input_complete": false,
+        "port_a_worker_output_ready": false,
+        "port_a_worker_output_complete": false,
+        "port_a_bunker_door_open_complete": false,
+        "port_a_bunker_door_close_complete": false,
+        "port_a_bunker_input_ready": false,
+        "port_a_bunker_input_complete": false,
+        "port_a_bunker_output_ready": false,
+        "port_a_bunker_output_complete": false,
+        "port_a_cylinder_align_in_progress": false,
+        "port_a_cylinder_align_complete": false
+      },
+      "[111] A Port 상세 상태": {
+        "port_a_cap_opening": false,
+        "port_a_cap_closing": false,
+        "port_a_x_axis_moving": false,
+        "port_a_x_axis_complete": false,
+        "port_a_finding_cap": false,
+        "port_a_finding_cylinder_neck": false,
+        "port_a_worker_door_opening": false,
+        "port_a_worker_door_closing": false,
+        "port_a_bunker_door_opening": false,
+        "port_a_bunker_door_closing": false
+      },
+      "[115] B Port 작업 상태": {
+        "port_b_cap_open_complete": false,
+        "port_b_cap_close_complete": false,
+        "port_b_worker_door_open_complete": false,
+        "port_b_worker_door_close_complete": false,
+        "port_b_worker_input_ready": false,
+        "port_b_worker_input_complete": false,
+        "port_b_worker_output_ready": false,
+        "port_b_worker_output_complete": false,
+        "port_b_bunker_door_open_complete": false,
+        "port_b_bunker_door_close_complete": false,
+        "port_b_bunker_input_ready": false,
+        "port_b_bunker_input_complete": false,
+        "port_b_bunker_output_ready": false,
+        "port_b_bunker_output_complete": false,
+        "port_b_cylinder_align_in_progress": false,
+        "port_b_cylinder_align_complete": false
+      },
+      "[116] B Port 상세 상태": {
+        "port_b_cap_opening": false,
+        "port_b_cap_closing": false,
+        "port_b_x_axis_moving": false,
+        "port_b_x_axis_complete": false,
+        "port_b_finding_cap": false,
+        "port_b_finding_cylinder_neck": false,
+        "port_b_worker_door_opening": false,
+        "port_b_worker_door_closing": false,
+        "port_b_bunker_door_opening": false,
+        "port_b_bunker_door_closing": false
+      }
+    }
+  }
