@@ -1,0 +1,1716 @@
+2025-01-25 17:25:51,879 
+=== Gas Cabinet PLC Data Area ===
+2025-01-25 17:25:51,886 Bunker ID: 0
+2025-01-25 17:25:51,886 Gas Cabinet ID: 5
+2025-01-25 17:25:51,886 Gas Cabinet 가스 종류: [16, 43, 19, 36, 34]
+2025-01-25 17:25:51,886 
+=== 시스템 상태 ===
+2025-01-25 17:25:51,887 SEND AND RECEIVE FOR MACHINE CODE: 12
+2025-01-25 17:25:51,887 Gas Cabinet Alarm Code: 77
+2025-01-25 17:25:51,887 Gas Cabinet Alarm Message: Unknown Alarm Code
+2025-01-25 17:25:51,887 
+=== 센서 데이터 ===
+2025-01-25 17:25:51,887 PT1A: 0 PSI
+2025-01-25 17:25:51,888 PT2A: 20 PSI
+2025-01-25 17:25:51,888 PT1B: 224 PSI
+2025-01-25 17:25:51,888 PT2B: 869 PSI
+2025-01-25 17:25:51,888 PT3: 538 PSI
+2025-01-25 17:25:51,888 PT4: 957 PSI
+2025-01-25 17:25:51,888 WA (A Port Weight): 785 kg
+2025-01-25 17:25:51,890 WB (B Port Weight): 86 kg
+2025-01-25 17:25:51,890 
+=== 히터 상태 ===
+2025-01-25 17:25:51,890 [A] JACKET HEATER: 65°C
+2025-01-25 17:25:51,890 [A] LINE HEATER: 88°C
+2025-01-25 17:25:51,890 [B] JACKET HEATER: 57°C
+2025-01-25 17:25:51,891 [B] LINE HEATER: 47°C
+2025-01-25 17:25:51,891 
+=== A Port 데이터 ===
+2025-01-25 17:25:51,891 [A] CGA 체결 Torque 설정값: 0 kgf·cm
+2025-01-25 17:25:51,891 [A] CAP 체결 Torque 설정값: 10 kgf·cm
+2025-01-25 17:25:51,891 [A] 실린더 Up/Down Pos 현재값: 30 mm
+2025-01-25 17:25:51,891 [A] 실린더 Barcode Data: ?VBXF6YG03FO3KNXXIQUY7A9LBKCAL
+2025-01-25 17:25:51,891 [A] Port 가스 종류: [71, 6, 49, 8, 4]
+2025-01-25 17:25:51,891 
+=== B Port 데이터 ===
+2025-01-25 17:25:51,891 [B] CGA 체결 Torque 설정값: 247 kgf·cm
+2025-01-25 17:25:51,891 [B] CAP 체결 Torque 설정값: 100 kgf·cm
+2025-01-25 17:25:51,892 [B] 실린더 Up/Down Pos 현재값: 35 mm
+2025-01-25 17:25:51,892 [B] 실린더 Barcode Data: FNH7YVNUPABIEYEUIC2S3IZHRMCMAQ
+2025-01-25 17:25:51,892 [B] Port 가스 종류: [20, 4, 42, 11, 40]
+2025-01-25 17:25:51,892 
+=== Gas Cabinet Bit Area Data ===
+2025-01-25 17:25:51,892 
+[100] 기본 신호:
+2025-01-25 17:25:51,892 EMG Signal: False
+2025-01-25 17:25:51,892 Heart Bit: True
+2025-01-25 17:25:51,892 Run/Stop Signal: False
+2025-01-25 17:25:51,892 Server Connected Bit: True
+2025-01-25 17:25:51,893 T-LAMP RED: False
+2025-01-25 17:25:51,893 T-LAMP YELLOW: False
+2025-01-25 17:25:51,893 T-LAMP GREEN: False
+2025-01-25 17:25:51,893 Touch 수동동작中 Signal: False
+2025-01-25 17:25:51,893 
+[101] 밸브 상태:
+2025-01-25 17:25:51,893 AV1A: False
+2025-01-25 17:25:51,893 AV2A: False
+2025-01-25 17:25:51,893 AV3A: True
+2025-01-25 17:25:51,893 AV4A: False
+2025-01-25 17:25:51,893 AV5A: True
+2025-01-25 17:25:51,893 AV1B: False
+2025-01-25 17:25:51,894 AV2B: False
+2025-01-25 17:25:51,894 AV3B: False
+2025-01-25 17:25:51,894 AV4B: False
+2025-01-25 17:25:51,894 AV5B: False
+2025-01-25 17:25:51,894 AV7: False
+2025-01-25 17:25:51,894 AV8: False
+2025-01-25 17:25:51,894 AV9: False
+2025-01-25 17:25:51,894 
+[102] 센서 및 릴레이 상태:
+2025-01-25 17:25:51,894 JACKET HEATER A RELAY: False
+2025-01-25 17:25:51,895 LINE HEATER A RELAY: False
+2025-01-25 17:25:51,895 JACKET HEATER B RELAY: False
+2025-01-25 17:25:51,895 LINE HEATER B RELAY: True
+2025-01-25 17:25:51,895 GAS LEAK SHUT DOWN: False
+2025-01-25 17:25:51,895 VMB STOP SIGNAL: True
+2025-01-25 17:25:51,895 UV/IR SENSOR: True
+2025-01-25 17:25:51,895 HIGH TEMP SENSOR: True
+2025-01-25 17:25:51,895 SMOKE SENSOR: True
+2025-01-25 17:25:51,895 
+[103] Port 요청 상태:
+2025-01-25 17:25:51,895 [A] Port Insert Request: False
+2025-01-25 17:25:51,895 [A] Port Insert Complete: True
+2025-01-25 17:25:51,895 [A] Port Remove Request: True
+2025-01-25 17:25:51,896 [A] Port Remove Complete: False
+2025-01-25 17:25:51,896 
+[105] 실린더 및 도어 상태:
+2025-01-25 17:25:51,896 [A] Port 실린더 유무: False
+2025-01-25 17:25:51,896 [B] Port 실린더 유무: False
+2025-01-25 17:25:51,896 Door Open 완료: False
+2025-01-25 17:25:51,896 Door Close 완료: False
+2025-01-25 17:25:51,896 
+[110] A Port 작업 상태:
+2025-01-25 17:25:51,896 [A] Close the Cylinder: False
+2025-01-25 17:25:51,896 [A] 1st Purge before Exchange: False
+2025-01-25 17:25:51,896 [A] Decompression Test: False
+2025-01-25 17:25:51,897 [A] 2nd Purge before Exchange: False
+2025-01-25 17:25:51,897 [A] Exchange Cylinder: False
+2025-01-25 17:25:51,897 [A] 1st Purge after Exchange: False
+2025-01-25 17:25:51,897 [A] Pressure Test: False
+2025-01-25 17:25:51,897 [A] 2nd Purge after Exchange: False
+2025-01-25 17:25:51,897 [A] Purge Completed: False
+2025-01-25 17:25:51,897 [A] Prepare to Supply: False
+2025-01-25 17:25:51,897 [A] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:25:51,897 [A] Gas Supply: False
+2025-01-25 17:25:51,897 [A] Ready to Supply: False
+2025-01-25 17:25:51,898 
+[115] B Port 작업 상태:
+2025-01-25 17:25:51,898 [B] Close the Cylinder: False
+2025-01-25 17:25:51,898 [B] 1st Purge before Exchange: False
+2025-01-25 17:25:51,898 [B] Decompression Test: False
+2025-01-25 17:25:51,898 [B] 2nd Purge before Exchange: False
+2025-01-25 17:25:51,898 [B] Exchange Cylinder: False
+2025-01-25 17:25:51,898 [B] 1st Purge after Exchange: False
+2025-01-25 17:25:51,898 [B] Pressure Test: False
+2025-01-25 17:25:51,898 [B] 2nd Purge after Exchange: False
+2025-01-25 17:25:51,898 [B] Purge Completed: False
+2025-01-25 17:25:51,898 [B] Prepare to Supply: False
+2025-01-25 17:25:51,899 [B] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:25:51,899 [B] Gas Supply: False
+2025-01-25 17:25:51,899 [B] Ready to Supply: False
+2025-01-25 17:25:51,899 
+[116] B Port 상세 상태:
+2025-01-25 17:25:51,899 [B] Cylinder Ready: False
+2025-01-25 17:25:51,899 [B] CGA Disconnect Complete: True
+2025-01-25 17:25:51,899 [B] CGA Connect Complete: True
+2025-01-25 17:25:51,899 [B] Cylinder Valve Open Complete: True
+2025-01-25 17:25:51,899 [B] Cylinder Valve Close Complete: True
+2025-01-25 17:25:51,899 [B] Cylinder Valve Open Status: False
+2025-01-25 17:25:51,900 [B] Cylinder Lift Unit Ready: True
+2025-01-25 17:25:51,900 [B] Cylinder Lift Unit Moving Up: True
+2025-01-25 17:25:51,900 [B] Cylinder Lift Unit Moving Down: True
+2025-01-25 17:25:51,900 [B] CGA Separation In Progress: True
+2025-01-25 17:25:51,900 [B] CGA Connection In Progress: False
+2025-01-25 17:25:51,900 [B] Cylinder Cap Separation In Progress: True
+2025-01-25 17:25:51,900 [B] Cylinder Valve Open In Progress: True
+2025-01-25 17:25:51,900 [B] Cylinder Valve Close In Progress: False
+2025-01-25 17:25:51,900 [B] Cylinder Alignment In Progress: False
+2025-01-25 17:25:51,900 [B] Cylinder Turn In Progress: False
+2025-01-25 17:25:51,900 
+[117] B Port 추가 상태:
+2025-01-25 17:25:51,901 [B] Cylinder Turn Complete: False
+2025-01-25 17:25:51,901 [B] Cylinder Clamp Complete: False
+2025-01-25 17:25:51,901 [B] CGA Connect Complete Status: False
+2025-01-25 17:25:56,918 
+=== Gas Cabinet PLC Data Area ===
+2025-01-25 17:25:56,918 Bunker ID: 0
+2025-01-25 17:25:56,918 Gas Cabinet ID: 6
+2025-01-25 17:25:56,919 Gas Cabinet 가스 종류: [4, 2, 36, 23, 15]
+2025-01-25 17:25:56,920 
+=== 시스템 상태 ===
+2025-01-25 17:25:56,920 SEND AND RECEIVE FOR MACHINE CODE: 14
+2025-01-25 17:25:56,920 Gas Cabinet Alarm Code: 108
+2025-01-25 17:25:56,921 Gas Cabinet Alarm Message: [A Port] VT 감압 시험 불량 알람
+2025-01-25 17:25:56,921 
+=== 센서 데이터 ===
+2025-01-25 17:25:56,922 PT1A: 0 PSI
+2025-01-25 17:25:56,922 PT2A: 726 PSI
+2025-01-25 17:25:56,922 PT1B: 664 PSI
+2025-01-25 17:25:56,923 PT2B: 383 PSI
+2025-01-25 17:25:56,923 PT3: 763 PSI
+2025-01-25 17:25:56,923 PT4: 713 PSI
+2025-01-25 17:25:56,923 WA (A Port Weight): 791 kg
+2025-01-25 17:25:56,923 WB (B Port Weight): 34 kg
+2025-01-25 17:25:56,924 
+=== 히터 상태 ===
+2025-01-25 17:25:56,924 [A] JACKET HEATER: 40°C
+2025-01-25 17:25:56,924 [A] LINE HEATER: 74°C
+2025-01-25 17:25:56,925 [B] JACKET HEATER: 31°C
+2025-01-25 17:25:56,925 [B] LINE HEATER: 8°C
+2025-01-25 17:25:56,925 
+=== A Port 데이터 ===
+2025-01-25 17:25:56,925 [A] CGA 체결 Torque 설정값: 0 kgf·cm
+2025-01-25 17:25:56,925 [A] CAP 체결 Torque 설정값: 24 kgf·cm
+2025-01-25 17:25:56,925 [A] 실린더 Up/Down Pos 현재값: 6 mm
+2025-01-25 17:25:56,925 [A] 실린더 Barcode Data: ?U70AGC2QKMSP9G2LE0PBJ8L3WORT6
+2025-01-25 17:25:56,926 [A] Port 가스 종류: [65, 8, 11, 40, 23]
+2025-01-25 17:25:56,926 
+=== B Port 데이터 ===
+2025-01-25 17:25:56,926 [B] CGA 체결 Torque 설정값: 106 kgf·cm
+2025-01-25 17:25:56,926 [B] CAP 체결 Torque 설정값: 10 kgf·cm
+2025-01-25 17:25:56,926 [B] 실린더 Up/Down Pos 현재값: 59 mm
+2025-01-25 17:25:56,926 [B] 실린더 Barcode Data: 94BJE220Y9HCSZ6PCJM1WER1GD20KH
+2025-01-25 17:25:56,926 [B] Port 가스 종류: [48, 47, 22, 12, 29]
+2025-01-25 17:25:56,926 
+=== Gas Cabinet Bit Area Data ===
+2025-01-25 17:25:56,926 
+[100] 기본 신호:
+2025-01-25 17:25:56,927 EMG Signal: True
+2025-01-25 17:25:56,927 Heart Bit: True
+2025-01-25 17:25:56,927 Run/Stop Signal: False
+2025-01-25 17:25:56,927 Server Connected Bit: False
+2025-01-25 17:25:56,927 T-LAMP RED: False
+2025-01-25 17:25:56,927 T-LAMP YELLOW: False
+2025-01-25 17:25:56,927 T-LAMP GREEN: False
+2025-01-25 17:25:56,927 Touch 수동동작中 Signal: False
+2025-01-25 17:25:56,927 
+[101] 밸브 상태:
+2025-01-25 17:25:56,927 AV1A: False
+2025-01-25 17:25:56,928 AV2A: False
+2025-01-25 17:25:56,928 AV3A: True
+2025-01-25 17:25:56,928 AV4A: True
+2025-01-25 17:25:56,928 AV5A: False
+2025-01-25 17:25:56,928 AV1B: False
+2025-01-25 17:25:56,928 AV2B: True
+2025-01-25 17:25:56,928 AV3B: True
+2025-01-25 17:25:56,928 AV4B: False
+2025-01-25 17:25:56,928 AV5B: False
+2025-01-25 17:25:56,929 AV7: False
+2025-01-25 17:25:56,929 AV8: False
+2025-01-25 17:25:56,929 AV9: False
+2025-01-25 17:25:56,929 
+[102] 센서 및 릴레이 상태:
+2025-01-25 17:25:56,929 JACKET HEATER A RELAY: True
+2025-01-25 17:25:56,929 LINE HEATER A RELAY: False
+2025-01-25 17:25:56,929 JACKET HEATER B RELAY: True
+2025-01-25 17:25:56,929 LINE HEATER B RELAY: True
+2025-01-25 17:25:56,929 GAS LEAK SHUT DOWN: True
+2025-01-25 17:25:56,930 VMB STOP SIGNAL: True
+2025-01-25 17:25:56,930 UV/IR SENSOR: True
+2025-01-25 17:25:56,930 HIGH TEMP SENSOR: False
+2025-01-25 17:25:56,930 SMOKE SENSOR: True
+2025-01-25 17:25:56,930 
+[103] Port 요청 상태:
+2025-01-25 17:25:56,930 [A] Port Insert Request: True
+2025-01-25 17:25:56,930 [A] Port Insert Complete: False
+2025-01-25 17:25:56,930 [A] Port Remove Request: True
+2025-01-25 17:25:56,930 [A] Port Remove Complete: True
+2025-01-25 17:25:56,930 
+[105] 실린더 및 도어 상태:
+2025-01-25 17:25:56,930 [A] Port 실린더 유무: False
+2025-01-25 17:25:56,931 [B] Port 실린더 유무: False
+2025-01-25 17:25:56,931 Door Open 완료: False
+2025-01-25 17:25:56,931 Door Close 완료: False
+2025-01-25 17:25:56,931 
+[110] A Port 작업 상태:
+2025-01-25 17:25:56,931 [A] Close the Cylinder: False
+2025-01-25 17:25:56,931 [A] 1st Purge before Exchange: False
+2025-01-25 17:25:56,931 [A] Decompression Test: False
+2025-01-25 17:25:56,931 [A] 2nd Purge before Exchange: False
+2025-01-25 17:25:56,931 [A] Exchange Cylinder: False
+2025-01-25 17:25:56,931 [A] 1st Purge after Exchange: False
+2025-01-25 17:25:56,931 [A] Pressure Test: False
+2025-01-25 17:25:56,931 [A] 2nd Purge after Exchange: False
+2025-01-25 17:25:56,932 [A] Purge Completed: False
+2025-01-25 17:25:56,932 [A] Prepare to Supply: False
+2025-01-25 17:25:56,932 [A] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:25:56,932 [A] Gas Supply: False
+2025-01-25 17:25:56,932 [A] Ready to Supply: False
+2025-01-25 17:25:56,932 
+[115] B Port 작업 상태:
+2025-01-25 17:25:56,932 [B] Close the Cylinder: False
+2025-01-25 17:25:56,932 [B] 1st Purge before Exchange: False
+2025-01-25 17:25:56,932 [B] Decompression Test: False
+2025-01-25 17:25:56,932 [B] 2nd Purge before Exchange: False
+2025-01-25 17:25:56,933 [B] Exchange Cylinder: False
+2025-01-25 17:25:56,933 [B] 1st Purge after Exchange: False
+2025-01-25 17:25:56,933 [B] Pressure Test: False
+2025-01-25 17:25:56,933 [B] 2nd Purge after Exchange: False
+2025-01-25 17:25:56,933 [B] Purge Completed: False
+2025-01-25 17:25:56,933 [B] Prepare to Supply: False
+2025-01-25 17:25:56,933 [B] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:25:56,933 [B] Gas Supply: False
+2025-01-25 17:25:56,933 [B] Ready to Supply: False
+2025-01-25 17:25:56,933 
+[116] B Port 상세 상태:
+2025-01-25 17:25:56,934 [B] Cylinder Ready: False
+2025-01-25 17:25:56,934 [B] CGA Disconnect Complete: True
+2025-01-25 17:25:56,934 [B] CGA Connect Complete: True
+2025-01-25 17:25:56,934 [B] Cylinder Valve Open Complete: False
+2025-01-25 17:25:56,934 [B] Cylinder Valve Close Complete: False
+2025-01-25 17:25:56,934 [B] Cylinder Valve Open Status: False
+2025-01-25 17:25:56,934 [B] Cylinder Lift Unit Ready: True
+2025-01-25 17:25:56,934 [B] Cylinder Lift Unit Moving Up: True
+2025-01-25 17:25:56,934 [B] Cylinder Lift Unit Moving Down: True
+2025-01-25 17:25:56,934 [B] CGA Separation In Progress: True
+2025-01-25 17:25:56,935 [B] CGA Connection In Progress: True
+2025-01-25 17:25:56,935 [B] Cylinder Cap Separation In Progress: True
+2025-01-25 17:25:56,935 [B] Cylinder Valve Open In Progress: True
+2025-01-25 17:25:56,935 [B] Cylinder Valve Close In Progress: False
+2025-01-25 17:25:56,935 [B] Cylinder Alignment In Progress: False
+2025-01-25 17:25:56,935 [B] Cylinder Turn In Progress: False
+2025-01-25 17:25:56,935 
+[117] B Port 추가 상태:
+2025-01-25 17:25:56,935 [B] Cylinder Turn Complete: True
+2025-01-25 17:25:56,935 [B] Cylinder Clamp Complete: True
+2025-01-25 17:25:56,935 [B] CGA Connect Complete Status: False
+2025-01-25 17:26:01,953 
+=== Gas Cabinet PLC Data Area ===
+2025-01-25 17:26:01,955 Bunker ID: 0
+2025-01-25 17:26:01,955 Gas Cabinet ID: 9
+2025-01-25 17:26:01,956 Gas Cabinet 가스 종류: [8, 3, 7, 25, 23]
+2025-01-25 17:26:01,957 
+=== 시스템 상태 ===
+2025-01-25 17:26:01,957 SEND AND RECEIVE FOR MACHINE CODE: 7
+2025-01-25 17:26:01,957 Gas Cabinet Alarm Code: 115
+2025-01-25 17:26:01,958 Gas Cabinet Alarm Message: [A Port] NOT STAND-BY 알람
+2025-01-25 17:26:01,959 
+=== 센서 데이터 ===
+2025-01-25 17:26:01,959 PT1A: 0 PSI
+2025-01-25 17:26:01,960 PT2A: 13 PSI
+2025-01-25 17:26:01,960 PT1B: 120 PSI
+2025-01-25 17:26:01,961 PT2B: 668 PSI
+2025-01-25 17:26:01,961 PT3: 902 PSI
+2025-01-25 17:26:01,961 PT4: 344 PSI
+2025-01-25 17:26:01,961 WA (A Port Weight): 674 kg
+2025-01-25 17:26:01,962 WB (B Port Weight): 92 kg
+2025-01-25 17:26:01,962 
+=== 히터 상태 ===
+2025-01-25 17:26:01,962 [A] JACKET HEATER: 3°C
+2025-01-25 17:26:01,962 [A] LINE HEATER: 11°C
+2025-01-25 17:26:01,962 [B] JACKET HEATER: 28°C
+2025-01-25 17:26:01,963 [B] LINE HEATER: 41°C
+2025-01-25 17:26:01,963 
+=== A Port 데이터 ===
+2025-01-25 17:26:01,963 [A] CGA 체결 Torque 설정값: 0 kgf·cm
+2025-01-25 17:26:01,963 [A] CAP 체결 Torque 설정값: 72 kgf·cm
+2025-01-25 17:26:01,963 [A] 실린더 Up/Down Pos 현재값: 48 mm
+2025-01-25 17:26:01,963 [A] 실린더 Barcode Data: $CMDHE7EA46VEP9OLOL9IPJ9T4QP93
+2025-01-25 17:26:01,963 [A] Port 가스 종류: [72, 24, 29, 37, 18]
+2025-01-25 17:26:01,964 
+=== B Port 데이터 ===
+2025-01-25 17:26:01,964 [B] CGA 체결 Torque 설정값: 158 kgf·cm
+2025-01-25 17:26:01,964 [B] CAP 체결 Torque 설정값: 46 kgf·cm
+2025-01-25 17:26:01,964 [B] 실린더 Up/Down Pos 현재값: 37 mm
+2025-01-25 17:26:01,964 [B] 실린더 Barcode Data: 72PNRDR2Y03OCPNCZHQC82BRRLBQKF
+2025-01-25 17:26:01,964 [B] Port 가스 종류: [2, 1, 33, 5, 37]
+2025-01-25 17:26:01,964 
+=== Gas Cabinet Bit Area Data ===
+2025-01-25 17:26:01,964 
+[100] 기본 신호:
+2025-01-25 17:26:01,965 EMG Signal: False
+2025-01-25 17:26:01,965 Heart Bit: False
+2025-01-25 17:26:01,965 Run/Stop Signal: True
+2025-01-25 17:26:01,965 Server Connected Bit: False
+2025-01-25 17:26:01,965 T-LAMP RED: False
+2025-01-25 17:26:01,965 T-LAMP YELLOW: True
+2025-01-25 17:26:01,965 T-LAMP GREEN: False
+2025-01-25 17:26:01,965 Touch 수동동작中 Signal: False
+2025-01-25 17:26:01,966 
+[101] 밸브 상태:
+2025-01-25 17:26:01,966 AV1A: False
+2025-01-25 17:26:01,966 AV2A: True
+2025-01-25 17:26:01,966 AV3A: True
+2025-01-25 17:26:01,966 AV4A: False
+2025-01-25 17:26:01,966 AV5A: False
+2025-01-25 17:26:01,966 AV1B: False
+2025-01-25 17:26:01,966 AV2B: True
+2025-01-25 17:26:01,967 AV3B: True
+2025-01-25 17:26:01,967 AV4B: False
+2025-01-25 17:26:01,967 AV5B: False
+2025-01-25 17:26:01,967 AV7: False
+2025-01-25 17:26:01,967 AV8: False
+2025-01-25 17:26:01,967 AV9: False
+2025-01-25 17:26:01,967 
+[102] 센서 및 릴레이 상태:
+2025-01-25 17:26:01,968 JACKET HEATER A RELAY: True
+2025-01-25 17:26:01,968 LINE HEATER A RELAY: False
+2025-01-25 17:26:01,968 JACKET HEATER B RELAY: True
+2025-01-25 17:26:01,968 LINE HEATER B RELAY: True
+2025-01-25 17:26:01,968 GAS LEAK SHUT DOWN: True
+2025-01-25 17:26:01,968 VMB STOP SIGNAL: True
+2025-01-25 17:26:01,968 UV/IR SENSOR: False
+2025-01-25 17:26:01,968 HIGH TEMP SENSOR: False
+2025-01-25 17:26:01,968 SMOKE SENSOR: False
+2025-01-25 17:26:01,968 
+[103] Port 요청 상태:
+2025-01-25 17:26:01,969 [A] Port Insert Request: True
+2025-01-25 17:26:01,969 [A] Port Insert Complete: False
+2025-01-25 17:26:01,969 [A] Port Remove Request: True
+2025-01-25 17:26:01,969 [A] Port Remove Complete: False
+2025-01-25 17:26:01,969 
+[105] 실린더 및 도어 상태:
+2025-01-25 17:26:01,969 [A] Port 실린더 유무: False
+2025-01-25 17:26:01,969 [B] Port 실린더 유무: False
+2025-01-25 17:26:01,969 Door Open 완료: False
+2025-01-25 17:26:01,969 Door Close 완료: False
+2025-01-25 17:26:01,969 
+[110] A Port 작업 상태:
+2025-01-25 17:26:01,969 [A] Close the Cylinder: False
+2025-01-25 17:26:01,970 [A] 1st Purge before Exchange: False
+2025-01-25 17:26:01,970 [A] Decompression Test: False
+2025-01-25 17:26:01,970 [A] 2nd Purge before Exchange: False
+2025-01-25 17:26:01,970 [A] Exchange Cylinder: False
+2025-01-25 17:26:01,970 [A] 1st Purge after Exchange: False
+2025-01-25 17:26:01,970 [A] Pressure Test: False
+2025-01-25 17:26:01,970 [A] 2nd Purge after Exchange: False
+2025-01-25 17:26:01,970 [A] Purge Completed: False
+2025-01-25 17:26:01,970 [A] Prepare to Supply: False
+2025-01-25 17:26:01,971 [A] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:01,971 [A] Gas Supply: False
+2025-01-25 17:26:01,971 [A] Ready to Supply: False
+2025-01-25 17:26:01,971 
+[115] B Port 작업 상태:
+2025-01-25 17:26:01,971 [B] Close the Cylinder: False
+2025-01-25 17:26:01,971 [B] 1st Purge before Exchange: False
+2025-01-25 17:26:01,971 [B] Decompression Test: False
+2025-01-25 17:26:01,972 [B] 2nd Purge before Exchange: False
+2025-01-25 17:26:01,972 [B] Exchange Cylinder: False
+2025-01-25 17:26:01,972 [B] 1st Purge after Exchange: False
+2025-01-25 17:26:01,972 [B] Pressure Test: False
+2025-01-25 17:26:01,972 [B] 2nd Purge after Exchange: False
+2025-01-25 17:26:01,972 [B] Purge Completed: False
+2025-01-25 17:26:01,972 [B] Prepare to Supply: False
+2025-01-25 17:26:01,972 [B] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:01,972 [B] Gas Supply: False
+2025-01-25 17:26:01,973 [B] Ready to Supply: False
+2025-01-25 17:26:01,973 
+[116] B Port 상세 상태:
+2025-01-25 17:26:01,973 [B] Cylinder Ready: False
+2025-01-25 17:26:01,973 [B] CGA Disconnect Complete: True
+2025-01-25 17:26:01,973 [B] CGA Connect Complete: False
+2025-01-25 17:26:01,973 [B] Cylinder Valve Open Complete: False
+2025-01-25 17:26:01,973 [B] Cylinder Valve Close Complete: True
+2025-01-25 17:26:01,973 [B] Cylinder Valve Open Status: True
+2025-01-25 17:26:01,973 [B] Cylinder Lift Unit Ready: True
+2025-01-25 17:26:01,973 [B] Cylinder Lift Unit Moving Up: True
+2025-01-25 17:26:01,973 [B] Cylinder Lift Unit Moving Down: True
+2025-01-25 17:26:01,973 [B] CGA Separation In Progress: True
+2025-01-25 17:26:01,974 [B] CGA Connection In Progress: False
+2025-01-25 17:26:01,974 [B] Cylinder Cap Separation In Progress: True
+2025-01-25 17:26:01,974 [B] Cylinder Valve Open In Progress: False
+2025-01-25 17:26:01,974 [B] Cylinder Valve Close In Progress: False
+2025-01-25 17:26:01,974 [B] Cylinder Alignment In Progress: False
+2025-01-25 17:26:01,974 [B] Cylinder Turn In Progress: False
+2025-01-25 17:26:01,974 
+[117] B Port 추가 상태:
+2025-01-25 17:26:01,974 [B] Cylinder Turn Complete: True
+2025-01-25 17:26:01,974 [B] Cylinder Clamp Complete: False
+2025-01-25 17:26:01,974 [B] CGA Connect Complete Status: False
+2025-01-25 17:26:06,992 
+=== Gas Cabinet PLC Data Area ===
+2025-01-25 17:26:06,993 Bunker ID: 0
+2025-01-25 17:26:06,995 Gas Cabinet ID: 10
+2025-01-25 17:26:06,996 Gas Cabinet 가스 종류: [5, 46, 1, 35, 33]
+2025-01-25 17:26:06,997 
+=== 시스템 상태 ===
+2025-01-25 17:26:06,998 SEND AND RECEIVE FOR MACHINE CODE: 28
+2025-01-25 17:26:06,999 Gas Cabinet Alarm Code: 1
+2025-01-25 17:26:07,000 Gas Cabinet Alarm Message: [공통] REDUNANCY OFF ERROR
+2025-01-25 17:26:07,001 
+=== 센서 데이터 ===
+2025-01-25 17:26:07,001 PT1A: 0 PSI
+2025-01-25 17:26:07,002 PT2A: 580 PSI
+2025-01-25 17:26:07,002 PT1B: 604 PSI
+2025-01-25 17:26:07,002 PT2B: 54 PSI
+2025-01-25 17:26:07,003 PT3: 808 PSI
+2025-01-25 17:26:07,003 PT4: 102 PSI
+2025-01-25 17:26:07,003 WA (A Port Weight): 209 kg
+2025-01-25 17:26:07,004 WB (B Port Weight): 12 kg
+2025-01-25 17:26:07,004 
+=== 히터 상태 ===
+2025-01-25 17:26:07,004 [A] JACKET HEATER: 18°C
+2025-01-25 17:26:07,004 [A] LINE HEATER: 28°C
+2025-01-25 17:26:07,004 [B] JACKET HEATER: 33°C
+2025-01-25 17:26:07,005 [B] LINE HEATER: 6°C
+2025-01-25 17:26:07,005 
+=== A Port 데이터 ===
+2025-01-25 17:26:07,005 [A] CGA 체결 Torque 설정값: 0 kgf·cm
+2025-01-25 17:26:07,006 [A] CAP 체결 Torque 설정값: 43 kgf·cm
+2025-01-25 17:26:07,006 [A] 실린더 Up/Down Pos 현재값: 14 mm
+2025-01-25 17:26:07,006 [A] 실린더 Barcode Data: ?R2GB3TSTK0MGIXHPNBLYP8MPMCR28
+2025-01-25 17:26:07,006 [A] Port 가스 종류: [80, 4, 17, 46, 11]
+2025-01-25 17:26:07,006 
+=== B Port 데이터 ===
+2025-01-25 17:26:07,007 [B] CGA 체결 Torque 설정값: 40 kgf·cm
+2025-01-25 17:26:07,007 [B] CAP 체결 Torque 설정값: 11 kgf·cm
+2025-01-25 17:26:07,007 [B] 실린더 Up/Down Pos 현재값: 17 mm
+2025-01-25 17:26:07,007 [B] 실린더 Barcode Data: B6OO1R1761JM0CXJ720PUPB5VIJ42V
+2025-01-25 17:26:07,008 [B] Port 가스 종류: [14, 11, 8, 40, 35]
+2025-01-25 17:26:07,008 
+=== Gas Cabinet Bit Area Data ===
+2025-01-25 17:26:07,008 
+[100] 기본 신호:
+2025-01-25 17:26:07,009 EMG Signal: True
+2025-01-25 17:26:07,009 Heart Bit: True
+2025-01-25 17:26:07,009 Run/Stop Signal: True
+2025-01-25 17:26:07,009 Server Connected Bit: False
+2025-01-25 17:26:07,009 T-LAMP RED: False
+2025-01-25 17:26:07,009 T-LAMP YELLOW: True
+2025-01-25 17:26:07,009 T-LAMP GREEN: False
+2025-01-25 17:26:07,009 Touch 수동동작中 Signal: False
+2025-01-25 17:26:07,010 
+[101] 밸브 상태:
+2025-01-25 17:26:07,010 AV1A: True
+2025-01-25 17:26:07,010 AV2A: True
+2025-01-25 17:26:07,010 AV3A: True
+2025-01-25 17:26:07,010 AV4A: False
+2025-01-25 17:26:07,010 AV5A: True
+2025-01-25 17:26:07,010 AV1B: False
+2025-01-25 17:26:07,010 AV2B: False
+2025-01-25 17:26:07,010 AV3B: False
+2025-01-25 17:26:07,011 AV4B: False
+2025-01-25 17:26:07,011 AV5B: False
+2025-01-25 17:26:07,011 AV7: False
+2025-01-25 17:26:07,011 AV8: False
+2025-01-25 17:26:07,011 AV9: False
+2025-01-25 17:26:07,011 
+[102] 센서 및 릴레이 상태:
+2025-01-25 17:26:07,011 JACKET HEATER A RELAY: False
+2025-01-25 17:26:07,011 LINE HEATER A RELAY: False
+2025-01-25 17:26:07,011 JACKET HEATER B RELAY: False
+2025-01-25 17:26:07,012 LINE HEATER B RELAY: False
+2025-01-25 17:26:07,012 GAS LEAK SHUT DOWN: False
+2025-01-25 17:26:07,012 VMB STOP SIGNAL: True
+2025-01-25 17:26:07,012 UV/IR SENSOR: False
+2025-01-25 17:26:07,012 HIGH TEMP SENSOR: True
+2025-01-25 17:26:07,012 SMOKE SENSOR: True
+2025-01-25 17:26:07,012 
+[103] Port 요청 상태:
+2025-01-25 17:26:07,012 [A] Port Insert Request: True
+2025-01-25 17:26:07,012 [A] Port Insert Complete: True
+2025-01-25 17:26:07,012 [A] Port Remove Request: True
+2025-01-25 17:26:07,012 [A] Port Remove Complete: False
+2025-01-25 17:26:07,012 
+[105] 실린더 및 도어 상태:
+2025-01-25 17:26:07,013 [A] Port 실린더 유무: False
+2025-01-25 17:26:07,013 [B] Port 실린더 유무: False
+2025-01-25 17:26:07,013 Door Open 완료: False
+2025-01-25 17:26:07,013 Door Close 완료: False
+2025-01-25 17:26:07,013 
+[110] A Port 작업 상태:
+2025-01-25 17:26:07,013 [A] Close the Cylinder: False
+2025-01-25 17:26:07,013 [A] 1st Purge before Exchange: False
+2025-01-25 17:26:07,013 [A] Decompression Test: False
+2025-01-25 17:26:07,013 [A] 2nd Purge before Exchange: False
+2025-01-25 17:26:07,013 [A] Exchange Cylinder: False
+2025-01-25 17:26:07,013 [A] 1st Purge after Exchange: False
+2025-01-25 17:26:07,013 [A] Pressure Test: False
+2025-01-25 17:26:07,014 [A] 2nd Purge after Exchange: False
+2025-01-25 17:26:07,014 [A] Purge Completed: False
+2025-01-25 17:26:07,014 [A] Prepare to Supply: False
+2025-01-25 17:26:07,014 [A] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:07,014 [A] Gas Supply: False
+2025-01-25 17:26:07,014 [A] Ready to Supply: False
+2025-01-25 17:26:07,014 
+[115] B Port 작업 상태:
+2025-01-25 17:26:07,014 [B] Close the Cylinder: False
+2025-01-25 17:26:07,014 [B] 1st Purge before Exchange: False
+2025-01-25 17:26:07,014 [B] Decompression Test: False
+2025-01-25 17:26:07,014 [B] 2nd Purge before Exchange: False
+2025-01-25 17:26:07,015 [B] Exchange Cylinder: False
+2025-01-25 17:26:07,015 [B] 1st Purge after Exchange: False
+2025-01-25 17:26:07,015 [B] Pressure Test: False
+2025-01-25 17:26:07,015 [B] 2nd Purge after Exchange: False
+2025-01-25 17:26:07,015 [B] Purge Completed: False
+2025-01-25 17:26:07,015 [B] Prepare to Supply: False
+2025-01-25 17:26:07,015 [B] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:07,015 [B] Gas Supply: False
+2025-01-25 17:26:07,015 [B] Ready to Supply: False
+2025-01-25 17:26:07,016 
+[116] B Port 상세 상태:
+2025-01-25 17:26:07,016 [B] Cylinder Ready: True
+2025-01-25 17:26:07,016 [B] CGA Disconnect Complete: False
+2025-01-25 17:26:07,016 [B] CGA Connect Complete: False
+2025-01-25 17:26:07,016 [B] Cylinder Valve Open Complete: True
+2025-01-25 17:26:07,016 [B] Cylinder Valve Close Complete: True
+2025-01-25 17:26:07,016 [B] Cylinder Valve Open Status: True
+2025-01-25 17:26:07,016 [B] Cylinder Lift Unit Ready: False
+2025-01-25 17:26:07,016 [B] Cylinder Lift Unit Moving Up: False
+2025-01-25 17:26:07,017 [B] Cylinder Lift Unit Moving Down: False
+2025-01-25 17:26:07,017 [B] CGA Separation In Progress: False
+2025-01-25 17:26:07,017 [B] CGA Connection In Progress: True
+2025-01-25 17:26:07,017 [B] Cylinder Cap Separation In Progress: False
+2025-01-25 17:26:07,017 [B] Cylinder Valve Open In Progress: True
+2025-01-25 17:26:07,017 [B] Cylinder Valve Close In Progress: False
+2025-01-25 17:26:07,017 [B] Cylinder Alignment In Progress: False
+2025-01-25 17:26:07,017 [B] Cylinder Turn In Progress: False
+2025-01-25 17:26:07,017 
+[117] B Port 추가 상태:
+2025-01-25 17:26:07,017 [B] Cylinder Turn Complete: False
+2025-01-25 17:26:07,017 [B] Cylinder Clamp Complete: True
+2025-01-25 17:26:07,018 [B] CGA Connect Complete Status: True
+2025-01-25 17:26:12,035 
+=== Gas Cabinet PLC Data Area ===
+2025-01-25 17:26:12,036 Bunker ID: 0
+2025-01-25 17:26:12,037 Gas Cabinet ID: 10
+2025-01-25 17:26:12,038 Gas Cabinet 가스 종류: [21, 5, 23, 17, 18]
+2025-01-25 17:26:12,039 
+=== 시스템 상태 ===
+2025-01-25 17:26:12,040 SEND AND RECEIVE FOR MACHINE CODE: 23
+2025-01-25 17:26:12,041 Gas Cabinet Alarm Code: 217
+2025-01-25 17:26:12,041 Gas Cabinet Alarm Message: Unknown Alarm Code
+2025-01-25 17:26:12,042 
+=== 센서 데이터 ===
+2025-01-25 17:26:12,042 PT1A: 0 PSI
+2025-01-25 17:26:12,042 PT2A: 256 PSI
+2025-01-25 17:26:12,043 PT1B: 718 PSI
+2025-01-25 17:26:12,043 PT2B: 574 PSI
+2025-01-25 17:26:12,044 PT3: 900 PSI
+2025-01-25 17:26:12,044 PT4: 843 PSI
+2025-01-25 17:26:12,045 WA (A Port Weight): 951 kg
+2025-01-25 17:26:12,045 WB (B Port Weight): 57 kg
+2025-01-25 17:26:12,045 
+=== 히터 상태 ===
+2025-01-25 17:26:12,045 [A] JACKET HEATER: 60°C
+2025-01-25 17:26:12,045 [A] LINE HEATER: 43°C
+2025-01-25 17:26:12,046 [B] JACKET HEATER: 61°C
+2025-01-25 17:26:12,046 [B] LINE HEATER: 82°C
+2025-01-25 17:26:12,046 
+=== A Port 데이터 ===
+2025-01-25 17:26:12,046 [A] CGA 체결 Torque 설정값: 0 kgf·cm
+2025-01-25 17:26:12,047 [A] CAP 체결 Torque 설정값: 5 kgf·cm
+2025-01-25 17:26:12,047 [A] 실린더 Up/Down Pos 현재값: 57 mm
+2025-01-25 17:26:12,047 [A] 실린더 Barcode Data: aUR7IWUDS32VT20T1O6JJAWB4PR5YI
+2025-01-25 17:26:12,047 [A] Port 가스 종류: [81, 30, 28, 25, 42]
+2025-01-25 17:26:12,047 
+=== B Port 데이터 ===
+2025-01-25 17:26:12,047 [B] CGA 체결 Torque 설정값: 153 kgf·cm
+2025-01-25 17:26:12,048 [B] CAP 체결 Torque 설정값: 55 kgf·cm
+2025-01-25 17:26:12,048 [B] 실린더 Up/Down Pos 현재값: 17 mm
+2025-01-25 17:26:12,048 [B] 실린더 Barcode Data: MTDXBF7TVWRYZBEY1L3OUY70ALDV6N
+2025-01-25 17:26:12,048 [B] Port 가스 종류: [18, 41, 40, 18, 24]
+2025-01-25 17:26:12,049 
+=== Gas Cabinet Bit Area Data ===
+2025-01-25 17:26:12,049 
+[100] 기본 신호:
+2025-01-25 17:26:12,049 EMG Signal: False
+2025-01-25 17:26:12,049 Heart Bit: False
+2025-01-25 17:26:12,049 Run/Stop Signal: True
+2025-01-25 17:26:12,049 Server Connected Bit: False
+2025-01-25 17:26:12,049 T-LAMP RED: False
+2025-01-25 17:26:12,050 T-LAMP YELLOW: True
+2025-01-25 17:26:12,050 T-LAMP GREEN: False
+2025-01-25 17:26:12,050 Touch 수동동작中 Signal: False
+2025-01-25 17:26:12,050 
+[101] 밸브 상태:
+2025-01-25 17:26:12,050 AV1A: True
+2025-01-25 17:26:12,050 AV2A: True
+2025-01-25 17:26:12,050 AV3A: True
+2025-01-25 17:26:12,050 AV4A: False
+2025-01-25 17:26:12,050 AV5A: True
+2025-01-25 17:26:12,051 AV1B: False
+2025-01-25 17:26:12,051 AV2B: False
+2025-01-25 17:26:12,051 AV3B: True
+2025-01-25 17:26:12,051 AV4B: False
+2025-01-25 17:26:12,051 AV5B: False
+2025-01-25 17:26:12,051 AV7: False
+2025-01-25 17:26:12,051 AV8: False
+2025-01-25 17:26:12,052 AV9: False
+2025-01-25 17:26:12,052 
+[102] 센서 및 릴레이 상태:
+2025-01-25 17:26:12,052 JACKET HEATER A RELAY: True
+2025-01-25 17:26:12,052 LINE HEATER A RELAY: True
+2025-01-25 17:26:12,052 JACKET HEATER B RELAY: True
+2025-01-25 17:26:12,052 LINE HEATER B RELAY: True
+2025-01-25 17:26:12,052 GAS LEAK SHUT DOWN: True
+2025-01-25 17:26:12,053 VMB STOP SIGNAL: True
+2025-01-25 17:26:12,053 UV/IR SENSOR: True
+2025-01-25 17:26:12,053 HIGH TEMP SENSOR: False
+2025-01-25 17:26:12,053 SMOKE SENSOR: True
+2025-01-25 17:26:12,053 
+[103] Port 요청 상태:
+2025-01-25 17:26:12,053 [A] Port Insert Request: False
+2025-01-25 17:26:12,053 [A] Port Insert Complete: False
+2025-01-25 17:26:12,053 [A] Port Remove Request: True
+2025-01-25 17:26:12,053 [A] Port Remove Complete: True
+2025-01-25 17:26:12,054 
+[105] 실린더 및 도어 상태:
+2025-01-25 17:26:12,054 [A] Port 실린더 유무: False
+2025-01-25 17:26:12,054 [B] Port 실린더 유무: False
+2025-01-25 17:26:12,054 Door Open 완료: False
+2025-01-25 17:26:12,054 Door Close 완료: False
+2025-01-25 17:26:12,054 
+[110] A Port 작업 상태:
+2025-01-25 17:26:12,054 [A] Close the Cylinder: False
+2025-01-25 17:26:12,054 [A] 1st Purge before Exchange: False
+2025-01-25 17:26:12,054 [A] Decompression Test: False
+2025-01-25 17:26:12,054 [A] 2nd Purge before Exchange: False
+2025-01-25 17:26:12,055 [A] Exchange Cylinder: False
+2025-01-25 17:26:12,055 [A] 1st Purge after Exchange: False
+2025-01-25 17:26:12,055 [A] Pressure Test: False
+2025-01-25 17:26:12,055 [A] 2nd Purge after Exchange: False
+2025-01-25 17:26:12,055 [A] Purge Completed: False
+2025-01-25 17:26:12,055 [A] Prepare to Supply: False
+2025-01-25 17:26:12,055 [A] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:12,055 [A] Gas Supply: False
+2025-01-25 17:26:12,055 [A] Ready to Supply: False
+2025-01-25 17:26:12,055 
+[115] B Port 작업 상태:
+2025-01-25 17:26:12,056 [B] Close the Cylinder: False
+2025-01-25 17:26:12,056 [B] 1st Purge before Exchange: False
+2025-01-25 17:26:12,056 [B] Decompression Test: False
+2025-01-25 17:26:12,056 [B] 2nd Purge before Exchange: False
+2025-01-25 17:26:12,056 [B] Exchange Cylinder: False
+2025-01-25 17:26:12,056 [B] 1st Purge after Exchange: False
+2025-01-25 17:26:12,056 [B] Pressure Test: False
+2025-01-25 17:26:12,056 [B] 2nd Purge after Exchange: False
+2025-01-25 17:26:12,056 [B] Purge Completed: False
+2025-01-25 17:26:12,056 [B] Prepare to Supply: False
+2025-01-25 17:26:12,056 [B] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:12,057 [B] Gas Supply: False
+2025-01-25 17:26:12,057 [B] Ready to Supply: False
+2025-01-25 17:26:12,057 
+[116] B Port 상세 상태:
+2025-01-25 17:26:12,057 [B] Cylinder Ready: True
+2025-01-25 17:26:12,057 [B] CGA Disconnect Complete: False
+2025-01-25 17:26:12,057 [B] CGA Connect Complete: True
+2025-01-25 17:26:12,057 [B] Cylinder Valve Open Complete: True
+2025-01-25 17:26:12,057 [B] Cylinder Valve Close Complete: True
+2025-01-25 17:26:12,057 [B] Cylinder Valve Open Status: False
+2025-01-25 17:26:12,058 [B] Cylinder Lift Unit Ready: False
+2025-01-25 17:26:12,058 [B] Cylinder Lift Unit Moving Up: False
+2025-01-25 17:26:12,058 [B] Cylinder Lift Unit Moving Down: True
+2025-01-25 17:26:12,058 [B] CGA Separation In Progress: False
+2025-01-25 17:26:12,058 [B] CGA Connection In Progress: False
+2025-01-25 17:26:12,058 [B] Cylinder Cap Separation In Progress: False
+2025-01-25 17:26:12,058 [B] Cylinder Valve Open In Progress: True
+2025-01-25 17:26:12,058 [B] Cylinder Valve Close In Progress: False
+2025-01-25 17:26:12,058 [B] Cylinder Alignment In Progress: False
+2025-01-25 17:26:12,059 [B] Cylinder Turn In Progress: False
+2025-01-25 17:26:12,059 
+[117] B Port 추가 상태:
+2025-01-25 17:26:12,059 [B] Cylinder Turn Complete: False
+2025-01-25 17:26:12,059 [B] Cylinder Clamp Complete: True
+2025-01-25 17:26:12,059 [B] CGA Connect Complete Status: True
+2025-01-25 17:26:17,077 
+=== Gas Cabinet PLC Data Area ===
+2025-01-25 17:26:17,078 Bunker ID: 0
+2025-01-25 17:26:17,079 Gas Cabinet ID: 4
+2025-01-25 17:26:17,079 Gas Cabinet 가스 종류: [17, 8, 37, 45, 26]
+2025-01-25 17:26:17,079 
+=== 시스템 상태 ===
+2025-01-25 17:26:17,080 SEND AND RECEIVE FOR MACHINE CODE: 28
+2025-01-25 17:26:17,080 Gas Cabinet Alarm Code: 193
+2025-01-25 17:26:17,081 Gas Cabinet Alarm Message: [A Port] PT2 음압 하한
+2025-01-25 17:26:17,082 
+=== 센서 데이터 ===
+2025-01-25 17:26:17,082 PT1A: 0 PSI
+2025-01-25 17:26:17,083 PT2A: 708 PSI
+2025-01-25 17:26:17,083 PT1B: 996 PSI
+2025-01-25 17:26:17,083 PT2B: 374 PSI
+2025-01-25 17:26:17,084 PT3: 466 PSI
+2025-01-25 17:26:17,084 PT4: 619 PSI
+2025-01-25 17:26:17,085 WA (A Port Weight): 267 kg
+2025-01-25 17:26:17,085 WB (B Port Weight): 36 kg
+2025-01-25 17:26:17,085 
+=== 히터 상태 ===
+2025-01-25 17:26:17,085 [A] JACKET HEATER: 57°C
+2025-01-25 17:26:17,085 [A] LINE HEATER: 100°C
+2025-01-25 17:26:17,086 [B] JACKET HEATER: 39°C
+2025-01-25 17:26:17,086 [B] LINE HEATER: 38°C
+2025-01-25 17:26:17,086 
+=== A Port 데이터 ===
+2025-01-25 17:26:17,086 [A] CGA 체결 Torque 설정값: 0 kgf·cm
+2025-01-25 17:26:17,086 [A] CAP 체결 Torque 설정값: 9 kgf·cm
+2025-01-25 17:26:17,087 [A] 실린더 Up/Down Pos 현재값: 11 mm
+2025-01-25 17:26:17,087 [A] 실린더 Barcode Data: <SNO3FCFXVUA1LNDYPFOAJXH3Q248C
+2025-01-25 17:26:17,087 [A] Port 가스 종류: [53, 38, 14, 47, 23]
+2025-01-25 17:26:17,087 
+=== B Port 데이터 ===
+2025-01-25 17:26:17,087 [B] CGA 체결 Torque 설정값: 218 kgf·cm
+2025-01-25 17:26:17,087 [B] CAP 체결 Torque 설정값: 95 kgf·cm
+2025-01-25 17:26:17,088 [B] 실린더 Up/Down Pos 현재값: 48 mm
+2025-01-25 17:26:17,088 [B] 실린더 Barcode Data: NTAUQ66LUH8F9439YIC9KXA8P87XR9
+2025-01-25 17:26:17,088 [B] Port 가스 종류: [7, 39, 48, 7, 8]
+2025-01-25 17:26:17,088 
+=== Gas Cabinet Bit Area Data ===
+2025-01-25 17:26:17,089 
+[100] 기본 신호:
+2025-01-25 17:26:17,089 EMG Signal: True
+2025-01-25 17:26:17,089 Heart Bit: True
+2025-01-25 17:26:17,089 Run/Stop Signal: True
+2025-01-25 17:26:17,089 Server Connected Bit: True
+2025-01-25 17:26:17,090 T-LAMP RED: False
+2025-01-25 17:26:17,090 T-LAMP YELLOW: False
+2025-01-25 17:26:17,090 T-LAMP GREEN: False
+2025-01-25 17:26:17,090 Touch 수동동작中 Signal: False
+2025-01-25 17:26:17,090 
+[101] 밸브 상태:
+2025-01-25 17:26:17,091 AV1A: False
+2025-01-25 17:26:17,091 AV2A: True
+2025-01-25 17:26:17,091 AV3A: True
+2025-01-25 17:26:17,091 AV4A: True
+2025-01-25 17:26:17,091 AV5A: False
+2025-01-25 17:26:17,091 AV1B: True
+2025-01-25 17:26:17,091 AV2B: True
+2025-01-25 17:26:17,091 AV3B: False
+2025-01-25 17:26:17,092 AV4B: False
+2025-01-25 17:26:17,092 AV5B: False
+2025-01-25 17:26:17,092 AV7: False
+2025-01-25 17:26:17,092 AV8: False
+2025-01-25 17:26:17,092 AV9: False
+2025-01-25 17:26:17,092 
+[102] 센서 및 릴레이 상태:
+2025-01-25 17:26:17,092 JACKET HEATER A RELAY: False
+2025-01-25 17:26:17,093 LINE HEATER A RELAY: False
+2025-01-25 17:26:17,093 JACKET HEATER B RELAY: True
+2025-01-25 17:26:17,093 LINE HEATER B RELAY: False
+2025-01-25 17:26:17,093 GAS LEAK SHUT DOWN: True
+2025-01-25 17:26:17,093 VMB STOP SIGNAL: False
+2025-01-25 17:26:17,093 UV/IR SENSOR: True
+2025-01-25 17:26:17,093 HIGH TEMP SENSOR: True
+2025-01-25 17:26:17,093 SMOKE SENSOR: True
+2025-01-25 17:26:17,093 
+[103] Port 요청 상태:
+2025-01-25 17:26:17,094 [A] Port Insert Request: False
+2025-01-25 17:26:17,094 [A] Port Insert Complete: False
+2025-01-25 17:26:17,094 [A] Port Remove Request: True
+2025-01-25 17:26:17,094 [A] Port Remove Complete: False
+2025-01-25 17:26:17,094 
+[105] 실린더 및 도어 상태:
+2025-01-25 17:26:17,094 [A] Port 실린더 유무: False
+2025-01-25 17:26:17,094 [B] Port 실린더 유무: False
+2025-01-25 17:26:17,094 Door Open 완료: False
+2025-01-25 17:26:17,094 Door Close 완료: False
+2025-01-25 17:26:17,095 
+[110] A Port 작업 상태:
+2025-01-25 17:26:17,095 [A] Close the Cylinder: False
+2025-01-25 17:26:17,095 [A] 1st Purge before Exchange: False
+2025-01-25 17:26:17,095 [A] Decompression Test: False
+2025-01-25 17:26:17,095 [A] 2nd Purge before Exchange: False
+2025-01-25 17:26:17,095 [A] Exchange Cylinder: False
+2025-01-25 17:26:17,095 [A] 1st Purge after Exchange: False
+2025-01-25 17:26:17,095 [A] Pressure Test: False
+2025-01-25 17:26:17,095 [A] 2nd Purge after Exchange: False
+2025-01-25 17:26:17,095 [A] Purge Completed: False
+2025-01-25 17:26:17,095 [A] Prepare to Supply: False
+2025-01-25 17:26:17,096 [A] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:17,096 [A] Gas Supply: False
+2025-01-25 17:26:17,096 [A] Ready to Supply: False
+2025-01-25 17:26:17,096 
+[115] B Port 작업 상태:
+2025-01-25 17:26:17,096 [B] Close the Cylinder: False
+2025-01-25 17:26:17,096 [B] 1st Purge before Exchange: False
+2025-01-25 17:26:17,096 [B] Decompression Test: False
+2025-01-25 17:26:17,096 [B] 2nd Purge before Exchange: False
+2025-01-25 17:26:17,096 [B] Exchange Cylinder: False
+2025-01-25 17:26:17,097 [B] 1st Purge after Exchange: False
+2025-01-25 17:26:17,097 [B] Pressure Test: False
+2025-01-25 17:26:17,097 [B] 2nd Purge after Exchange: False
+2025-01-25 17:26:17,097 [B] Purge Completed: False
+2025-01-25 17:26:17,097 [B] Prepare to Supply: False
+2025-01-25 17:26:17,097 [B] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:17,097 [B] Gas Supply: False
+2025-01-25 17:26:17,097 [B] Ready to Supply: False
+2025-01-25 17:26:17,097 
+[116] B Port 상세 상태:
+2025-01-25 17:26:17,098 [B] Cylinder Ready: False
+2025-01-25 17:26:17,098 [B] CGA Disconnect Complete: True
+2025-01-25 17:26:17,098 [B] CGA Connect Complete: True
+2025-01-25 17:26:17,098 [B] Cylinder Valve Open Complete: True
+2025-01-25 17:26:17,098 [B] Cylinder Valve Close Complete: True
+2025-01-25 17:26:17,098 [B] Cylinder Valve Open Status: False
+2025-01-25 17:26:17,098 [B] Cylinder Lift Unit Ready: True
+2025-01-25 17:26:17,098 [B] Cylinder Lift Unit Moving Up: True
+2025-01-25 17:26:17,098 [B] Cylinder Lift Unit Moving Down: True
+2025-01-25 17:26:17,099 [B] CGA Separation In Progress: False
+2025-01-25 17:26:17,099 [B] CGA Connection In Progress: True
+2025-01-25 17:26:17,099 [B] Cylinder Cap Separation In Progress: True
+2025-01-25 17:26:17,099 [B] Cylinder Valve Open In Progress: False
+2025-01-25 17:26:17,099 [B] Cylinder Valve Close In Progress: False
+2025-01-25 17:26:17,099 [B] Cylinder Alignment In Progress: False
+2025-01-25 17:26:17,099 [B] Cylinder Turn In Progress: False
+2025-01-25 17:26:17,099 
+[117] B Port 추가 상태:
+2025-01-25 17:26:17,099 [B] Cylinder Turn Complete: False
+2025-01-25 17:26:17,099 [B] Cylinder Clamp Complete: False
+2025-01-25 17:26:17,100 [B] CGA Connect Complete Status: True
+2025-01-25 17:26:22,118 
+=== Gas Cabinet PLC Data Area ===
+2025-01-25 17:26:22,120 Bunker ID: 0
+2025-01-25 17:26:22,121 Gas Cabinet ID: 3
+2025-01-25 17:26:22,122 Gas Cabinet 가스 종류: [10, 35, 24, 33, 22]
+2025-01-25 17:26:22,123 
+=== 시스템 상태 ===
+2025-01-25 17:26:22,124 SEND AND RECEIVE FOR MACHINE CODE: 37
+2025-01-25 17:26:22,125 Gas Cabinet Alarm Code: 60
+2025-01-25 17:26:22,125 Gas Cabinet Alarm Message: Unknown Alarm Code
+2025-01-25 17:26:22,126 
+=== 센서 데이터 ===
+2025-01-25 17:26:22,127 PT1A: 0 PSI
+2025-01-25 17:26:22,128 PT2A: 520 PSI
+2025-01-25 17:26:22,128 PT1B: 582 PSI
+2025-01-25 17:26:22,129 PT2B: 736 PSI
+2025-01-25 17:26:22,129 PT3: 910 PSI
+2025-01-25 17:26:22,129 PT4: 0 PSI
+2025-01-25 17:26:22,129 WA (A Port Weight): 352 kg
+2025-01-25 17:26:22,130 WB (B Port Weight): 38 kg
+2025-01-25 17:26:22,130 
+=== 히터 상태 ===
+2025-01-25 17:26:22,130 [A] JACKET HEATER: 11°C
+2025-01-25 17:26:22,130 [A] LINE HEATER: 72°C
+2025-01-25 17:26:22,131 [B] JACKET HEATER: 26°C
+2025-01-25 17:26:22,131 [B] LINE HEATER: 46°C
+2025-01-25 17:26:22,131 
+=== A Port 데이터 ===
+2025-01-25 17:26:22,131 [A] CGA 체결 Torque 설정값: 0 kgf·cm
+2025-01-25 17:26:22,131 [A] CAP 체결 Torque 설정값: 6 kgf·cm
+2025-01-25 17:26:22,132 [A] 실린더 Up/Down Pos 현재값: 72 mm
+2025-01-25 17:26:22,132 [A] 실린더 Barcode Data: cPY03S0TJ3RBUUTZTC7IOPN1RY1HZ5
+2025-01-25 17:26:22,132 [A] Port 가스 종류: [90, 49, 24, 16, 12]
+2025-01-25 17:26:22,132 
+=== B Port 데이터 ===
+2025-01-25 17:26:22,133 [B] CGA 체결 Torque 설정값: 71 kgf·cm
+2025-01-25 17:26:22,133 [B] CAP 체결 Torque 설정값: 59 kgf·cm
+2025-01-25 17:26:22,133 [B] 실린더 Up/Down Pos 현재값: 51 mm
+2025-01-25 17:26:22,133 [B] 실린더 Barcode Data: QVH0X18D0EMIDO0DZ6DTFPF8U8K976
+2025-01-25 17:26:22,133 [B] Port 가스 종류: [3, 20, 7, 29, 23]
+2025-01-25 17:26:22,133 
+=== Gas Cabinet Bit Area Data ===
+2025-01-25 17:26:22,134 
+[100] 기본 신호:
+2025-01-25 17:26:22,134 EMG Signal: False
+2025-01-25 17:26:22,134 Heart Bit: False
+2025-01-25 17:26:22,134 Run/Stop Signal: False
+2025-01-25 17:26:22,134 Server Connected Bit: False
+2025-01-25 17:26:22,134 T-LAMP RED: True
+2025-01-25 17:26:22,134 T-LAMP YELLOW: True
+2025-01-25 17:26:22,135 T-LAMP GREEN: False
+2025-01-25 17:26:22,135 Touch 수동동작中 Signal: False
+2025-01-25 17:26:22,135 
+[101] 밸브 상태:
+2025-01-25 17:26:22,135 AV1A: True
+2025-01-25 17:26:22,135 AV2A: True
+2025-01-25 17:26:22,135 AV3A: False
+2025-01-25 17:26:22,135 AV4A: True
+2025-01-25 17:26:22,136 AV5A: True
+2025-01-25 17:26:22,136 AV1B: False
+2025-01-25 17:26:22,136 AV2B: True
+2025-01-25 17:26:22,136 AV3B: True
+2025-01-25 17:26:22,136 AV4B: False
+2025-01-25 17:26:22,136 AV5B: False
+2025-01-25 17:26:22,136 AV7: False
+2025-01-25 17:26:22,136 AV8: False
+2025-01-25 17:26:22,136 AV9: False
+2025-01-25 17:26:22,137 
+[102] 센서 및 릴레이 상태:
+2025-01-25 17:26:22,137 JACKET HEATER A RELAY: True
+2025-01-25 17:26:22,137 LINE HEATER A RELAY: False
+2025-01-25 17:26:22,137 JACKET HEATER B RELAY: True
+2025-01-25 17:26:22,137 LINE HEATER B RELAY: True
+2025-01-25 17:26:22,137 GAS LEAK SHUT DOWN: True
+2025-01-25 17:26:22,137 VMB STOP SIGNAL: False
+2025-01-25 17:26:22,137 UV/IR SENSOR: True
+2025-01-25 17:26:22,138 HIGH TEMP SENSOR: True
+2025-01-25 17:26:22,138 SMOKE SENSOR: False
+2025-01-25 17:26:22,138 
+[103] Port 요청 상태:
+2025-01-25 17:26:22,138 [A] Port Insert Request: True
+2025-01-25 17:26:22,138 [A] Port Insert Complete: True
+2025-01-25 17:26:22,138 [A] Port Remove Request: True
+2025-01-25 17:26:22,138 [A] Port Remove Complete: False
+2025-01-25 17:26:22,138 
+[105] 실린더 및 도어 상태:
+2025-01-25 17:26:22,138 [A] Port 실린더 유무: False
+2025-01-25 17:26:22,139 [B] Port 실린더 유무: False
+2025-01-25 17:26:22,139 Door Open 완료: False
+2025-01-25 17:26:22,139 Door Close 완료: False
+2025-01-25 17:26:22,139 
+[110] A Port 작업 상태:
+2025-01-25 17:26:22,139 [A] Close the Cylinder: False
+2025-01-25 17:26:22,139 [A] 1st Purge before Exchange: False
+2025-01-25 17:26:22,139 [A] Decompression Test: False
+2025-01-25 17:26:22,139 [A] 2nd Purge before Exchange: False
+2025-01-25 17:26:22,139 [A] Exchange Cylinder: False
+2025-01-25 17:26:22,139 [A] 1st Purge after Exchange: False
+2025-01-25 17:26:22,139 [A] Pressure Test: False
+2025-01-25 17:26:22,140 [A] 2nd Purge after Exchange: False
+2025-01-25 17:26:22,140 [A] Purge Completed: False
+2025-01-25 17:26:22,140 [A] Prepare to Supply: False
+2025-01-25 17:26:22,140 [A] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:22,140 [A] Gas Supply: False
+2025-01-25 17:26:22,140 [A] Ready to Supply: False
+2025-01-25 17:26:22,140 
+[115] B Port 작업 상태:
+2025-01-25 17:26:22,140 [B] Close the Cylinder: False
+2025-01-25 17:26:22,140 [B] 1st Purge before Exchange: False
+2025-01-25 17:26:22,141 [B] Decompression Test: False
+2025-01-25 17:26:22,141 [B] 2nd Purge before Exchange: False
+2025-01-25 17:26:22,141 [B] Exchange Cylinder: False
+2025-01-25 17:26:22,141 [B] 1st Purge after Exchange: False
+2025-01-25 17:26:22,141 [B] Pressure Test: False
+2025-01-25 17:26:22,141 [B] 2nd Purge after Exchange: False
+2025-01-25 17:26:22,141 [B] Purge Completed: False
+2025-01-25 17:26:22,141 [B] Prepare to Supply: False
+2025-01-25 17:26:22,141 [B] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:22,142 [B] Gas Supply: False
+2025-01-25 17:26:22,142 [B] Ready to Supply: False
+2025-01-25 17:26:22,142 
+[116] B Port 상세 상태:
+2025-01-25 17:26:22,142 [B] Cylinder Ready: True
+2025-01-25 17:26:22,142 [B] CGA Disconnect Complete: False
+2025-01-25 17:26:22,142 [B] CGA Connect Complete: True
+2025-01-25 17:26:22,142 [B] Cylinder Valve Open Complete: False
+2025-01-25 17:26:22,142 [B] Cylinder Valve Close Complete: False
+2025-01-25 17:26:22,142 [B] Cylinder Valve Open Status: True
+2025-01-25 17:26:22,143 [B] Cylinder Lift Unit Ready: True
+2025-01-25 17:26:22,143 [B] Cylinder Lift Unit Moving Up: False
+2025-01-25 17:26:22,143 [B] Cylinder Lift Unit Moving Down: True
+2025-01-25 17:26:22,143 [B] CGA Separation In Progress: True
+2025-01-25 17:26:22,143 [B] CGA Connection In Progress: False
+2025-01-25 17:26:22,143 [B] Cylinder Cap Separation In Progress: True
+2025-01-25 17:26:22,143 [B] Cylinder Valve Open In Progress: False
+2025-01-25 17:26:22,143 [B] Cylinder Valve Close In Progress: False
+2025-01-25 17:26:22,143 [B] Cylinder Alignment In Progress: False
+2025-01-25 17:26:22,143 [B] Cylinder Turn In Progress: False
+2025-01-25 17:26:22,144 
+[117] B Port 추가 상태:
+2025-01-25 17:26:22,144 [B] Cylinder Turn Complete: True
+2025-01-25 17:26:22,144 [B] Cylinder Clamp Complete: True
+2025-01-25 17:26:22,144 [B] CGA Connect Complete Status: True
+2025-01-25 17:26:27,161 
+=== Gas Cabinet PLC Data Area ===
+2025-01-25 17:26:27,162 Bunker ID: 0
+2025-01-25 17:26:27,163 Gas Cabinet ID: 6
+2025-01-25 17:26:27,163 Gas Cabinet 가스 종류: [25, 17, 17, 44, 24]
+2025-01-25 17:26:27,164 
+=== 시스템 상태 ===
+2025-01-25 17:26:27,164 SEND AND RECEIVE FOR MACHINE CODE: 16
+2025-01-25 17:26:27,164 Gas Cabinet Alarm Code: 57
+2025-01-25 17:26:27,165 Gas Cabinet Alarm Message: Unknown Alarm Code
+2025-01-25 17:26:27,165 
+=== 센서 데이터 ===
+2025-01-25 17:26:27,165 PT1A: 0 PSI
+2025-01-25 17:26:27,165 PT2A: 434 PSI
+2025-01-25 17:26:27,166 PT1B: 591 PSI
+2025-01-25 17:26:27,166 PT2B: 148 PSI
+2025-01-25 17:26:27,166 PT3: 702 PSI
+2025-01-25 17:26:27,166 PT4: 658 PSI
+2025-01-25 17:26:27,167 WA (A Port Weight): 164 kg
+2025-01-25 17:26:27,167 WB (B Port Weight): 92 kg
+2025-01-25 17:26:27,167 
+=== 히터 상태 ===
+2025-01-25 17:26:27,167 [A] JACKET HEATER: 85°C
+2025-01-25 17:26:27,168 [A] LINE HEATER: 73°C
+2025-01-25 17:26:27,168 [B] JACKET HEATER: 46°C
+2025-01-25 17:26:27,168 [B] LINE HEATER: 16°C
+2025-01-25 17:26:27,169 
+=== A Port 데이터 ===
+2025-01-25 17:26:27,169 [A] CGA 체결 Torque 설정값: 0 kgf·cm
+2025-01-25 17:26:27,169 [A] CAP 체결 Torque 설정값: 4 kgf·cm
+2025-01-25 17:26:27,169 [A] 실린더 Up/Down Pos 현재값: 97 mm
+2025-01-25 17:26:27,169 [A] 실린더 Barcode Data: 1Z1521XF5N6GDOWJGAUAB2V6LT544H
+2025-01-25 17:26:27,169 [A] Port 가스 종류: [67, 42, 20, 49, 43]
+2025-01-25 17:26:27,169 
+=== B Port 데이터 ===
+2025-01-25 17:26:27,169 [B] CGA 체결 Torque 설정값: 56 kgf·cm
+2025-01-25 17:26:27,170 [B] CAP 체결 Torque 설정값: 51 kgf·cm
+2025-01-25 17:26:27,170 [B] 실린더 Up/Down Pos 현재값: 77 mm
+2025-01-25 17:26:27,170 [B] 실린더 Barcode Data: 9LR6HZ7WNUFVUNL26CGOH69ZK00B9M
+2025-01-25 17:26:27,170 [B] Port 가스 종류: [7, 46, 30, 20, 21]
+2025-01-25 17:26:27,170 
+=== Gas Cabinet Bit Area Data ===
+2025-01-25 17:26:27,170 
+[100] 기본 신호:
+2025-01-25 17:26:27,170 EMG Signal: True
+2025-01-25 17:26:27,171 Heart Bit: True
+2025-01-25 17:26:27,171 Run/Stop Signal: False
+2025-01-25 17:26:27,171 Server Connected Bit: False
+2025-01-25 17:26:27,171 T-LAMP RED: False
+2025-01-25 17:26:27,171 T-LAMP YELLOW: True
+2025-01-25 17:26:27,171 T-LAMP GREEN: False
+2025-01-25 17:26:27,172 Touch 수동동작中 Signal: False
+2025-01-25 17:26:27,172 
+[101] 밸브 상태:
+2025-01-25 17:26:27,172 AV1A: True
+2025-01-25 17:26:27,172 AV2A: False
+2025-01-25 17:26:27,172 AV3A: False
+2025-01-25 17:26:27,172 AV4A: False
+2025-01-25 17:26:27,172 AV5A: True
+2025-01-25 17:26:27,173 AV1B: True
+2025-01-25 17:26:27,173 AV2B: True
+2025-01-25 17:26:27,173 AV3B: True
+2025-01-25 17:26:27,173 AV4B: False
+2025-01-25 17:26:27,173 AV5B: False
+2025-01-25 17:26:27,173 AV7: False
+2025-01-25 17:26:27,173 AV8: False
+2025-01-25 17:26:27,174 AV9: False
+2025-01-25 17:26:27,174 
+[102] 센서 및 릴레이 상태:
+2025-01-25 17:26:27,174 JACKET HEATER A RELAY: False
+2025-01-25 17:26:27,174 LINE HEATER A RELAY: False
+2025-01-25 17:26:27,174 JACKET HEATER B RELAY: False
+2025-01-25 17:26:27,174 LINE HEATER B RELAY: True
+2025-01-25 17:26:27,174 GAS LEAK SHUT DOWN: False
+2025-01-25 17:26:27,175 VMB STOP SIGNAL: False
+2025-01-25 17:26:27,175 UV/IR SENSOR: False
+2025-01-25 17:26:27,175 HIGH TEMP SENSOR: True
+2025-01-25 17:26:27,175 SMOKE SENSOR: False
+2025-01-25 17:26:27,175 
+[103] Port 요청 상태:
+2025-01-25 17:26:27,175 [A] Port Insert Request: False
+2025-01-25 17:26:27,175 [A] Port Insert Complete: False
+2025-01-25 17:26:27,175 [A] Port Remove Request: True
+2025-01-25 17:26:27,175 [A] Port Remove Complete: False
+2025-01-25 17:26:27,176 
+[105] 실린더 및 도어 상태:
+2025-01-25 17:26:27,176 [A] Port 실린더 유무: False
+2025-01-25 17:26:27,176 [B] Port 실린더 유무: False
+2025-01-25 17:26:27,176 Door Open 완료: False
+2025-01-25 17:26:27,176 Door Close 완료: False
+2025-01-25 17:26:27,176 
+[110] A Port 작업 상태:
+2025-01-25 17:26:27,177 [A] Close the Cylinder: False
+2025-01-25 17:26:27,177 [A] 1st Purge before Exchange: False
+2025-01-25 17:26:27,177 [A] Decompression Test: False
+2025-01-25 17:26:27,177 [A] 2nd Purge before Exchange: False
+2025-01-25 17:26:27,177 [A] Exchange Cylinder: False
+2025-01-25 17:26:27,177 [A] 1st Purge after Exchange: False
+2025-01-25 17:26:27,177 [A] Pressure Test: False
+2025-01-25 17:26:27,177 [A] 2nd Purge after Exchange: False
+2025-01-25 17:26:27,177 [A] Purge Completed: False
+2025-01-25 17:26:27,177 [A] Prepare to Supply: False
+2025-01-25 17:26:27,178 [A] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:27,178 [A] Gas Supply: False
+2025-01-25 17:26:27,178 [A] Ready to Supply: False
+2025-01-25 17:26:27,178 
+[115] B Port 작업 상태:
+2025-01-25 17:26:27,178 [B] Close the Cylinder: False
+2025-01-25 17:26:27,178 [B] 1st Purge before Exchange: False
+2025-01-25 17:26:27,178 [B] Decompression Test: False
+2025-01-25 17:26:27,178 [B] 2nd Purge before Exchange: False
+2025-01-25 17:26:27,178 [B] Exchange Cylinder: False
+2025-01-25 17:26:27,179 [B] 1st Purge after Exchange: False
+2025-01-25 17:26:27,179 [B] Pressure Test: False
+2025-01-25 17:26:27,179 [B] 2nd Purge after Exchange: False
+2025-01-25 17:26:27,179 [B] Purge Completed: False
+2025-01-25 17:26:27,179 [B] Prepare to Supply: False
+2025-01-25 17:26:27,179 [B] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:27,179 [B] Gas Supply: False
+2025-01-25 17:26:27,179 [B] Ready to Supply: False
+2025-01-25 17:26:27,179 
+[116] B Port 상세 상태:
+2025-01-25 17:26:27,179 [B] Cylinder Ready: False
+2025-01-25 17:26:27,179 [B] CGA Disconnect Complete: True
+2025-01-25 17:26:27,179 [B] CGA Connect Complete: True
+2025-01-25 17:26:27,179 [B] Cylinder Valve Open Complete: True
+2025-01-25 17:26:27,180 [B] Cylinder Valve Close Complete: False
+2025-01-25 17:26:27,180 [B] Cylinder Valve Open Status: True
+2025-01-25 17:26:27,180 [B] Cylinder Lift Unit Ready: True
+2025-01-25 17:26:27,180 [B] Cylinder Lift Unit Moving Up: True
+2025-01-25 17:26:27,180 [B] Cylinder Lift Unit Moving Down: True
+2025-01-25 17:26:27,180 [B] CGA Separation In Progress: False
+2025-01-25 17:26:27,180 [B] CGA Connection In Progress: True
+2025-01-25 17:26:27,180 [B] Cylinder Cap Separation In Progress: True
+2025-01-25 17:26:27,180 [B] Cylinder Valve Open In Progress: True
+2025-01-25 17:26:27,180 [B] Cylinder Valve Close In Progress: False
+2025-01-25 17:26:27,180 [B] Cylinder Alignment In Progress: False
+2025-01-25 17:26:27,181 [B] Cylinder Turn In Progress: False
+2025-01-25 17:26:27,181 
+[117] B Port 추가 상태:
+2025-01-25 17:26:27,181 [B] Cylinder Turn Complete: False
+2025-01-25 17:26:27,181 [B] Cylinder Clamp Complete: True
+2025-01-25 17:26:27,181 [B] CGA Connect Complete Status: True
+2025-01-25 17:26:32,199 
+=== Gas Cabinet PLC Data Area ===
+2025-01-25 17:26:32,200 Bunker ID: 0
+2025-01-25 17:26:32,201 Gas Cabinet ID: 5
+2025-01-25 17:26:32,201 Gas Cabinet 가스 종류: [1, 29, 1, 11, 16]
+2025-01-25 17:26:32,202 
+=== 시스템 상태 ===
+2025-01-25 17:26:32,202 SEND AND RECEIVE FOR MACHINE CODE: 37
+2025-01-25 17:26:32,203 Gas Cabinet Alarm Code: 191
+2025-01-25 17:26:32,204 Gas Cabinet Alarm Message: [A Port] PT1 음압 하한
+2025-01-25 17:26:32,205 
+=== 센서 데이터 ===
+2025-01-25 17:26:32,205 PT1A: 0 PSI
+2025-01-25 17:26:32,206 PT2A: 56 PSI
+2025-01-25 17:26:32,207 PT1B: 694 PSI
+2025-01-25 17:26:32,207 PT2B: 481 PSI
+2025-01-25 17:26:32,208 PT3: 862 PSI
+2025-01-25 17:26:32,208 PT4: 568 PSI
+2025-01-25 17:26:32,209 WA (A Port Weight): 289 kg
+2025-01-25 17:26:32,209 WB (B Port Weight): 92 kg
+2025-01-25 17:26:32,209 
+=== 히터 상태 ===
+2025-01-25 17:26:32,210 [A] JACKET HEATER: 47°C
+2025-01-25 17:26:32,210 [A] LINE HEATER: 31°C
+2025-01-25 17:26:32,210 [B] JACKET HEATER: 81°C
+2025-01-25 17:26:32,210 [B] LINE HEATER: 11°C
+2025-01-25 17:26:32,210 
+=== A Port 데이터 ===
+2025-01-25 17:26:32,210 [A] CGA 체결 Torque 설정값: 0 kgf·cm
+2025-01-25 17:26:32,211 [A] CAP 체결 Torque 설정값: 5 kgf·cm
+2025-01-25 17:26:32,211 [A] 실린더 Up/Down Pos 현재값: 17 mm
+2025-01-25 17:26:32,211 [A] 실린더 Barcode Data: ?MX9XZTXJW1IWKP1YX9USC4J0RLG46
+2025-01-25 17:26:32,211 [A] Port 가스 종류: [71, 14, 5, 15, 45]
+2025-01-25 17:26:32,211 
+=== B Port 데이터 ===
+2025-01-25 17:26:32,211 [B] CGA 체결 Torque 설정값: 55 kgf·cm
+2025-01-25 17:26:32,212 [B] CAP 체결 Torque 설정값: 52 kgf·cm
+2025-01-25 17:26:32,212 [B] 실린더 Up/Down Pos 현재값: 73 mm
+2025-01-25 17:26:32,212 [B] 실린더 Barcode Data: EYTDU79P6AKBH8IAJSL06F6OQ2T21G
+2025-01-25 17:26:32,212 [B] Port 가스 종류: [4, 21, 19, 34, 8]
+2025-01-25 17:26:32,212 
+=== Gas Cabinet Bit Area Data ===
+2025-01-25 17:26:32,213 
+[100] 기본 신호:
+2025-01-25 17:26:32,213 EMG Signal: True
+2025-01-25 17:26:32,213 Heart Bit: True
+2025-01-25 17:26:32,213 Run/Stop Signal: False
+2025-01-25 17:26:32,213 Server Connected Bit: True
+2025-01-25 17:26:32,213 T-LAMP RED: False
+2025-01-25 17:26:32,213 T-LAMP YELLOW: True
+2025-01-25 17:26:32,213 T-LAMP GREEN: False
+2025-01-25 17:26:32,214 Touch 수동동작中 Signal: False
+2025-01-25 17:26:32,214 
+[101] 밸브 상태:
+2025-01-25 17:26:32,214 AV1A: False
+2025-01-25 17:26:32,214 AV2A: False
+2025-01-25 17:26:32,214 AV3A: False
+2025-01-25 17:26:32,214 AV4A: False
+2025-01-25 17:26:32,214 AV5A: True
+2025-01-25 17:26:32,214 AV1B: True
+2025-01-25 17:26:32,215 AV2B: True
+2025-01-25 17:26:32,215 AV3B: False
+2025-01-25 17:26:32,215 AV4B: False
+2025-01-25 17:26:32,215 AV5B: False
+2025-01-25 17:26:32,215 AV7: False
+2025-01-25 17:26:32,215 AV8: False
+2025-01-25 17:26:32,215 AV9: False
+2025-01-25 17:26:32,215 
+[102] 센서 및 릴레이 상태:
+2025-01-25 17:26:32,215 JACKET HEATER A RELAY: False
+2025-01-25 17:26:32,216 LINE HEATER A RELAY: False
+2025-01-25 17:26:32,216 JACKET HEATER B RELAY: True
+2025-01-25 17:26:32,216 LINE HEATER B RELAY: False
+2025-01-25 17:26:32,216 GAS LEAK SHUT DOWN: False
+2025-01-25 17:26:32,216 VMB STOP SIGNAL: True
+2025-01-25 17:26:32,216 UV/IR SENSOR: True
+2025-01-25 17:26:32,216 HIGH TEMP SENSOR: False
+2025-01-25 17:26:32,216 SMOKE SENSOR: True
+2025-01-25 17:26:32,217 
+[103] Port 요청 상태:
+2025-01-25 17:26:32,217 [A] Port Insert Request: False
+2025-01-25 17:26:32,217 [A] Port Insert Complete: True
+2025-01-25 17:26:32,217 [A] Port Remove Request: True
+2025-01-25 17:26:32,217 [A] Port Remove Complete: True
+2025-01-25 17:26:32,218 
+[105] 실린더 및 도어 상태:
+2025-01-25 17:26:32,218 [A] Port 실린더 유무: False
+2025-01-25 17:26:32,218 [B] Port 실린더 유무: False
+2025-01-25 17:26:32,218 Door Open 완료: False
+2025-01-25 17:26:32,218 Door Close 완료: False
+2025-01-25 17:26:32,218 
+[110] A Port 작업 상태:
+2025-01-25 17:26:32,218 [A] Close the Cylinder: False
+2025-01-25 17:26:32,218 [A] 1st Purge before Exchange: False
+2025-01-25 17:26:32,218 [A] Decompression Test: False
+2025-01-25 17:26:32,218 [A] 2nd Purge before Exchange: False
+2025-01-25 17:26:32,218 [A] Exchange Cylinder: False
+2025-01-25 17:26:32,219 [A] 1st Purge after Exchange: False
+2025-01-25 17:26:32,219 [A] Pressure Test: False
+2025-01-25 17:26:32,219 [A] 2nd Purge after Exchange: False
+2025-01-25 17:26:32,219 [A] Purge Completed: False
+2025-01-25 17:26:32,219 [A] Prepare to Supply: False
+2025-01-25 17:26:32,219 [A] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:32,219 [A] Gas Supply: False
+2025-01-25 17:26:32,219 [A] Ready to Supply: False
+2025-01-25 17:26:32,219 
+[115] B Port 작업 상태:
+2025-01-25 17:26:32,219 [B] Close the Cylinder: False
+2025-01-25 17:26:32,219 [B] 1st Purge before Exchange: False
+2025-01-25 17:26:32,219 [B] Decompression Test: False
+2025-01-25 17:26:32,220 [B] 2nd Purge before Exchange: False
+2025-01-25 17:26:32,220 [B] Exchange Cylinder: False
+2025-01-25 17:26:32,220 [B] 1st Purge after Exchange: False
+2025-01-25 17:26:32,220 [B] Pressure Test: False
+2025-01-25 17:26:32,220 [B] 2nd Purge after Exchange: False
+2025-01-25 17:26:32,220 [B] Purge Completed: False
+2025-01-25 17:26:32,220 [B] Prepare to Supply: False
+2025-01-25 17:26:32,220 [B] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:32,220 [B] Gas Supply: False
+2025-01-25 17:26:32,220 [B] Ready to Supply: False
+2025-01-25 17:26:32,220 
+[116] B Port 상세 상태:
+2025-01-25 17:26:32,221 [B] Cylinder Ready: True
+2025-01-25 17:26:32,221 [B] CGA Disconnect Complete: True
+2025-01-25 17:26:32,221 [B] CGA Connect Complete: True
+2025-01-25 17:26:32,221 [B] Cylinder Valve Open Complete: True
+2025-01-25 17:26:32,221 [B] Cylinder Valve Close Complete: True
+2025-01-25 17:26:32,221 [B] Cylinder Valve Open Status: False
+2025-01-25 17:26:32,221 [B] Cylinder Lift Unit Ready: False
+2025-01-25 17:26:32,222 [B] Cylinder Lift Unit Moving Up: False
+2025-01-25 17:26:32,222 [B] Cylinder Lift Unit Moving Down: False
+2025-01-25 17:26:32,222 [B] CGA Separation In Progress: False
+2025-01-25 17:26:32,222 [B] CGA Connection In Progress: False
+2025-01-25 17:26:32,222 [B] Cylinder Cap Separation In Progress: False
+2025-01-25 17:26:32,222 [B] Cylinder Valve Open In Progress: True
+2025-01-25 17:26:32,223 [B] Cylinder Valve Close In Progress: False
+2025-01-25 17:26:32,223 [B] Cylinder Alignment In Progress: False
+2025-01-25 17:26:32,223 [B] Cylinder Turn In Progress: False
+2025-01-25 17:26:32,223 
+[117] B Port 추가 상태:
+2025-01-25 17:26:32,223 [B] Cylinder Turn Complete: True
+2025-01-25 17:26:32,223 [B] Cylinder Clamp Complete: False
+2025-01-25 17:26:32,223 [B] CGA Connect Complete Status: True
+2025-01-25 17:26:37,241 
+=== Gas Cabinet PLC Data Area ===
+2025-01-25 17:26:37,243 Bunker ID: 0
+2025-01-25 17:26:37,243 Gas Cabinet ID: 4
+2025-01-25 17:26:37,244 Gas Cabinet 가스 종류: [8, 19, 42, 31, 36]
+2025-01-25 17:26:37,245 
+=== 시스템 상태 ===
+2025-01-25 17:26:37,246 SEND AND RECEIVE FOR MACHINE CODE: 23
+2025-01-25 17:26:37,247 Gas Cabinet Alarm Code: 134
+2025-01-25 17:26:37,248 Gas Cabinet Alarm Message: Unknown Alarm Code
+2025-01-25 17:26:37,249 
+=== 센서 데이터 ===
+2025-01-25 17:26:37,250 PT1A: 0 PSI
+2025-01-25 17:26:37,251 PT2A: 69 PSI
+2025-01-25 17:26:37,252 PT1B: 727 PSI
+2025-01-25 17:26:37,253 PT2B: 403 PSI
+2025-01-25 17:26:37,253 PT3: 473 PSI
+2025-01-25 17:26:37,254 PT4: 330 PSI
+2025-01-25 17:26:37,254 WA (A Port Weight): 195 kg
+2025-01-25 17:26:37,255 WB (B Port Weight): 44 kg
+2025-01-25 17:26:37,255 
+=== 히터 상태 ===
+2025-01-25 17:26:37,256 [A] JACKET HEATER: 93°C
+2025-01-25 17:26:37,256 [A] LINE HEATER: 82°C
+2025-01-25 17:26:37,256 [B] JACKET HEATER: 51°C
+2025-01-25 17:26:37,257 [B] LINE HEATER: 20°C
+2025-01-25 17:26:37,257 
+=== A Port 데이터 ===
+2025-01-25 17:26:37,257 [A] CGA 체결 Torque 설정값: 0 kgf·cm
+2025-01-25 17:26:37,257 [A] CAP 체결 Torque 설정값: 28 kgf·cm
+2025-01-25 17:26:37,257 [A] 실린더 Up/Down Pos 현재값: 10 mm
+2025-01-25 17:26:37,257 [A] 실린더 Barcode Data: ?6KC6GO3JUQWEK3HFYKMKKX9M7C21X
+2025-01-25 17:26:37,257 [A] Port 가스 종류: [57, 25, 18, 36, 44]
+2025-01-25 17:26:37,257 
+=== B Port 데이터 ===
+2025-01-25 17:26:37,258 [B] CGA 체결 Torque 설정값: 49 kgf·cm
+2025-01-25 17:26:37,258 [B] CAP 체결 Torque 설정값: 96 kgf·cm
+2025-01-25 17:26:37,258 [B] 실린더 Up/Down Pos 현재값: 68 mm
+2025-01-25 17:26:37,258 [B] 실린더 Barcode Data: 77BQUVB58A2BQVW9FL1FWOIT65GIS2
+2025-01-25 17:26:37,258 [B] Port 가스 종류: [24, 3, 13, 12, 25]
+2025-01-25 17:26:37,258 
+=== Gas Cabinet Bit Area Data ===
+2025-01-25 17:26:37,258 
+[100] 기본 신호:
+2025-01-25 17:26:37,258 EMG Signal: False
+2025-01-25 17:26:37,258 Heart Bit: False
+2025-01-25 17:26:37,259 Run/Stop Signal: False
+2025-01-25 17:26:37,259 Server Connected Bit: False
+2025-01-25 17:26:37,259 T-LAMP RED: True
+2025-01-25 17:26:37,259 T-LAMP YELLOW: True
+2025-01-25 17:26:37,259 T-LAMP GREEN: False
+2025-01-25 17:26:37,259 Touch 수동동작中 Signal: False
+2025-01-25 17:26:37,259 
+[101] 밸브 상태:
+2025-01-25 17:26:37,260 AV1A: True
+2025-01-25 17:26:37,260 AV2A: False
+2025-01-25 17:26:37,260 AV3A: True
+2025-01-25 17:26:37,260 AV4A: False
+2025-01-25 17:26:37,260 AV5A: True
+2025-01-25 17:26:37,260 AV1B: False
+2025-01-25 17:26:37,260 AV2B: True
+2025-01-25 17:26:37,261 AV3B: False
+2025-01-25 17:26:37,261 AV4B: False
+2025-01-25 17:26:37,261 AV5B: False
+2025-01-25 17:26:37,261 AV7: False
+2025-01-25 17:26:37,261 AV8: False
+2025-01-25 17:26:37,261 AV9: False
+2025-01-25 17:26:37,262 
+[102] 센서 및 릴레이 상태:
+2025-01-25 17:26:37,262 JACKET HEATER A RELAY: False
+2025-01-25 17:26:37,262 LINE HEATER A RELAY: False
+2025-01-25 17:26:37,262 JACKET HEATER B RELAY: False
+2025-01-25 17:26:37,262 LINE HEATER B RELAY: False
+2025-01-25 17:26:37,262 GAS LEAK SHUT DOWN: True
+2025-01-25 17:26:37,262 VMB STOP SIGNAL: False
+2025-01-25 17:26:37,262 UV/IR SENSOR: False
+2025-01-25 17:26:37,262 HIGH TEMP SENSOR: True
+2025-01-25 17:26:37,262 SMOKE SENSOR: True
+2025-01-25 17:26:37,262 
+[103] Port 요청 상태:
+2025-01-25 17:26:37,263 [A] Port Insert Request: False
+2025-01-25 17:26:37,263 [A] Port Insert Complete: True
+2025-01-25 17:26:37,263 [A] Port Remove Request: False
+2025-01-25 17:26:37,263 [A] Port Remove Complete: False
+2025-01-25 17:26:37,263 
+[105] 실린더 및 도어 상태:
+2025-01-25 17:26:37,263 [A] Port 실린더 유무: False
+2025-01-25 17:26:37,263 [B] Port 실린더 유무: False
+2025-01-25 17:26:37,263 Door Open 완료: False
+2025-01-25 17:26:37,263 Door Close 완료: False
+2025-01-25 17:26:37,263 
+[110] A Port 작업 상태:
+2025-01-25 17:26:37,263 [A] Close the Cylinder: False
+2025-01-25 17:26:37,263 [A] 1st Purge before Exchange: False
+2025-01-25 17:26:37,264 [A] Decompression Test: False
+2025-01-25 17:26:37,264 [A] 2nd Purge before Exchange: False
+2025-01-25 17:26:37,264 [A] Exchange Cylinder: False
+2025-01-25 17:26:37,264 [A] 1st Purge after Exchange: False
+2025-01-25 17:26:37,264 [A] Pressure Test: False
+2025-01-25 17:26:37,264 [A] 2nd Purge after Exchange: False
+2025-01-25 17:26:37,264 [A] Purge Completed: False
+2025-01-25 17:26:37,264 [A] Prepare to Supply: False
+2025-01-25 17:26:37,264 [A] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:37,265 [A] Gas Supply: False
+2025-01-25 17:26:37,265 [A] Ready to Supply: False
+2025-01-25 17:26:37,265 
+[115] B Port 작업 상태:
+2025-01-25 17:26:37,265 [B] Close the Cylinder: False
+2025-01-25 17:26:37,265 [B] 1st Purge before Exchange: False
+2025-01-25 17:26:37,265 [B] Decompression Test: False
+2025-01-25 17:26:37,265 [B] 2nd Purge before Exchange: False
+2025-01-25 17:26:37,265 [B] Exchange Cylinder: False
+2025-01-25 17:26:37,266 [B] 1st Purge after Exchange: False
+2025-01-25 17:26:37,266 [B] Pressure Test: False
+2025-01-25 17:26:37,266 [B] 2nd Purge after Exchange: False
+2025-01-25 17:26:37,266 [B] Purge Completed: False
+2025-01-25 17:26:37,266 [B] Prepare to Supply: False
+2025-01-25 17:26:37,266 [B] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:37,266 [B] Gas Supply: False
+2025-01-25 17:26:37,266 [B] Ready to Supply: False
+2025-01-25 17:26:37,267 
+[116] B Port 상세 상태:
+2025-01-25 17:26:37,267 [B] Cylinder Ready: True
+2025-01-25 17:26:37,267 [B] CGA Disconnect Complete: True
+2025-01-25 17:26:37,267 [B] CGA Connect Complete: False
+2025-01-25 17:26:37,267 [B] Cylinder Valve Open Complete: True
+2025-01-25 17:26:37,267 [B] Cylinder Valve Close Complete: False
+2025-01-25 17:26:37,267 [B] Cylinder Valve Open Status: True
+2025-01-25 17:26:37,267 [B] Cylinder Lift Unit Ready: False
+2025-01-25 17:26:37,267 [B] Cylinder Lift Unit Moving Up: True
+2025-01-25 17:26:37,267 [B] Cylinder Lift Unit Moving Down: False
+2025-01-25 17:26:37,267 [B] CGA Separation In Progress: True
+2025-01-25 17:26:37,267 [B] CGA Connection In Progress: False
+2025-01-25 17:26:37,268 [B] Cylinder Cap Separation In Progress: False
+2025-01-25 17:26:37,268 [B] Cylinder Valve Open In Progress: False
+2025-01-25 17:26:37,268 [B] Cylinder Valve Close In Progress: False
+2025-01-25 17:26:37,268 [B] Cylinder Alignment In Progress: False
+2025-01-25 17:26:37,268 [B] Cylinder Turn In Progress: False
+2025-01-25 17:26:37,268 
+[117] B Port 추가 상태:
+2025-01-25 17:26:37,268 [B] Cylinder Turn Complete: False
+2025-01-25 17:26:37,268 [B] Cylinder Clamp Complete: True
+2025-01-25 17:26:37,268 [B] CGA Connect Complete Status: True
+2025-01-25 17:26:42,286 
+=== Gas Cabinet PLC Data Area ===
+2025-01-25 17:26:42,287 Bunker ID: 0
+2025-01-25 17:26:42,288 Gas Cabinet ID: 5
+2025-01-25 17:26:42,289 Gas Cabinet 가스 종류: [21, 35, 48, 50, 40]
+2025-01-25 17:26:42,289 
+=== 시스템 상태 ===
+2025-01-25 17:26:42,290 SEND AND RECEIVE FOR MACHINE CODE: 45
+2025-01-25 17:26:42,291 Gas Cabinet Alarm Code: 22
+2025-01-25 17:26:42,292 Gas Cabinet Alarm Message: [공통] VALVE LIFE TIME OVER (SOME ONE)
+2025-01-25 17:26:42,293 
+=== 센서 데이터 ===
+2025-01-25 17:26:42,294 PT1A: 0 PSI
+2025-01-25 17:26:42,294 PT2A: 106 PSI
+2025-01-25 17:26:42,295 PT1B: 836 PSI
+2025-01-25 17:26:42,296 PT2B: 410 PSI
+2025-01-25 17:26:42,296 PT3: 471 PSI
+2025-01-25 17:26:42,297 PT4: 125 PSI
+2025-01-25 17:26:42,297 WA (A Port Weight): 342 kg
+2025-01-25 17:26:42,298 WB (B Port Weight): 96 kg
+2025-01-25 17:26:42,298 
+=== 히터 상태 ===
+2025-01-25 17:26:42,298 [A] JACKET HEATER: 99°C
+2025-01-25 17:26:42,299 [A] LINE HEATER: 23°C
+2025-01-25 17:26:42,299 [B] JACKET HEATER: 99°C
+2025-01-25 17:26:42,299 [B] LINE HEATER: 33°C
+2025-01-25 17:26:42,299 
+=== A Port 데이터 ===
+2025-01-25 17:26:42,300 [A] CGA 체결 Torque 설정값: 0 kgf·cm
+2025-01-25 17:26:42,300 [A] CAP 체결 Torque 설정값: 75 kgf·cm
+2025-01-25 17:26:42,300 [A] 실린더 Up/Down Pos 현재값: 93 mm
+2025-01-25 17:26:42,300 [A] 실린더 Barcode Data: ^BG6HJAQY122K7CXBAXTKV6HVNA3JL
+2025-01-25 17:26:42,300 [A] Port 가스 종류: [69, 46, 37, 41, 20]
+2025-01-25 17:26:42,301 
+=== B Port 데이터 ===
+2025-01-25 17:26:42,301 [B] CGA 체결 Torque 설정값: 48 kgf·cm
+2025-01-25 17:26:42,301 [B] CAP 체결 Torque 설정값: 10 kgf·cm
+2025-01-25 17:26:42,301 [B] 실린더 Up/Down Pos 현재값: 100 mm
+2025-01-25 17:26:42,301 [B] 실린더 Barcode Data: 2NTCRJHMLRMQXY9VWL4WZ02AP9S68M
+2025-01-25 17:26:42,301 [B] Port 가스 종류: [8, 39, 8, 19, 35]
+2025-01-25 17:26:42,301 
+=== Gas Cabinet Bit Area Data ===
+2025-01-25 17:26:42,302 
+[100] 기본 신호:
+2025-01-25 17:26:42,302 EMG Signal: False
+2025-01-25 17:26:42,302 Heart Bit: True
+2025-01-25 17:26:42,302 Run/Stop Signal: False
+2025-01-25 17:26:42,302 Server Connected Bit: False
+2025-01-25 17:26:42,303 T-LAMP RED: False
+2025-01-25 17:26:42,303 T-LAMP YELLOW: True
+2025-01-25 17:26:42,303 T-LAMP GREEN: False
+2025-01-25 17:26:42,303 Touch 수동동작中 Signal: False
+2025-01-25 17:26:42,303 
+[101] 밸브 상태:
+2025-01-25 17:26:42,303 AV1A: False
+2025-01-25 17:26:42,303 AV2A: False
+2025-01-25 17:26:42,303 AV3A: True
+2025-01-25 17:26:42,303 AV4A: True
+2025-01-25 17:26:42,304 AV5A: True
+2025-01-25 17:26:42,304 AV1B: True
+2025-01-25 17:26:42,304 AV2B: True
+2025-01-25 17:26:42,304 AV3B: True
+2025-01-25 17:26:42,304 AV4B: False
+2025-01-25 17:26:42,304 AV5B: False
+2025-01-25 17:26:42,305 AV7: False
+2025-01-25 17:26:42,305 AV8: False
+2025-01-25 17:26:42,305 AV9: False
+2025-01-25 17:26:42,305 
+[102] 센서 및 릴레이 상태:
+2025-01-25 17:26:42,305 JACKET HEATER A RELAY: False
+2025-01-25 17:26:42,305 LINE HEATER A RELAY: True
+2025-01-25 17:26:42,305 JACKET HEATER B RELAY: False
+2025-01-25 17:26:42,305 LINE HEATER B RELAY: False
+2025-01-25 17:26:42,306 GAS LEAK SHUT DOWN: False
+2025-01-25 17:26:42,306 VMB STOP SIGNAL: True
+2025-01-25 17:26:42,306 UV/IR SENSOR: True
+2025-01-25 17:26:42,306 HIGH TEMP SENSOR: True
+2025-01-25 17:26:42,306 SMOKE SENSOR: False
+2025-01-25 17:26:42,306 
+[103] Port 요청 상태:
+2025-01-25 17:26:42,306 [A] Port Insert Request: False
+2025-01-25 17:26:42,306 [A] Port Insert Complete: True
+2025-01-25 17:26:42,306 [A] Port Remove Request: True
+2025-01-25 17:26:42,307 [A] Port Remove Complete: True
+2025-01-25 17:26:42,307 
+[105] 실린더 및 도어 상태:
+2025-01-25 17:26:42,307 [A] Port 실린더 유무: False
+2025-01-25 17:26:42,307 [B] Port 실린더 유무: False
+2025-01-25 17:26:42,307 Door Open 완료: False
+2025-01-25 17:26:42,307 Door Close 완료: False
+2025-01-25 17:26:42,307 
+[110] A Port 작업 상태:
+2025-01-25 17:26:42,307 [A] Close the Cylinder: False
+2025-01-25 17:26:42,308 [A] 1st Purge before Exchange: False
+2025-01-25 17:26:42,308 [A] Decompression Test: False
+2025-01-25 17:26:42,308 [A] 2nd Purge before Exchange: False
+2025-01-25 17:26:42,308 [A] Exchange Cylinder: False
+2025-01-25 17:26:42,308 [A] 1st Purge after Exchange: False
+2025-01-25 17:26:42,308 [A] Pressure Test: False
+2025-01-25 17:26:42,308 [A] 2nd Purge after Exchange: False
+2025-01-25 17:26:42,308 [A] Purge Completed: False
+2025-01-25 17:26:42,308 [A] Prepare to Supply: False
+2025-01-25 17:26:42,309 [A] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:42,309 [A] Gas Supply: False
+2025-01-25 17:26:42,309 [A] Ready to Supply: False
+2025-01-25 17:26:42,309 
+[115] B Port 작업 상태:
+2025-01-25 17:26:42,309 [B] Close the Cylinder: False
+2025-01-25 17:26:42,309 [B] 1st Purge before Exchange: False
+2025-01-25 17:26:42,309 [B] Decompression Test: False
+2025-01-25 17:26:42,309 [B] 2nd Purge before Exchange: False
+2025-01-25 17:26:42,309 [B] Exchange Cylinder: False
+2025-01-25 17:26:42,309 [B] 1st Purge after Exchange: False
+2025-01-25 17:26:42,309 [B] Pressure Test: False
+2025-01-25 17:26:42,310 [B] 2nd Purge after Exchange: False
+2025-01-25 17:26:42,310 [B] Purge Completed: False
+2025-01-25 17:26:42,310 [B] Prepare to Supply: False
+2025-01-25 17:26:42,310 [B] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:42,310 [B] Gas Supply: False
+2025-01-25 17:26:42,310 [B] Ready to Supply: False
+2025-01-25 17:26:42,310 
+[116] B Port 상세 상태:
+2025-01-25 17:26:42,310 [B] Cylinder Ready: False
+2025-01-25 17:26:42,310 [B] CGA Disconnect Complete: True
+2025-01-25 17:26:42,310 [B] CGA Connect Complete: True
+2025-01-25 17:26:42,311 [B] Cylinder Valve Open Complete: False
+2025-01-25 17:26:42,311 [B] Cylinder Valve Close Complete: True
+2025-01-25 17:26:42,311 [B] Cylinder Valve Open Status: True
+2025-01-25 17:26:42,311 [B] Cylinder Lift Unit Ready: True
+2025-01-25 17:26:42,311 [B] Cylinder Lift Unit Moving Up: False
+2025-01-25 17:26:42,311 [B] Cylinder Lift Unit Moving Down: False
+2025-01-25 17:26:42,311 [B] CGA Separation In Progress: True
+2025-01-25 17:26:42,311 [B] CGA Connection In Progress: True
+2025-01-25 17:26:42,311 [B] Cylinder Cap Separation In Progress: True
+2025-01-25 17:26:42,311 [B] Cylinder Valve Open In Progress: True
+2025-01-25 17:26:42,312 [B] Cylinder Valve Close In Progress: False
+2025-01-25 17:26:42,312 [B] Cylinder Alignment In Progress: False
+2025-01-25 17:26:42,312 [B] Cylinder Turn In Progress: False
+2025-01-25 17:26:42,312 
+[117] B Port 추가 상태:
+2025-01-25 17:26:42,312 [B] Cylinder Turn Complete: True
+2025-01-25 17:26:42,312 [B] Cylinder Clamp Complete: True
+2025-01-25 17:26:42,312 [B] CGA Connect Complete Status: False
+2025-01-25 17:26:47,330 
+=== Gas Cabinet PLC Data Area ===
+2025-01-25 17:26:47,331 Bunker ID: 0
+2025-01-25 17:26:47,332 Gas Cabinet ID: 3
+2025-01-25 17:26:47,333 Gas Cabinet 가스 종류: [20, 26, 46, 27, 13]
+2025-01-25 17:26:47,333 
+=== 시스템 상태 ===
+2025-01-25 17:26:47,334 SEND AND RECEIVE FOR MACHINE CODE: 32
+2025-01-25 17:26:47,335 Gas Cabinet Alarm Code: 218
+2025-01-25 17:26:47,335 Gas Cabinet Alarm Message: Unknown Alarm Code
+2025-01-25 17:26:47,336 
+=== 센서 데이터 ===
+2025-01-25 17:26:47,337 PT1A: 0 PSI
+2025-01-25 17:26:47,338 PT2A: 18 PSI
+2025-01-25 17:26:47,338 PT1B: 114 PSI
+2025-01-25 17:26:47,339 PT2B: 985 PSI
+2025-01-25 17:26:47,340 PT3: 582 PSI
+2025-01-25 17:26:47,340 PT4: 906 PSI
+2025-01-25 17:26:47,340 WA (A Port Weight): 924 kg
+2025-01-25 17:26:47,340 WB (B Port Weight): 73 kg
+2025-01-25 17:26:47,341 
+=== 히터 상태 ===
+2025-01-25 17:26:47,341 [A] JACKET HEATER: 77°C
+2025-01-25 17:26:47,341 [A] LINE HEATER: 73°C
+2025-01-25 17:26:47,341 [B] JACKET HEATER: 86°C
+2025-01-25 17:26:47,341 [B] LINE HEATER: 33°C
+2025-01-25 17:26:47,342 
+=== A Port 데이터 ===
+2025-01-25 17:26:47,342 [A] CGA 체결 Torque 설정값: 0 kgf·cm
+2025-01-25 17:26:47,342 [A] CAP 체결 Torque 설정값: 72 kgf·cm
+2025-01-25 17:26:47,342 [A] 실린더 Up/Down Pos 현재값: 40 mm
+2025-01-25 17:26:47,342 [A] 실린더 Barcode Data: ?SVGP97EZB10FQZQQF9L938OXYE2B6
+2025-01-25 17:26:47,342 [A] Port 가스 종류: [66, 49, 27, 25, 50]
+2025-01-25 17:26:47,343 
+=== B Port 데이터 ===
+2025-01-25 17:26:47,343 [B] CGA 체결 Torque 설정값: 234 kgf·cm
+2025-01-25 17:26:47,343 [B] CAP 체결 Torque 설정값: 72 kgf·cm
+2025-01-25 17:26:47,343 [B] 실린더 Up/Down Pos 현재값: 46 mm
+2025-01-25 17:26:47,344 [B] 실린더 Barcode Data: KF0VA2H34NK10PP751MOU2KRTDIZNC
+2025-01-25 17:26:47,344 [B] Port 가스 종류: [50, 13, 15, 40, 3]
+2025-01-25 17:26:47,344 
+=== Gas Cabinet Bit Area Data ===
+2025-01-25 17:26:47,344 
+[100] 기본 신호:
+2025-01-25 17:26:47,344 EMG Signal: True
+2025-01-25 17:26:47,344 Heart Bit: True
+2025-01-25 17:26:47,344 Run/Stop Signal: True
+2025-01-25 17:26:47,345 Server Connected Bit: True
+2025-01-25 17:26:47,345 T-LAMP RED: False
+2025-01-25 17:26:47,345 T-LAMP YELLOW: True
+2025-01-25 17:26:47,345 T-LAMP GREEN: False
+2025-01-25 17:26:47,345 Touch 수동동작中 Signal: False
+2025-01-25 17:26:47,345 
+[101] 밸브 상태:
+2025-01-25 17:26:47,345 AV1A: True
+2025-01-25 17:26:47,345 AV2A: False
+2025-01-25 17:26:47,345 AV3A: False
+2025-01-25 17:26:47,345 AV4A: True
+2025-01-25 17:26:47,345 AV5A: False
+2025-01-25 17:26:47,345 AV1B: False
+2025-01-25 17:26:47,346 AV2B: False
+2025-01-25 17:26:47,346 AV3B: True
+2025-01-25 17:26:47,346 AV4B: False
+2025-01-25 17:26:47,346 AV5B: False
+2025-01-25 17:26:47,346 AV7: False
+2025-01-25 17:26:47,346 AV8: False
+2025-01-25 17:26:47,346 AV9: False
+2025-01-25 17:26:47,347 
+[102] 센서 및 릴레이 상태:
+2025-01-25 17:26:47,347 JACKET HEATER A RELAY: False
+2025-01-25 17:26:47,347 LINE HEATER A RELAY: False
+2025-01-25 17:26:47,347 JACKET HEATER B RELAY: True
+2025-01-25 17:26:47,347 LINE HEATER B RELAY: True
+2025-01-25 17:26:47,347 GAS LEAK SHUT DOWN: True
+2025-01-25 17:26:47,347 VMB STOP SIGNAL: False
+2025-01-25 17:26:47,347 UV/IR SENSOR: False
+2025-01-25 17:26:47,348 HIGH TEMP SENSOR: True
+2025-01-25 17:26:47,348 SMOKE SENSOR: False
+2025-01-25 17:26:47,348 
+[103] Port 요청 상태:
+2025-01-25 17:26:47,348 [A] Port Insert Request: False
+2025-01-25 17:26:47,348 [A] Port Insert Complete: True
+2025-01-25 17:26:47,348 [A] Port Remove Request: True
+2025-01-25 17:26:47,349 [A] Port Remove Complete: True
+2025-01-25 17:26:47,349 
+[105] 실린더 및 도어 상태:
+2025-01-25 17:26:47,349 [A] Port 실린더 유무: False
+2025-01-25 17:26:47,349 [B] Port 실린더 유무: False
+2025-01-25 17:26:47,349 Door Open 완료: False
+2025-01-25 17:26:47,349 Door Close 완료: False
+2025-01-25 17:26:47,349 
+[110] A Port 작업 상태:
+2025-01-25 17:26:47,349 [A] Close the Cylinder: False
+2025-01-25 17:26:47,349 [A] 1st Purge before Exchange: False
+2025-01-25 17:26:47,349 [A] Decompression Test: False
+2025-01-25 17:26:47,349 [A] 2nd Purge before Exchange: False
+2025-01-25 17:26:47,350 [A] Exchange Cylinder: False
+2025-01-25 17:26:47,350 [A] 1st Purge after Exchange: False
+2025-01-25 17:26:47,350 [A] Pressure Test: False
+2025-01-25 17:26:47,350 [A] 2nd Purge after Exchange: False
+2025-01-25 17:26:47,350 [A] Purge Completed: False
+2025-01-25 17:26:47,350 [A] Prepare to Supply: False
+2025-01-25 17:26:47,350 [A] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:47,350 [A] Gas Supply: False
+2025-01-25 17:26:47,350 [A] Ready to Supply: False
+2025-01-25 17:26:47,350 
+[115] B Port 작업 상태:
+2025-01-25 17:26:47,350 [B] Close the Cylinder: False
+2025-01-25 17:26:47,350 [B] 1st Purge before Exchange: False
+2025-01-25 17:26:47,350 [B] Decompression Test: False
+2025-01-25 17:26:47,351 [B] 2nd Purge before Exchange: False
+2025-01-25 17:26:47,351 [B] Exchange Cylinder: False
+2025-01-25 17:26:47,351 [B] 1st Purge after Exchange: False
+2025-01-25 17:26:47,351 [B] Pressure Test: False
+2025-01-25 17:26:47,351 [B] 2nd Purge after Exchange: False
+2025-01-25 17:26:47,351 [B] Purge Completed: False
+2025-01-25 17:26:47,351 [B] Prepare to Supply: False
+2025-01-25 17:26:47,351 [B] Gas Supply AV3 Open/Close Choose: False
+2025-01-25 17:26:47,351 [B] Gas Supply: False
+2025-01-25 17:26:47,351 [B] Ready to Supply: False
+2025-01-25 17:26:47,351 
+[116] B Port 상세 상태:
+2025-01-25 17:26:47,352 [B] Cylinder Ready: False
+2025-01-25 17:26:47,352 [B] CGA Disconnect Complete: False
+2025-01-25 17:26:47,352 [B] CGA Connect Complete: True
+2025-01-25 17:26:47,352 [B] Cylinder Valve Open Complete: False
+2025-01-25 17:26:47,352 [B] Cylinder Valve Close Complete: True
+2025-01-25 17:26:47,352 [B] Cylinder Valve Open Status: False
+2025-01-25 17:26:47,352 [B] Cylinder Lift Unit Ready: False
+2025-01-25 17:26:47,352 [B] Cylinder Lift Unit Moving Up: False
+2025-01-25 17:26:47,352 [B] Cylinder Lift Unit Moving Down: True
+2025-01-25 17:26:47,352 [B] CGA Separation In Progress: True
+2025-01-25 17:26:47,352 [B] CGA Connection In Progress: True
+2025-01-25 17:26:47,353 [B] Cylinder Cap Separation In Progress: True
+2025-01-25 17:26:47,353 [B] Cylinder Valve Open In Progress: True
+2025-01-25 17:26:47,353 [B] Cylinder Valve Close In Progress: False
+2025-01-25 17:26:47,353 [B] Cylinder Alignment In Progress: False
+2025-01-25 17:26:47,353 [B] Cylinder Turn In Progress: False
+2025-01-25 17:26:47,353 
+[117] B Port 추가 상태:
+2025-01-25 17:26:47,353 [B] Cylinder Turn Complete: False
+2025-01-25 17:26:47,353 [B] Cylinder Clamp Complete: True
+2025-01-25 17:26:47,353 [B] CGA Connect Complete Status: True

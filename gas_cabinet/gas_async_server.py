@@ -306,35 +306,7 @@ class ModbusServer:
                 if self.running:  # 정상 실행 중일 때만 에러 출력
                     print(f"Socket accept error: {e}")
                 await asyncio.sleep(1)
-
-    # 가스 공급 중지 명령 현재 사용 안함. 별도의 Command Server 구현 할 예정.
-    # async def stop_gas_supply(self, cabinet_id):  # 수정
-    #     try:
-    #         async with self.data_lock:
-    #             # 예: 특정 주소에 가스 공급 중지 명령 쓰기
-    #             self.datablock.setValues(211, [0])  # A Port 밸브 닫기
-    #             self.datablock.setValues(221, [0])  # B Port 밸브 닫기
-    #         return True
-    #     except Exception as e:
-    #         logging.error(f"가스 공급 중지 중 오류: {str(e)}")
-    #         return False
-
-    # async def emergency_stop_all(self):
-    #     """모든 캐비닛 긴급 정지"""
-    #     try:
-    #         async with self.data_lock:
-    #             # EMG Signal 설정 (200번 워드의 0번 비트)
-    #             self.datablock.setValues(200, [1])  # EMG 비트 설정
-    #             # 모든 밸브 닫기
-    #             self.datablock.setValues(211, [0])  # A Port
-    #             self.datablock.setValues(221, [0])  # B Port
-    #         return True
-    #     except Exception as e:
-    #         logging.error(f"긴급 정지 중 오류: {str(e)}")
-    #         return False
-
-    #Gas Cabinet의 전체 상태 데이터를 JSON 형식으로 구조화 
-    # 현재 상태를 Web 시스템에 제공하는 데이터 인터페이스 역할 제공    
+   
     async def get_current_data(self):
         """현재 모든 데이터 조회"""
         async with self.data_lock:
@@ -342,10 +314,6 @@ class ModbusServer:
             plc_data = self.datablock.getValues(0, 100)
             # 비트 데이터 영역 (100-117)
             bit_data = self.datablock.getValues(100, 18)
-            
-            print("\n=== 서버 데이터 읽기 ===")
-            print(f"PLC 데이터 첫 10개: {plc_data[:10]}")
-            print(f"Bit 데이터 첫 5개: {bit_data[:5]}")
 
             return {
                 "plc_data": {
@@ -544,15 +512,6 @@ class ModbusServer:
     async def update_values(self, address, values):
         async with self.data_lock:
             self.datablock.setValues(address, values)
-        # await self.broadcast_update(address, values)
-
-    # async def broadcast_update(self, address, value):
-    #     for client in self.clients:
-    #         try:
-    #             pass  # 실제 브로드캐스트 로직 구현 필요
-    #             #await self.send_socket_data(client, data)
-    #         except Exception as e:
-    #             logging.error(f"브로드캐스트 오류: {e}")
 
     async def on_client_connect(self, client_socket):
         """클라이언트 연결 시 호출되는 콜백"""
