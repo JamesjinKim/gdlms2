@@ -1,4 +1,5 @@
 from pymodbus.client import AsyncModbusTcpClient
+from pymodbus.exceptions import ModbusIOException
 import random
 import asyncio
 import logging
@@ -36,90 +37,165 @@ def generate_plc_data() -> list:
     return data
 
 def generate_bit_data() -> list:
+    """Generate bit data for PLC Bit area based on the provided Modbus addresses and bit indices."""
     bit_data = []
-    
-    # Word 100 (Basic signals)
-    word_100 = (1 << 3)  # Server Connected Bit
-    word_100 |= (1 << 0)  # EMG Signal
-    word_100 |= (1 << 1)  # Heart Bit
-    word_100 |= (1 << 2)  # Run/Stop Signal
-    bit_data.append(word_100)
+    word_dict = {
+        100: [
+            (0, "EMG Signal"),
+            (1, "Heart Bit"),
+            (2, "Run/Stop Signal"),
+            (3, "Server Connected Bit"),
+            (4, "T-LAMP RED"),
+            (5, "T-LAMP YELLOW"),
+            (6, "T-LAMP GREEN"),
+            (7, "Touch 수동동작中 Signal")
+        ],
+        105: [
+            (0, "[A] Port 실린더 유무"),
+            (1, "[B] Port 실린더 유무"),
+            (2, "[A] Worker Door Open"),
+            (3, "[A] Worker Door Close"),
+            (4, "[A] Bunker Door Open"),
+            (5, "[A] Bunker Door Close"),
+            (6, "[B] Worker Door Open"),
+            (7, "[B] Worker Door Close"),
+            (8, "[B] Bunker Door Open"),
+            (9, "[B] Bunker Door Close")
+        ],
+        110: [
+            (0, "[A] Port 보호캡 분리 완료"),
+            (1, "[A] Port 보호캡 체결 완료"),
+            (2, "[A] Worker Door Open 완료"),
+            (3, "[A] Worker Door Close 완료"),
+            (4, "[A] Worker 투입 Ready"),
+            (5, "[A] Worker 투입 Complete"),
+            (6, "[A] Worker 배출 Ready"),
+            (7, "[A] Worker 배출 Complete"),
+            (8, "[A] Bunker Door Open 완료"),
+            (9, "[A] Bunker Door Close 완료"),
+            (10, "[A] Bunker 투입 Ready"),
+            (11, "[A] Bunker 투입 Complete"),
+            (12, "[A] Bunker 배출 Ready"),
+            (13, "[A] Bunker 배출 Complete"),
+            (14, "[A] Cylinder Align 진행중"),
+            (15, "[A] Cylinder Align 완료")
+        ],
+        111: [
+            (0, "[A] Cap Open 진행중"),
+            (1, "[A] Cap Close 진행중"),
+            (2, "[A] Cylinder 위치로 X축 이동중"),
+            (3, "[A] Cylinder 위치로 X축 이동완료"),
+            (4, "[A] Cap 위치 찾는중"),
+            (5, "[A] Cylinder Neck 위치 찾는중"),
+            (6, "[A] Worker door Open 진행중"),
+            (7, "[A] Worker door Close 진행중"),
+            (8, "[A] Bunker door Open 진행중"),
+            (9, "[A] Bunker door Close 진행중")
+        ],
+        115: [
+            (0, "[B] Port 보호캡 분리 완료"),
+            (1, "[B] Port 보호캡 체결 완료"),
+            (2, "[B] Worker Door Open 완료"),
+            (3, "[B] Worker Door Close 완료"),
+            (4, "[B] Worker 투입 Ready"),
+            (5, "[B] Worker 투입 Complete"),
+            (6, "[B] Worker 배출 Ready"),
+            (7, "[B] Worker 배출 Complete"),
+            (8, "[B] Bunker Door Open 완료"),
+            (9, "[B] Bunker Door Close 완료"),
+            (10, "[B] Bunker 투입 Ready"),
+            (11, "[B] Bunker 투입 Complete"),
+            (12, "[B] Bunker 배출 Ready"),
+            (13, "[B] Bunker 배출 Complete"),
+            (14, "[B] Cylinder Align 진행중"),
+            (15, "[B] Cylinder Align 완료")
+        ],
+        116: [
+            (0, "[B] Cap Open 진행중"),
+            (1, "[B] Cap Close 진행중"),
+            (2, "[B] Cylinder 위치로 X축 이동중"),
+            (3, "[B] Cylinder 위치로 X축 이동완료"),
+            (4, "[B] Cap 위치 찾는중"),
+            (5, "[B] Cylinder Neck 위치 찾는중"),
+            (6, "[B] Worker door Open 진행중"),
+            (7, "[B] Worker door Close 진행중"),
+            (8, "[B] Bunker door Open 진행중"),
+            (9, "[B] Bunker door Close 진행중")
+        ]
+    }
 
-    # Word 101-104 (Empty)
-    bit_data.extend([0] * 4)
+    for address, bits in word_dict.items():
+        word = 0
+        for bit, description in bits:
+            bit_value = random.choice([0, 1])
+            word |= bit_value << bit
+        bit_data.append(word)
 
-    # Word 105 (Door status)
-    word_105 = 0b1111111111  # All 10 bits True
-    bit_data.append(word_105)
-
-    # Word 106-109 (Empty)
-    bit_data.extend([0] * 4)
-
-    # Word 110 (A Port status)
-    word_110 = 0b1111111111111111  # All 16 bits True
-    bit_data.append(word_110)
-
-    # Word 111 (A Port detailed status)
-    word_111 = 0b1111111111  # All 10 bits True
-    bit_data.append(word_111)
-
-    # Word 112-114 (Empty)
-    bit_data.extend([0] * 3)
-
-    # Word 115 (B Port status)
-    word_115 = 0b1111111111111111  # All 16 bits True
-    bit_data.append(word_115)
-
-    # Word 116 (B Port detailed status)
-    word_116 = 0b1111111111  # All 10 bits True
-    bit_data.append(word_116)
-   
     return bit_data
 
 async def run_client():
     client = None
     try:
-        client = AsyncModbusTcpClient('127.0.0.1', port=5020)
-        await client.connect()
-        logger.info("서버 연결 성공!")
+        client = AsyncModbusTcpClient('127.0.0.1', port=5020)  # 'unit' 인자 제거
+        connected = await client.connect()
+        if not connected:
+            logger.error("Server connection failed!")
+            return
+
+        logger.info("Server connection successful!")
 
         while True:
             try:
                 # Generate and combine data
-                register_data = generate_plc_data()
+                plc_data = generate_plc_data()
                 bit_data = generate_bit_data()
 
-                # Combine register data and bit data
-                combined_data = register_data + bit_data
-                logger.info("=== 생성된 Stocker 데이터 ===")
+                # Combine register data and bit_data
+                combined_data = plc_data + bit_data
+                logger.info("=== Generated Stocker Data ===")
                 logger.info(f"Bunker ID: {combined_data[0]}")
                 logger.info(f"Stocker ID: {combined_data[1]}")
 
-                # Send data in blocks
+                # Send bit data using write_coils 
                 BLOCK_SIZE = 50
-                for i in range(0, len(combined_data), BLOCK_SIZE):
-                    block = combined_data[i:i + BLOCK_SIZE]
-                    await client.write_registers(address=i, values=block, slave=1)
-                logger.info("데이터 전송 성공")
+                for i in range(0, len(bit_data), BLOCK_SIZE):
+                    block = bit_data[i:i + BLOCK_SIZE]
+                    response = await client.read_coils(address=i, values=block, unit=1)  # 'unit' 인자 명시
+                    if not response.isError():
+                        logger.info(f"Block {i} bit data transmission successful")
+                    else:
+                        logger.error(f"Block {i} bit data transmission failed: {response}")
+                logger.info("Bit data transmission successful")
+
+                # Send register data using write_registers 
+                for i in range(0, len(plc_data), BLOCK_SIZE):
+                    block = plc_data[i:i + BLOCK_SIZE]
+                    response = await client.write_registers(address=i, values=block, unit=1)  # 'unit' 인자 명시
+                    if not response.isError():
+                        logger.info(f"Block {i} register data transmission successful")
+                    else:
+                        logger.error(f"Block {i} register data transmission failed: {response}")
+                logger.info("Register data transmission successful")
 
                 # Wait before sending the next set of data
                 await asyncio.sleep(5)
             except asyncio.CancelledError:
-                logger.info("작업이 취소되었습니다.")
+                logger.info("Operation cancelled.")
                 break
             except Exception as e:
-                logger.error(f"데이터 전송 중 오류 발생: {e}")
+                logger.error(f"Data transmission error: {e}")
                 break
-
     except Exception as e:
-        logger.error(f"연결 오류: {e}")
+        logger.error(f"Connection error: {e}")
     finally:
-        if client and client.connected:
-            await client.close()
-        logger.info("클라이언트 연결 종료 완료")
+        if client:
+            await client.close()  # 'await' 키워드 사용
+            logger.info("Client connection closed.")
 
 if __name__ == "__main__":
     try:
         asyncio.run(run_client())
     except KeyboardInterrupt:
         logger.info("사용자가 프로그램을 중단했습니다.")
+    except Exception as e:
+        logger.error(f"프로그램 실행 중 오류 발생: {e}")
