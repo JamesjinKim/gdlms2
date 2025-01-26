@@ -1,7 +1,7 @@
+from pymodbus.client import AsyncModbusTcpClient
 import random
 import asyncio
 import logging
-from pymodbus.client import AsyncModbusTcpClient
 
 # Logging setup
 logging.basicConfig(
@@ -36,89 +36,44 @@ def generate_plc_data() -> list:
     return data
 
 def generate_bit_data() -> list:
-    """Generate bit data for PLC Bit area."""
     bit_data = []
+    
     # Word 100 (Basic signals)
-    word_100 = 0
-    word_100 |= random.choice([0, 1]) << 0  # EMG Signal
-    word_100 |= random.choice([0, 1]) << 1  # Heart Bit
-    word_100 |= random.choice([0, 1]) << 2  # Run/Stop Signal
-    word_100 |= random.choice([0, 1]) << 3  # Server Connected Bit
-    word_100 |= random.choice([0, 1]) << 4  # T-LAMP RED
-    word_100 |= random.choice([0, 1]) << 5  # T-LAMP YELLOW
-    word_100 |= random.choice([0, 1]) << 6  # T-LAMP GREEN
-    word_100 |= random.choice([0, 1]) << 7  # Touch 수동동작中 Signal
+    word_100 = (1 << 3)  # Server Connected Bit
+    word_100 |= (1 << 0)  # EMG Signal
+    word_100 |= (1 << 1)  # Heart Bit
+    word_100 |= (1 << 2)  # Run/Stop Signal
     bit_data.append(word_100)
 
-    # Word 101 (Valve status)
-    word_101 = 0
-    for i in range(13):  # AV1A ~ AV9
-        word_101 |= random.choice([0, 1]) << i
-    bit_data.append(word_101)
-
-    # Word 102 (Heater and sensor status)
-    word_102 = 0
-    for i in range(9):  # Various sensors and relays
-        word_102 |= random.choice([0, 1]) << i
-    bit_data.append(word_102)
-
-    # Word 103 (Port requests and completions)
-    word_103 = 0
-    for i in range(12):  # Port insert/remove requests and completions
-        word_103 |= random.choice([0, 1]) << i
-    bit_data.append(word_103)
-
-    # Word 104 (Empty)
-    bit_data.append(0)
-
-    # Word 105 (Door and cylinder status)
-    word_105 = 0
-    for i in range(4):  # Cylinder presence and door status
-        word_105 |= random.choice([0, 1]) << i
-    bit_data.append(word_105)
-
-    # Words 106-109 (Empty)
+    # Word 101-104 (Empty)
     bit_data.extend([0] * 4)
 
-    # Word 110 ([A] Port operation status)
-    word_110 = 0
-    for i in range(13):  # A Port operation flags
-        word_110 |= random.choice([0, 1]) << i
+    # Word 105 (Door status)
+    word_105 = 0b1111111111  # All 10 bits True
+    bit_data.append(word_105)
+
+    # Word 106-109 (Empty)
+    bit_data.extend([0] * 4)
+
+    # Word 110 (A Port status)
+    word_110 = 0b1111111111111111  # All 16 bits True
     bit_data.append(word_110)
 
-    # Word 111 ([A] Port detailed status)
-    word_111 = 0
-    for i in range(16):  # A Port detailed status flags
-        word_111 |= random.choice([0, 1]) << i
+    # Word 111 (A Port detailed status)
+    word_111 = 0b1111111111  # All 10 bits True
     bit_data.append(word_111)
 
-    # Word 112 ([A] Port additional status)
-    word_112 = 0
-    for i in range(3):  # A Port additional status flags
-        word_112 |= random.choice([0, 1]) << i
-    bit_data.append(word_112)
+    # Word 112-114 (Empty)
+    bit_data.extend([0] * 3)
 
-    # Words 113-114 (Empty)
-    bit_data.extend([0] * 2)
-
-    # Word 115 ([B] Port operation status)
-    word_115 = 0
-    for i in range(13):  # B Port operation flags
-        word_115 |= random.choice([0, 1]) << i
+    # Word 115 (B Port status)
+    word_115 = 0b1111111111111111  # All 16 bits True
     bit_data.append(word_115)
 
-    # Word 116 ([B] Port detailed status)
-    word_116 = 0
-    for i in range(16):  # B Port detailed status flags
-        word_116 |= random.choice([0, 1]) << i
+    # Word 116 (B Port detailed status)
+    word_116 = 0b1111111111  # All 10 bits True
     bit_data.append(word_116)
-
-    # Word 117 ([B] Port additional status)
-    word_117 = 0
-    for i in range(3):  # B Port additional status flags
-        word_117 |= random.choice([0, 1]) << i
-    bit_data.append(word_117)
-
+   
     return bit_data
 
 async def run_client():

@@ -6,9 +6,10 @@ import signal
 
 # 로깅 설정
 logging.basicConfig(
-    format='%(asctime)s %(message)s',
+    format='%(asctime)s %(name)s %(levelname)s %(message)s',
     level=logging.INFO,
 )
+logger = logging.getLogger("GasCabinetClient")
 
 def generate_plc_data():
     """PLC 데이터 생성 함수 - Data area (0-99) 데이터 생성"""
@@ -153,149 +154,46 @@ def generate_bit_data():
     return bit_data
 
 async def run_client():
-    # 클라이언트 설정
     client = None
-    loop = asyncio.get_running_loop()
-    should_exit = asyncio.Event()
-
-    async def read_time_sync_data():
-        """시간 동기화 데이터 읽기"""
-        try:
-            if client and client.connected:
-                # 주소 0-5에서 시간 데이터 읽기
-                result = await client.read_holding_registers(
-                    address=0,
-                    count=6,
-                    slave=1
-                )
-                if result and not result.isError():
-                    time_data = result.registers
-                    print("\n=== 수신된 시간 동기화 데이터 ===")
-                    print(f"날짜: {time_data[0]:04d}년 {time_data[1]:02d}월 {time_data[2]:02d}일")
-                    print(f"시간: {time_data[3]:02d}시 {time_data[4]:02d}분 {time_data[5]:02d}초")
-                    return time_data
-        except Exception as e:
-            print(f"시간 동기화 데이터 읽기 오류: {e}")
-        return None
-    
-    async def connect_client():
-        nonlocal client
-        try:
-            if client is None or not client.connected:
-                print("\n=== Modbus TCP 클라이언트 연결 시도 ===")
-                client = AsyncModbusTcpClient('127.0.0.1', port=5020)
-                connected = await client.connect()
-                if connected:
-                    print("서버 연결 성공!")
-                    # 연결 직후 시간 동기화 데이터 읽기
-                    await read_time_sync_data()
-                else:
-                    print("서버 연결 실패!")
-                return connected
-            return client.connected
-        except Exception as e:
-            print(f"연결 오류: {e}")
-            return False
-
-    async def send_data():
-        """데이터 전송 함수"""
-        if not await connect_client():
-            print("서버에 연결할 수 없습니다. 재시도 중...")
-            return
-                
-        try:
-            # 시간 동기화 데이터 읽기
-            await read_time_sync_data()
-
-            # Data area (0-99) 데이터 전송
-            data = generate_plc_data()
-            print("\n=== 생성된 PLC 데이터 ===")
-            print(f"Bunker ID: {data[0]}")
-            print(f"Cabinet ID: {data[1]}")
-            print(f"Gas Type: {data[2:7]}")
-            
-            # 각 레지스터를 개별적으로 전송
-            for i, value in enumerate(data):
-                try:
-                    if client and client.connected:
-                        result = await client.write_register(
-                            address=i,      # 0-99 범위의 주소
-                            value=value,
-                            slave=1
-                        )
-                        if result and hasattr(result, 'isError') and result.isError():
-                            print(f"데이터 전송 실패: address={i}, value={value}")
-                    else:
-                        print("클라이언트 연결이 끊어졌습니다.")
-                        break
-                except Exception as e:
-                    print(f"레지스터 쓰기 오류 - address={i}: {e}")
-
-            # Bit area (100-117) 데이터 전송
-            bit_data = generate_bit_data()
-            print(f"\n=== 생성된 Bit 데이터 ===")
-            print(f"Bit data length: {len(bit_data)}")
-            
-            # 각 비트 데이터를 개별적으로 전송
-            for i, value in enumerate(bit_data):
-                try:
-                    if client and client.connected:
-                        result = await client.write_register(
-                            address=100 + i,    # 100-117 범위의 주소
-                            value=value,
-                            slave=1
-                        )
-                        if result and hasattr(result, 'isError') and result.isError():
-                            print(f"비트 데이터 전송 실패: address={100+i}, value={value}")
-                    else:
-                        print("클라이언트 연결이 끊어졌습니다.")
-                        break
-                except Exception as e:
-                    print(f"비트 레지스터 쓰기 오류 - address={100+i}: {e}")
-
-        except Exception as e:
-            print(f"데이터 전송 중 오류 발생: {e}")
-
-    async def client_loop():
-        try:
-            while not should_exit.is_set():
-                await send_data()
-                await asyncio.sleep(5)
-        except asyncio.CancelledError:
-            print("클라이언트 루프가 취소되었습니다.")
-        except Exception as e:
-            print(f"클라이언트 루프 오류: {e}")
-
-    def signal_handler():
-        print("\n프로그램 종료 시작...")
-        should_exit.set()
-        for task in asyncio.all_tasks(loop):
-            if task is not asyncio.current_task():
-                task.cancel()
-
     try:
-        loop.add_signal_handler(signal.SIGINT, signal_handler)
-        print("\n=== Modbus TCP 클라이언트 시작 ===")
-        await client_loop()
-    except asyncio.CancelledError:
-        print("프로그램이 취소되었습니다.")
-    except Exception as e:
-        print(f"예기치 않은 오류: {e}")
-    finally:
-        # 클라이언트 종료 부분 수정
-        if client and hasattr(client, 'connected'):
-            try:
-                if client.connected:
-                    await client.close()
-                    print("클라이언트 연결 종료 완료")
-                else:
-                    print("클라이언트가 이미 연결 해제된 상태입니다.")
-            except Exception as e:
-                print(f"클라이언트 종료 중 오류 발생: {e}")
-        else:
-            print("클라이언트가 초기화되지 않았거나 이미 종료되었습니다.")
-        print("클라이언트 프로그램 종료")
+        client = AsyncModbusTcpClient('127.0.0.1', port=5020)
+        await client.connect()
+        logger.info("서버 연결 성공!")
 
+        while True:
+            try:
+                # Generate and combine data
+                register_data = generate_plc_data()
+                bit_data = generate_bit_data()
+
+                # Combine register data and bit data
+                combined_data = register_data + bit_data
+                logger.info("=== 생성된 Stocker 데이터 ===")
+                logger.info(f"Bunker ID: {combined_data[0]}")
+                logger.info(f"Stocker ID: {combined_data[1]}")
+
+                # Send data in blocks
+                BLOCK_SIZE = 50
+                for i in range(0, len(combined_data), BLOCK_SIZE):
+                    block = combined_data[i:i + BLOCK_SIZE]
+                    await client.write_registers(address=i, values=block, slave=1)
+                logger.info("데이터 전송 성공")
+
+                # Wait before sending the next set of data
+                await asyncio.sleep(5)
+            except asyncio.CancelledError:
+                logger.info("작업이 취소되었습니다.")
+                break
+            except Exception as e:
+                logger.error(f"데이터 전송 중 오류 발생: {e}")
+                break
+
+    except Exception as e:
+        logger.error(f"연결 오류: {e}")
+    finally:
+        if client and client.connected:
+            await client.close()
+        logger.info("클라이언트 연결 종료 완료")
 
 if __name__ == "__main__":
     try:

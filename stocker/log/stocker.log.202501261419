@@ -1,0 +1,495 @@
+2025-01-26 14:19:57,543 
+=== Stocker PLC Data Area ===
+2025-01-26 14:19:57,561 Bunker ID: 0
+2025-01-26 14:19:57,561 Stocker ID: 13
+2025-01-26 14:19:57,561 Gas Stocker 가스 종류: [32, 10, 5, 10, 7]
+2025-01-26 14:19:57,562 Stocker Alarm Code: 0
+2025-01-26 14:19:57,562 X축 현재값: 0
+2025-01-26 14:19:57,562 Z축 현재값: 971
+2025-01-26 14:19:57,562 Cap Unit 축 보호캡 분리 Torque 설정값: 849
+2025-01-26 14:19:57,562 Cap Unit 축 보호캡 체결 Torque 설정값: 100
+2025-01-26 14:19:57,562 [A] Port Barcode Data: ?OQI3QZT2U529UVYVBIORWTXY0SDYK
+2025-01-26 14:19:57,562 [B] Port Barcode Data: BLD1MU8TQQ1OPLJPHPX7BE6NQ7XD59
+2025-01-26 14:19:57,562 [A] Port 가스 종류: [69, 8, 10, 6, 5]
+2025-01-26 14:19:57,562 [B] Port 가스 종류: [9, 3, 7, 4, 4]
+2025-01-26 14:19:57,564 ==================
+2025-01-26 14:19:57,564 
+=== Stocker Bit Area Data ===
+2025-01-26 14:19:57,565 
+[100] Basic Signals:
+2025-01-26 14:19:57,565 EMG Signal: False
+2025-01-26 14:19:57,565 Heart Bit: True
+2025-01-26 14:19:57,565 Run/Stop Signal: False
+2025-01-26 14:19:57,565 Server Connected Bit: False
+2025-01-26 14:19:57,565 T-LAMP RED: False
+2025-01-26 14:19:57,565 T-LAMP YELLOW: False
+2025-01-26 14:19:57,565 T-LAMP GREEN: False
+2025-01-26 14:19:57,565 Touch 수동동작中 Signal: False
+2025-01-26 14:19:57,565 
+[105] Door and Cylinder Status:
+2025-01-26 14:19:57,565 [A] Port 실린더 유무: False
+2025-01-26 14:19:57,566 [B] Port 실린더 유무: False
+2025-01-26 14:19:57,566 [A] Worker Door Open: False
+2025-01-26 14:19:57,566 [A] Worker Door Close: False
+2025-01-26 14:19:57,566 [A] Bunker Door Open: False
+2025-01-26 14:19:57,566 [A] Bunker Door Close: False
+2025-01-26 14:19:57,566 [B] Worker Door Open: False
+2025-01-26 14:19:57,566 [B] Worker Door Close: False
+2025-01-26 14:19:57,566 [B] Bunker Door Open: False
+2025-01-26 14:19:57,566 [B] Bunker Door Close: False
+2025-01-26 14:19:57,566 
+[110] [A] Port Operation Status:
+2025-01-26 14:19:57,566 [A] Port 보호캡 분리 완료: False
+2025-01-26 14:19:57,567 [A] Port 보호캡 체결 완료: False
+2025-01-26 14:19:57,567 [A] Worker Door Open 완료: False
+2025-01-26 14:19:57,567 [A] Worker Door Close 완료: False
+2025-01-26 14:19:57,567 [A] Worker 투입 Ready: False
+2025-01-26 14:19:57,567 [A] Worker 투입 Complete: False
+2025-01-26 14:19:57,567 [A] Worker 배출 Ready: False
+2025-01-26 14:19:57,567 [A] Worker 배출 Comlete: False
+2025-01-26 14:19:57,567 [A] Bunker Door Open 완료: False
+2025-01-26 14:19:57,567 [A] Bunker Door Close 완료: False
+2025-01-26 14:19:57,568 [A] Bunker 투입 Ready: False
+2025-01-26 14:19:57,568 [A] Bunker 투입 Complete: False
+2025-01-26 14:19:57,568 [A] Bunker 배출 Ready: False
+2025-01-26 14:19:57,568 [A] Bunker 배출 Comlete: False
+2025-01-26 14:19:57,568 [A] Cylinder Align 진행중: False
+2025-01-26 14:19:57,568 [A] Cylinder Align 완료: False
+2025-01-26 14:19:57,568 
+[111] [A] Port Detailed Status:
+2025-01-26 14:19:57,568 [A] Cap Open 진행중: False
+2025-01-26 14:19:57,568 [A] Cap Close 진행중: False
+2025-01-26 14:19:57,568 [A] Cylinder 위치로 X축 이동중: False
+2025-01-26 14:19:57,568 [A] Cylinder 위치로 X축 이동완료: False
+2025-01-26 14:19:57,568 [A] Cap 위치 찾는중: False
+2025-01-26 14:19:57,569 [A] Cylinder Neck 위치 찾는중: False
+2025-01-26 14:19:57,569 [A] Worker door Open 진행중: False
+2025-01-26 14:19:57,569 [A] Worker door Close 진행중: False
+2025-01-26 14:19:57,569 [A] Bunker door Open 진행중: False
+2025-01-26 14:19:57,569 [A] Bunker door Close 진행중: False
+2025-01-26 14:19:57,569 
+[115] [B] Port Operation Status:
+2025-01-26 14:19:57,569 [B] Port 보호캡 분리 완료: False
+2025-01-26 14:19:57,569 [B] Port 보호캡 체결 완료: False
+2025-01-26 14:19:57,569 [B] Worker Door Open 완료: False
+2025-01-26 14:19:57,569 [B] Worker Door Close 완료: False
+2025-01-26 14:19:57,569 [B] Worker 투입 Ready: False
+2025-01-26 14:19:57,569 [B] Worker 투입 Complete: False
+2025-01-26 14:19:57,570 [B] Worker 배출 Ready: False
+2025-01-26 14:19:57,570 [B] Worker 배출 Comlete: False
+2025-01-26 14:19:57,570 [B] Bunker Door Open 완료: False
+2025-01-26 14:19:57,570 [B] Bunker Door Close 완료: False
+2025-01-26 14:19:57,570 [B] Bunker 투입 Ready: False
+2025-01-26 14:19:57,570 [B] Bunker 투입 Complete: False
+2025-01-26 14:19:57,570 [B] Bunker 배출 Ready: False
+2025-01-26 14:19:57,570 [B] Bunker 배출 Comlete: False
+2025-01-26 14:19:57,570 [B] Cylinder Align 진행중: False
+2025-01-26 14:19:57,570 [B] Cylinder Align 완료: False
+2025-01-26 14:19:57,570 
+[116] [B] Port Detailed Status:
+2025-01-26 14:19:57,571 [B] Cap Open 진행중: False
+2025-01-26 14:19:57,571 [B] Cap Close 진행중: False
+2025-01-26 14:19:57,571 [B] Cylinder 위치로 X축 이동중: False
+2025-01-26 14:19:57,571 [B] Cylinder 위치로 X축 이동완료: False
+2025-01-26 14:19:57,571 [B] Cap 위치 찾는중: False
+2025-01-26 14:19:57,571 [B] Cylinder Neck 위치 찾는중: False
+2025-01-26 14:19:57,571 [B] Worker door Open 진행중: False
+2025-01-26 14:19:57,571 [B] Worker door Close 진행중: False
+2025-01-26 14:19:57,571 [B] Bunker door Open 진행중: False
+2025-01-26 14:19:57,571 [B] Bunker door Close 진행중: False
+2025-01-26 14:20:02,578 
+=== Stocker PLC Data Area ===
+2025-01-26 14:20:02,578 Bunker ID: 0
+2025-01-26 14:20:02,578 Stocker ID: 84
+2025-01-26 14:20:02,579 Gas Stocker 가스 종류: [93, 6, 2, 5, 10]
+2025-01-26 14:20:02,579 Stocker Alarm Code: 0
+2025-01-26 14:20:02,579 X축 현재값: 0
+2025-01-26 14:20:02,579 Z축 현재값: 688
+2025-01-26 14:20:02,579 Cap Unit 축 보호캡 분리 Torque 설정값: 641
+2025-01-26 14:20:02,579 Cap Unit 축 보호캡 체결 Torque 설정값: 35
+2025-01-26 14:20:02,580 [A] Port Barcode Data: ?U1CQ639HWSEOTBJBVIVLGKZKMWHYU
+2025-01-26 14:20:02,580 [B] Port Barcode Data: S5Z89ZW3V601Y3KODVXOFKAXQL5WJC
+2025-01-26 14:20:02,580 [A] Port 가스 종류: [69, 4, 2, 10, 9]
+2025-01-26 14:20:02,580 [B] Port 가스 종류: [5, 9, 3, 4, 2]
+2025-01-26 14:20:02,580 ==================
+2025-01-26 14:20:02,580 
+=== Stocker Bit Area Data ===
+2025-01-26 14:20:02,580 
+[100] Basic Signals:
+2025-01-26 14:20:02,581 EMG Signal: False
+2025-01-26 14:20:02,581 Heart Bit: True
+2025-01-26 14:20:02,581 Run/Stop Signal: False
+2025-01-26 14:20:02,581 Server Connected Bit: False
+2025-01-26 14:20:02,581 T-LAMP RED: False
+2025-01-26 14:20:02,581 T-LAMP YELLOW: False
+2025-01-26 14:20:02,581 T-LAMP GREEN: False
+2025-01-26 14:20:02,581 Touch 수동동작中 Signal: False
+2025-01-26 14:20:02,581 
+[105] Door and Cylinder Status:
+2025-01-26 14:20:02,582 [A] Port 실린더 유무: False
+2025-01-26 14:20:02,582 [B] Port 실린더 유무: False
+2025-01-26 14:20:02,582 [A] Worker Door Open: False
+2025-01-26 14:20:02,582 [A] Worker Door Close: False
+2025-01-26 14:20:02,582 [A] Bunker Door Open: False
+2025-01-26 14:20:02,582 [A] Bunker Door Close: False
+2025-01-26 14:20:02,582 [B] Worker Door Open: False
+2025-01-26 14:20:02,582 [B] Worker Door Close: False
+2025-01-26 14:20:02,583 [B] Bunker Door Open: False
+2025-01-26 14:20:02,583 [B] Bunker Door Close: False
+2025-01-26 14:20:02,583 
+[110] [A] Port Operation Status:
+2025-01-26 14:20:02,583 [A] Port 보호캡 분리 완료: False
+2025-01-26 14:20:02,583 [A] Port 보호캡 체결 완료: False
+2025-01-26 14:20:02,583 [A] Worker Door Open 완료: False
+2025-01-26 14:20:02,583 [A] Worker Door Close 완료: False
+2025-01-26 14:20:02,583 [A] Worker 투입 Ready: False
+2025-01-26 14:20:02,583 [A] Worker 투입 Complete: False
+2025-01-26 14:20:02,584 [A] Worker 배출 Ready: False
+2025-01-26 14:20:02,584 [A] Worker 배출 Comlete: False
+2025-01-26 14:20:02,584 [A] Bunker Door Open 완료: False
+2025-01-26 14:20:02,584 [A] Bunker Door Close 완료: False
+2025-01-26 14:20:02,584 [A] Bunker 투입 Ready: False
+2025-01-26 14:20:02,585 [A] Bunker 투입 Complete: False
+2025-01-26 14:20:02,585 [A] Bunker 배출 Ready: False
+2025-01-26 14:20:02,585 [A] Bunker 배출 Comlete: False
+2025-01-26 14:20:02,585 [A] Cylinder Align 진행중: False
+2025-01-26 14:20:02,585 [A] Cylinder Align 완료: False
+2025-01-26 14:20:02,585 
+[111] [A] Port Detailed Status:
+2025-01-26 14:20:02,585 [A] Cap Open 진행중: False
+2025-01-26 14:20:02,585 [A] Cap Close 진행중: False
+2025-01-26 14:20:02,585 [A] Cylinder 위치로 X축 이동중: False
+2025-01-26 14:20:02,585 [A] Cylinder 위치로 X축 이동완료: False
+2025-01-26 14:20:02,585 [A] Cap 위치 찾는중: False
+2025-01-26 14:20:02,586 [A] Cylinder Neck 위치 찾는중: False
+2025-01-26 14:20:02,586 [A] Worker door Open 진행중: False
+2025-01-26 14:20:02,586 [A] Worker door Close 진행중: False
+2025-01-26 14:20:02,586 [A] Bunker door Open 진행중: False
+2025-01-26 14:20:02,586 [A] Bunker door Close 진행중: False
+2025-01-26 14:20:02,586 
+[115] [B] Port Operation Status:
+2025-01-26 14:20:02,586 [B] Port 보호캡 분리 완료: False
+2025-01-26 14:20:02,586 [B] Port 보호캡 체결 완료: False
+2025-01-26 14:20:02,586 [B] Worker Door Open 완료: False
+2025-01-26 14:20:02,586 [B] Worker Door Close 완료: False
+2025-01-26 14:20:02,586 [B] Worker 투입 Ready: False
+2025-01-26 14:20:02,586 [B] Worker 투입 Complete: False
+2025-01-26 14:20:02,587 [B] Worker 배출 Ready: False
+2025-01-26 14:20:02,587 [B] Worker 배출 Comlete: False
+2025-01-26 14:20:02,587 [B] Bunker Door Open 완료: False
+2025-01-26 14:20:02,587 [B] Bunker Door Close 완료: False
+2025-01-26 14:20:02,587 [B] Bunker 투입 Ready: False
+2025-01-26 14:20:02,587 [B] Bunker 투입 Complete: False
+2025-01-26 14:20:02,587 [B] Bunker 배출 Ready: False
+2025-01-26 14:20:02,588 [B] Bunker 배출 Comlete: False
+2025-01-26 14:20:02,588 [B] Cylinder Align 진행중: False
+2025-01-26 14:20:02,588 [B] Cylinder Align 완료: False
+2025-01-26 14:20:02,588 
+[116] [B] Port Detailed Status:
+2025-01-26 14:20:02,589 [B] Cap Open 진행중: False
+2025-01-26 14:20:02,589 [B] Cap Close 진행중: False
+2025-01-26 14:20:02,589 [B] Cylinder 위치로 X축 이동중: False
+2025-01-26 14:20:02,589 [B] Cylinder 위치로 X축 이동완료: False
+2025-01-26 14:20:02,589 [B] Cap 위치 찾는중: False
+2025-01-26 14:20:02,589 [B] Cylinder Neck 위치 찾는중: False
+2025-01-26 14:20:02,590 [B] Worker door Open 진행중: False
+2025-01-26 14:20:02,590 [B] Worker door Close 진행중: False
+2025-01-26 14:20:02,590 [B] Bunker door Open 진행중: False
+2025-01-26 14:20:02,590 [B] Bunker door Close 진행중: False
+2025-01-26 14:20:07,599 
+=== Stocker PLC Data Area ===
+2025-01-26 14:20:07,600 Bunker ID: 0
+2025-01-26 14:20:07,601 Stocker ID: 24
+2025-01-26 14:20:07,602 Gas Stocker 가스 종류: [46, 5, 6, 4, 6]
+2025-01-26 14:20:07,603 Stocker Alarm Code: 0
+2025-01-26 14:20:07,604 X축 현재값: 0
+2025-01-26 14:20:07,604 Z축 현재값: 701
+2025-01-26 14:20:07,605 Cap Unit 축 보호캡 분리 Torque 설정값: 85
+2025-01-26 14:20:07,605 Cap Unit 축 보호캡 체결 Torque 설정값: 34
+2025-01-26 14:20:07,606 [A] Port Barcode Data: ?EOV5E9TZKY6WAKXWMIZC49UAQX6FF
+2025-01-26 14:20:07,606 [B] Port Barcode Data: EDYLQP0I4YIFV723DMYBFGREO7MHZU
+2025-01-26 14:20:07,607 [A] Port 가스 종류: [78, 6, 1, 4, 4]
+2025-01-26 14:20:07,607 [B] Port 가스 종류: [3, 1, 10, 2, 6]
+2025-01-26 14:20:07,608 ==================
+2025-01-26 14:20:07,608 
+=== Stocker Bit Area Data ===
+2025-01-26 14:20:07,608 
+[100] Basic Signals:
+2025-01-26 14:20:07,609 EMG Signal: False
+2025-01-26 14:20:07,609 Heart Bit: False
+2025-01-26 14:20:07,609 Run/Stop Signal: False
+2025-01-26 14:20:07,609 Server Connected Bit: True
+2025-01-26 14:20:07,609 T-LAMP RED: False
+2025-01-26 14:20:07,610 T-LAMP YELLOW: False
+2025-01-26 14:20:07,610 T-LAMP GREEN: False
+2025-01-26 14:20:07,610 Touch 수동동작中 Signal: False
+2025-01-26 14:20:07,610 
+[105] Door and Cylinder Status:
+2025-01-26 14:20:07,611 [A] Port 실린더 유무: False
+2025-01-26 14:20:07,611 [B] Port 실린더 유무: False
+2025-01-26 14:20:07,611 [A] Worker Door Open: False
+2025-01-26 14:20:07,611 [A] Worker Door Close: False
+2025-01-26 14:20:07,611 [A] Bunker Door Open: False
+2025-01-26 14:20:07,611 [A] Bunker Door Close: False
+2025-01-26 14:20:07,612 [B] Worker Door Open: False
+2025-01-26 14:20:07,612 [B] Worker Door Close: False
+2025-01-26 14:20:07,612 [B] Bunker Door Open: False
+2025-01-26 14:20:07,612 [B] Bunker Door Close: False
+2025-01-26 14:20:07,612 
+[110] [A] Port Operation Status:
+2025-01-26 14:20:07,612 [A] Port 보호캡 분리 완료: False
+2025-01-26 14:20:07,613 [A] Port 보호캡 체결 완료: False
+2025-01-26 14:20:07,613 [A] Worker Door Open 완료: False
+2025-01-26 14:20:07,613 [A] Worker Door Close 완료: False
+2025-01-26 14:20:07,613 [A] Worker 투입 Ready: False
+2025-01-26 14:20:07,613 [A] Worker 투입 Complete: False
+2025-01-26 14:20:07,613 [A] Worker 배출 Ready: False
+2025-01-26 14:20:07,614 [A] Worker 배출 Comlete: False
+2025-01-26 14:20:07,614 [A] Bunker Door Open 완료: False
+2025-01-26 14:20:07,614 [A] Bunker Door Close 완료: False
+2025-01-26 14:20:07,614 [A] Bunker 투입 Ready: False
+2025-01-26 14:20:07,614 [A] Bunker 투입 Complete: False
+2025-01-26 14:20:07,614 [A] Bunker 배출 Ready: False
+2025-01-26 14:20:07,614 [A] Bunker 배출 Comlete: False
+2025-01-26 14:20:07,614 [A] Cylinder Align 진행중: False
+2025-01-26 14:20:07,614 [A] Cylinder Align 완료: False
+2025-01-26 14:20:07,615 
+[111] [A] Port Detailed Status:
+2025-01-26 14:20:07,615 [A] Cap Open 진행중: False
+2025-01-26 14:20:07,615 [A] Cap Close 진행중: False
+2025-01-26 14:20:07,615 [A] Cylinder 위치로 X축 이동중: False
+2025-01-26 14:20:07,616 [A] Cylinder 위치로 X축 이동완료: False
+2025-01-26 14:20:07,616 [A] Cap 위치 찾는중: False
+2025-01-26 14:20:07,616 [A] Cylinder Neck 위치 찾는중: False
+2025-01-26 14:20:07,617 [A] Worker door Open 진행중: False
+2025-01-26 14:20:07,617 [A] Worker door Close 진행중: False
+2025-01-26 14:20:07,617 [A] Bunker door Open 진행중: False
+2025-01-26 14:20:07,617 [A] Bunker door Close 진행중: False
+2025-01-26 14:20:07,617 
+[115] [B] Port Operation Status:
+2025-01-26 14:20:07,617 [B] Port 보호캡 분리 완료: False
+2025-01-26 14:20:07,617 [B] Port 보호캡 체결 완료: False
+2025-01-26 14:20:07,617 [B] Worker Door Open 완료: False
+2025-01-26 14:20:07,618 [B] Worker Door Close 완료: False
+2025-01-26 14:20:07,618 [B] Worker 투입 Ready: False
+2025-01-26 14:20:07,618 [B] Worker 투입 Complete: False
+2025-01-26 14:20:07,618 [B] Worker 배출 Ready: False
+2025-01-26 14:20:07,618 [B] Worker 배출 Comlete: False
+2025-01-26 14:20:07,618 [B] Bunker Door Open 완료: False
+2025-01-26 14:20:07,618 [B] Bunker Door Close 완료: False
+2025-01-26 14:20:07,618 [B] Bunker 투입 Ready: False
+2025-01-26 14:20:07,619 [B] Bunker 투입 Complete: False
+2025-01-26 14:20:07,619 [B] Bunker 배출 Ready: False
+2025-01-26 14:20:07,619 [B] Bunker 배출 Comlete: False
+2025-01-26 14:20:07,619 [B] Cylinder Align 진행중: False
+2025-01-26 14:20:07,619 [B] Cylinder Align 완료: False
+2025-01-26 14:20:07,619 
+[116] [B] Port Detailed Status:
+2025-01-26 14:20:07,619 [B] Cap Open 진행중: False
+2025-01-26 14:20:07,619 [B] Cap Close 진행중: False
+2025-01-26 14:20:07,619 [B] Cylinder 위치로 X축 이동중: False
+2025-01-26 14:20:07,619 [B] Cylinder 위치로 X축 이동완료: False
+2025-01-26 14:20:07,619 [B] Cap 위치 찾는중: False
+2025-01-26 14:20:07,619 [B] Cylinder Neck 위치 찾는중: False
+2025-01-26 14:20:07,619 [B] Worker door Open 진행중: False
+2025-01-26 14:20:07,620 [B] Worker door Close 진행중: False
+2025-01-26 14:20:07,620 [B] Bunker door Open 진행중: False
+2025-01-26 14:20:07,620 [B] Bunker door Close 진행중: False
+2025-01-26 14:20:12,628 
+=== Stocker PLC Data Area ===
+2025-01-26 14:20:12,629 Bunker ID: 0
+2025-01-26 14:20:12,630 Stocker ID: 52
+2025-01-26 14:20:12,630 Gas Stocker 가스 종류: [22, 1, 8, 5, 7]
+2025-01-26 14:20:12,631 Stocker Alarm Code: 0
+2025-01-26 14:20:12,631 X축 현재값: 0
+2025-01-26 14:20:12,632 Z축 현재값: 24
+2025-01-26 14:20:12,632 Cap Unit 축 보호캡 분리 Torque 설정값: 389
+2025-01-26 14:20:12,633 Cap Unit 축 보호캡 체결 Torque 설정값: 31
+2025-01-26 14:20:12,634 [A] Port Barcode Data: ?5SY3RUA2A1HZIC9LBBTFJRZZ7MR4N
+2025-01-26 14:20:12,635 [B] Port Barcode Data: 178908XP7C56RKMZ0Q88169MZKEUUF
+2025-01-26 14:20:12,635 [A] Port 가스 종류: [81, 1, 6, 6, 1]
+2025-01-26 14:20:12,636 [B] Port 가스 종류: [4, 4, 10, 7, 6]
+2025-01-26 14:20:12,636 ==================
+2025-01-26 14:20:12,637 
+=== Stocker Bit Area Data ===
+2025-01-26 14:20:12,637 
+[100] Basic Signals:
+2025-01-26 14:20:12,637 EMG Signal: False
+2025-01-26 14:20:12,637 Heart Bit: False
+2025-01-26 14:20:12,638 Run/Stop Signal: True
+2025-01-26 14:20:12,638 Server Connected Bit: False
+2025-01-26 14:20:12,638 T-LAMP RED: False
+2025-01-26 14:20:12,638 T-LAMP YELLOW: False
+2025-01-26 14:20:12,638 T-LAMP GREEN: False
+2025-01-26 14:20:12,638 Touch 수동동작中 Signal: False
+2025-01-26 14:20:12,638 
+[105] Door and Cylinder Status:
+2025-01-26 14:20:12,639 [A] Port 실린더 유무: False
+2025-01-26 14:20:12,639 [B] Port 실린더 유무: False
+2025-01-26 14:20:12,639 [A] Worker Door Open: False
+2025-01-26 14:20:12,639 [A] Worker Door Close: False
+2025-01-26 14:20:12,639 [A] Bunker Door Open: False
+2025-01-26 14:20:12,639 [A] Bunker Door Close: False
+2025-01-26 14:20:12,639 [B] Worker Door Open: False
+2025-01-26 14:20:12,640 [B] Worker Door Close: False
+2025-01-26 14:20:12,640 [B] Bunker Door Open: False
+2025-01-26 14:20:12,640 [B] Bunker Door Close: False
+2025-01-26 14:20:12,640 
+[110] [A] Port Operation Status:
+2025-01-26 14:20:12,640 [A] Port 보호캡 분리 완료: False
+2025-01-26 14:20:12,640 [A] Port 보호캡 체결 완료: False
+2025-01-26 14:20:12,640 [A] Worker Door Open 완료: False
+2025-01-26 14:20:12,641 [A] Worker Door Close 완료: False
+2025-01-26 14:20:12,641 [A] Worker 투입 Ready: False
+2025-01-26 14:20:12,641 [A] Worker 투입 Complete: False
+2025-01-26 14:20:12,641 [A] Worker 배출 Ready: False
+2025-01-26 14:20:12,641 [A] Worker 배출 Comlete: False
+2025-01-26 14:20:12,641 [A] Bunker Door Open 완료: False
+2025-01-26 14:20:12,641 [A] Bunker Door Close 완료: False
+2025-01-26 14:20:12,641 [A] Bunker 투입 Ready: False
+2025-01-26 14:20:12,641 [A] Bunker 투입 Complete: False
+2025-01-26 14:20:12,642 [A] Bunker 배출 Ready: False
+2025-01-26 14:20:12,642 [A] Bunker 배출 Comlete: False
+2025-01-26 14:20:12,642 [A] Cylinder Align 진행중: False
+2025-01-26 14:20:12,642 [A] Cylinder Align 완료: False
+2025-01-26 14:20:12,642 
+[111] [A] Port Detailed Status:
+2025-01-26 14:20:12,642 [A] Cap Open 진행중: False
+2025-01-26 14:20:12,642 [A] Cap Close 진행중: False
+2025-01-26 14:20:12,642 [A] Cylinder 위치로 X축 이동중: False
+2025-01-26 14:20:12,643 [A] Cylinder 위치로 X축 이동완료: False
+2025-01-26 14:20:12,643 [A] Cap 위치 찾는중: False
+2025-01-26 14:20:12,643 [A] Cylinder Neck 위치 찾는중: False
+2025-01-26 14:20:12,643 [A] Worker door Open 진행중: False
+2025-01-26 14:20:12,643 [A] Worker door Close 진행중: False
+2025-01-26 14:20:12,643 [A] Bunker door Open 진행중: False
+2025-01-26 14:20:12,643 [A] Bunker door Close 진행중: False
+2025-01-26 14:20:12,643 
+[115] [B] Port Operation Status:
+2025-01-26 14:20:12,643 [B] Port 보호캡 분리 완료: False
+2025-01-26 14:20:12,644 [B] Port 보호캡 체결 완료: False
+2025-01-26 14:20:12,644 [B] Worker Door Open 완료: False
+2025-01-26 14:20:12,644 [B] Worker Door Close 완료: False
+2025-01-26 14:20:12,644 [B] Worker 투입 Ready: False
+2025-01-26 14:20:12,644 [B] Worker 투입 Complete: False
+2025-01-26 14:20:12,644 [B] Worker 배출 Ready: False
+2025-01-26 14:20:12,644 [B] Worker 배출 Comlete: False
+2025-01-26 14:20:12,644 [B] Bunker Door Open 완료: False
+2025-01-26 14:20:12,644 [B] Bunker Door Close 완료: False
+2025-01-26 14:20:12,644 [B] Bunker 투입 Ready: False
+2025-01-26 14:20:12,644 [B] Bunker 투입 Complete: False
+2025-01-26 14:20:12,645 [B] Bunker 배출 Ready: False
+2025-01-26 14:20:12,645 [B] Bunker 배출 Comlete: False
+2025-01-26 14:20:12,645 [B] Cylinder Align 진행중: False
+2025-01-26 14:20:12,645 [B] Cylinder Align 완료: False
+2025-01-26 14:20:12,645 
+[116] [B] Port Detailed Status:
+2025-01-26 14:20:12,645 [B] Cap Open 진행중: False
+2025-01-26 14:20:12,645 [B] Cap Close 진행중: False
+2025-01-26 14:20:12,645 [B] Cylinder 위치로 X축 이동중: False
+2025-01-26 14:20:12,645 [B] Cylinder 위치로 X축 이동완료: False
+2025-01-26 14:20:12,646 [B] Cap 위치 찾는중: False
+2025-01-26 14:20:12,646 [B] Cylinder Neck 위치 찾는중: False
+2025-01-26 14:20:12,646 [B] Worker door Open 진행중: False
+2025-01-26 14:20:12,646 [B] Worker door Close 진행중: False
+2025-01-26 14:20:12,646 [B] Bunker door Open 진행중: False
+2025-01-26 14:20:12,646 [B] Bunker door Close 진행중: False
+2025-01-26 14:20:17,654 
+=== Stocker PLC Data Area ===
+2025-01-26 14:20:17,655 Bunker ID: 0
+2025-01-26 14:20:17,655 Stocker ID: 51
+2025-01-26 14:20:17,656 Gas Stocker 가스 종류: [73, 1, 6, 9, 6]
+2025-01-26 14:20:17,656 Stocker Alarm Code: 0
+2025-01-26 14:20:17,656 X축 현재값: 0
+2025-01-26 14:20:17,656 Z축 현재값: 464
+2025-01-26 14:20:17,657 Cap Unit 축 보호캡 분리 Torque 설정값: 98
+2025-01-26 14:20:17,657 Cap Unit 축 보호캡 체결 Torque 설정값: 98
+2025-01-26 14:20:17,657 [A] Port Barcode Data: ?P5KI6RKL19EBUDWQ5B2LUY3RDV6TY
+2025-01-26 14:20:17,657 [B] Port Barcode Data: VZW5RDRZ3ZY52J4Y27BXXDXC4Q7R9Q
+2025-01-26 14:20:17,657 [A] Port 가스 종류: [69, 9, 7, 3, 2]
+2025-01-26 14:20:17,657 [B] Port 가스 종류: [6, 8, 6, 3, 9]
+2025-01-26 14:20:17,657 ==================
+2025-01-26 14:20:17,657 
+=== Stocker Bit Area Data ===
+2025-01-26 14:20:17,657 
+[100] Basic Signals:
+2025-01-26 14:20:17,657 EMG Signal: False
+2025-01-26 14:20:17,657 Heart Bit: False
+2025-01-26 14:20:17,658 Run/Stop Signal: True
+2025-01-26 14:20:17,658 Server Connected Bit: False
+2025-01-26 14:20:17,658 T-LAMP RED: False
+2025-01-26 14:20:17,658 T-LAMP YELLOW: False
+2025-01-26 14:20:17,658 T-LAMP GREEN: False
+2025-01-26 14:20:17,658 Touch 수동동작中 Signal: False
+2025-01-26 14:20:17,658 
+[105] Door and Cylinder Status:
+2025-01-26 14:20:17,658 [A] Port 실린더 유무: False
+2025-01-26 14:20:17,658 [B] Port 실린더 유무: False
+2025-01-26 14:20:17,658 [A] Worker Door Open: False
+2025-01-26 14:20:17,658 [A] Worker Door Close: False
+2025-01-26 14:20:17,658 [A] Bunker Door Open: False
+2025-01-26 14:20:17,659 [A] Bunker Door Close: False
+2025-01-26 14:20:17,659 [B] Worker Door Open: False
+2025-01-26 14:20:17,659 [B] Worker Door Close: False
+2025-01-26 14:20:17,659 [B] Bunker Door Open: False
+2025-01-26 14:20:17,659 [B] Bunker Door Close: False
+2025-01-26 14:20:17,659 
+[110] [A] Port Operation Status:
+2025-01-26 14:20:17,659 [A] Port 보호캡 분리 완료: False
+2025-01-26 14:20:17,659 [A] Port 보호캡 체결 완료: False
+2025-01-26 14:20:17,659 [A] Worker Door Open 완료: False
+2025-01-26 14:20:17,659 [A] Worker Door Close 완료: False
+2025-01-26 14:20:17,660 [A] Worker 투입 Ready: False
+2025-01-26 14:20:17,660 [A] Worker 투입 Complete: False
+2025-01-26 14:20:17,660 [A] Worker 배출 Ready: False
+2025-01-26 14:20:17,660 [A] Worker 배출 Comlete: False
+2025-01-26 14:20:17,660 [A] Bunker Door Open 완료: False
+2025-01-26 14:20:17,660 [A] Bunker Door Close 완료: False
+2025-01-26 14:20:17,660 [A] Bunker 투입 Ready: False
+2025-01-26 14:20:17,661 [A] Bunker 투입 Complete: False
+2025-01-26 14:20:17,661 [A] Bunker 배출 Ready: False
+2025-01-26 14:20:17,661 [A] Bunker 배출 Comlete: False
+2025-01-26 14:20:17,661 [A] Cylinder Align 진행중: False
+2025-01-26 14:20:17,661 [A] Cylinder Align 완료: False
+2025-01-26 14:20:17,661 
+[111] [A] Port Detailed Status:
+2025-01-26 14:20:17,662 [A] Cap Open 진행중: False
+2025-01-26 14:20:17,662 [A] Cap Close 진행중: False
+2025-01-26 14:20:17,662 [A] Cylinder 위치로 X축 이동중: False
+2025-01-26 14:20:17,662 [A] Cylinder 위치로 X축 이동완료: False
+2025-01-26 14:20:17,662 [A] Cap 위치 찾는중: False
+2025-01-26 14:20:17,663 [A] Cylinder Neck 위치 찾는중: False
+2025-01-26 14:20:17,663 [A] Worker door Open 진행중: False
+2025-01-26 14:20:17,663 [A] Worker door Close 진행중: False
+2025-01-26 14:20:17,663 [A] Bunker door Open 진행중: False
+2025-01-26 14:20:17,664 [A] Bunker door Close 진행중: False
+2025-01-26 14:20:17,664 
+[115] [B] Port Operation Status:
+2025-01-26 14:20:17,664 [B] Port 보호캡 분리 완료: False
+2025-01-26 14:20:17,664 [B] Port 보호캡 체결 완료: False
+2025-01-26 14:20:17,665 [B] Worker Door Open 완료: False
+2025-01-26 14:20:17,665 [B] Worker Door Close 완료: False
+2025-01-26 14:20:17,665 [B] Worker 투입 Ready: False
+2025-01-26 14:20:17,665 [B] Worker 투입 Complete: False
+2025-01-26 14:20:17,666 [B] Worker 배출 Ready: False
+2025-01-26 14:20:17,666 [B] Worker 배출 Comlete: False
+2025-01-26 14:20:17,666 [B] Bunker Door Open 완료: False
+2025-01-26 14:20:17,666 [B] Bunker Door Close 완료: False
+2025-01-26 14:20:17,666 [B] Bunker 투입 Ready: False
+2025-01-26 14:20:17,666 [B] Bunker 투입 Complete: False
+2025-01-26 14:20:17,667 [B] Bunker 배출 Ready: False
+2025-01-26 14:20:17,667 [B] Bunker 배출 Comlete: False
+2025-01-26 14:20:17,667 [B] Cylinder Align 진행중: False
+2025-01-26 14:20:17,667 [B] Cylinder Align 완료: False
+2025-01-26 14:20:17,667 
+[116] [B] Port Detailed Status:
+2025-01-26 14:20:17,667 [B] Cap Open 진행중: False
+2025-01-26 14:20:17,667 [B] Cap Close 진행중: False
+2025-01-26 14:20:17,667 [B] Cylinder 위치로 X축 이동중: False
+2025-01-26 14:20:17,667 [B] Cylinder 위치로 X축 이동완료: False
+2025-01-26 14:20:17,667 [B] Cap 위치 찾는중: False
+2025-01-26 14:20:17,668 [B] Cylinder Neck 위치 찾는중: False
+2025-01-26 14:20:17,668 [B] Worker door Open 진행중: False
+2025-01-26 14:20:17,668 [B] Worker door Close 진행중: False
+2025-01-26 14:20:17,668 [B] Bunker door Open 진행중: False
+2025-01-26 14:20:17,668 [B] Bunker door Close 진행중: False

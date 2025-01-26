@@ -279,20 +279,28 @@ class ModbusDataClient:
                         logger.error(f"레지스터 읽기 실패: {start}-{start+count}")
                         return None
 
-                # 비트 데이터 읽기
-                bit_result = await self.client.read_holding_registers(
-                    address=200,
-                    count=27,
+                # 비트 데이터 읽기   self.client.read_holding_registers(
+                bit_results = await self.client.read_coils(
+                    address=0,
+                    count=18,
                     slave=1
                 )
                 
-                if not bit_result or bit_result.isError():
+                if not bit_results or bit_results.isError():
                     logger.error("비트 데이터 읽기 실패")
                     return None
 
                 plc_data = results
-                bit_data = bit_result.registers
+                current_bits = bit_results.bits
 
+                if not hasattr(self, '_last_bits') or self._last_bits != current_bits:
+                    logger.info("비트 데이터 변경 감지")
+                    logger.info(f"현재 비트 데이터: {current_bits}")
+                    if hasattr(self, '_last_bits'):
+                        logger.info(f"이전 비트 데이터: {self._last_bits}")
+                    self._last_bits = current_bits
+                    
+                # 데이터 변환 로직
                 current_data = {
                     "plc_data": {
                         "bunker_id": plc_data[0] if len(plc_data) > 0 else 0,
@@ -321,28 +329,104 @@ class ModbusDataClient:
                     },
                     "bit_data": {
                         "word_100": {
-                            "raw": bit_data[0] if len(bit_data) > 0 else 0,
-                            "states": self._get_word_100_states(bit_data[0] if len(bit_data) > 0 else 0)
+                            "raw": int(''.join(['1' if x else '0' for x in bit_results.bits[0:8]]), 2),
+                            "states": {
+                                "EMG Signal": bit_results.bits[0],
+                                "Heart Bit": bit_results.bits[1],
+                                "Run/Stop Signal": bit_results.bits[2],
+                                "Server Connected Bit": bit_results.bits[3],
+                                "T-LAMP RED": bit_results.bits[4],
+                                "T-LAMP YELLOW": bit_results.bits[5],
+                                "T-LAMP GREEN": bit_results.bits[6],
+                                "Touch 수동동작中 Signal": bit_results.bits[7]
+                            }
                         },
                         "word_105": {
-                            "raw": bit_data[5] if len(bit_data) > 5 else 0,
-                            "states": self._get_word_105_states(bit_data[5] if len(bit_data) > 5 else 0)
+                            "raw": int(''.join(['1' if x else '0' for x in bit_results.bits[16:20]]), 2),
+                            "states": {
+                                "[A] Port 실린더 유무": bit_results.bits[16],
+                                "[B] Port 실린더 유무": bit_results.bits[17],
+                                "Door Open 완료": bit_results.bits[18],
+                                "Door Close 완료": bit_results.bits[19]
+                            }
                         },
                         "word_110": {
-                            "raw": bit_data[10] if len(bit_data) > 10 else 0,
-                            "states": self._get_word_110_states(bit_data[10] if len(bit_data) > 10 else 0)
+                            "raw": int(''.join(['1' if x else '0' for x in bit_results.bits[32:45]]), 2),
+                            "states": {
+                                "[A] Close the Cylinder": bit_results.bits[32],
+                                "[A] 1st Purge before Exchange": bit_results.bits[33],
+                                "[A] Decompression Test": bit_results.bits[34],
+                                "[A] 2nd Purge before Exchange": bit_results.bits[35],
+                                "[A] Exchange Cylinder": bit_results.bits[36],
+                                "[A] 1st Purge after Exchange": bit_results.bits[37],
+                                "[A] Pressure Test": bit_results.bits[38],
+                                "[A] 2nd Purge after Exchange": bit_results.bits[39],
+                                "[A] Purge Completed": bit_results.bits[40],
+                                "[A] Prepare to Supply": bit_results.bits[41],
+                                "[A] Gas Supply AV3 Open/Close Choose": bit_results.bits[42],
+                                "[A] Gas Supply": bit_results.bits[43],
+                                "[A] Ready to Supply": bit_results.bits[44]
+                            }
                         },
                         "word_111": {
-                            "raw": bit_data[11] if len(bit_data) > 11 else 0,
-                            "states": self._get_word_111_states(bit_data[11] if len(bit_data) > 11 else 0)
+                            "raw": int(''.join(['1' if x else '0' for x in bit_results.bits[45:61]]), 2),
+                            "states": {
+                                "[A] Cyclinder Ready": bit_results.bits[45],
+                                "[A] CGA Disconnect Complete": bit_results.bits[46],
+                                "[A] CGA Connect Complete": bit_results.bits[47],
+                                "[A] Cylinder Valve Open Complete": bit_results.bits[48],
+                                "[A] Cylinder Valve Close Complete": bit_results.bits[49],
+                                "[A] Cylinder Valve Open Status": bit_results.bits[50],
+                                "[A] Cylinder Lift Unit Ready": bit_results.bits[51],
+                                "[A] Cylinder Lift Unit Moving Up": bit_results.bits[52],
+                                "[A] Cylinder Lift Unit Moving Down": bit_results.bits[53],
+                                "[A] CGA Separation In Progress": bit_results.bits[54],
+                                "[A] CGA Connection In Progress": bit_results.bits[55],
+                                "[A] Cylinder Cap Separation In Progress": bit_results.bits[56],
+                                "[A] Cylinder Valve Open In Progress": bit_results.bits[57],
+                                "[A] Cylinder Valve Close In Progress": bit_results.bits[58],
+                                "[A] Cylinder Alignment In Progress": bit_results.bits[59],
+                                "[A] Cylinder Turn In Progress": bit_results.bits[60]
+                            }
                         },
                         "word_115": {
-                            "raw": bit_data[15] if len(bit_data) > 15 else 0,
-                            "states": self._get_word_115_states(bit_data[15] if len(bit_data) > 15 else 0)
+                            "raw": int(''.join(['1' if x else '0' for x in bit_results.bits[61:74]]), 2),
+                            "states": {
+                                "[B] Close the Cylinder": bit_results.bits[61],
+                                "[B] 1st Purge before Exchange": bit_results.bits[62],
+                                "[B] Decompression Test": bit_results.bits[63],
+                                "[B] 2nd Purge before Exchange": bit_results.bits[64],
+                                "[B] Exchange Cylinder": bit_results.bits[65],
+                                "[B] 1st Purge after Exchange": bit_results.bits[66],
+                                "[B] Pressure Test": bit_results.bits[67],
+                                "[B] 2nd Purge after Exchange": bit_results.bits[68],
+                                "[B] Purge Completed": bit_results.bits[69],
+                                "[B] Prepare to Supply": bit_results.bits[70],
+                                "[B] Gas Supply AV3 Open/Close Choose": bit_results.bits[71],
+                                "[B] Gas Supply": bit_results.bits[72],
+                                "[B] Ready to Supply": bit_results.bits[73]
+                            }
                         },
                         "word_116": {
-                            "raw": bit_data[16] if len(bit_data) > 16 else 0,
-                            "states": self._get_word_116_states(bit_data[16] if len(bit_data) > 16 else 0)
+                            "raw": int(''.join(['1' if x else '0' for x in bit_results.bits[74:90]]), 2),
+                            "states": {
+                                "[B] Cylinder Ready": bit_results.bits[74],
+                                "[B] CGA Disconnect Complete": bit_results.bits[75],
+                                "[B] CGA Connect Complete": bit_results.bits[76],
+                                "[B] Cylinder Valve Open Complete": bit_results.bits[77],
+                                "[B] Cylinder Valve Close Complete": bit_results.bits[78],
+                                "[B] Cylinder Valve Open Status": bit_results.bits[79],
+                                "[B] Cylinder Lift Unit Ready": bit_results.bits[80],
+                                "[B] Cylinder Lift Unit Moving Up": bit_results.bits[81],
+                                "[B] Cylinder Lift Unit Moving Down": bit_results.bits[82],
+                                "[B] CGA Separation In Progress": bit_results.bits[83],
+                                "[B] CGA Connection In Progress": bit_results.bits[84],
+                                "[B] Cylinder Cap Separation In Progress": bit_results.bits[85],
+                                "[B] Cylinder Valve Open In Progress": bit_results.bits[86],
+                                "[B] Cylinder Valve Close In Progress": bit_results.bits[87],
+                                "[B] Cylinder Alignment In Progress": bit_results.bits[88],
+                                "[B] Cylinder Turn In Progress": bit_results.bits[89]
+                            }
                         }
                     }
                 }

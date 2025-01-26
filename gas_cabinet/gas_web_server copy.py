@@ -4,8 +4,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 import logging
 import asyncio
-import json
-import os
 from typing import Any, List, Dict, Optional
 from contextlib import asynccontextmanager
 from pymodbus.client import AsyncModbusTcpClient
@@ -340,7 +338,6 @@ class ModbusDataClient:
                             "gas_type": plc_data[95:100] if len(plc_data) > 99 else [0]*5
                         }
                     },
-                    
                     "bit_data": {
                         "word_100": {
                             "raw": int(''.join(['1' if x else '0' for x in bit_results.bits[0:8]]), 2),
@@ -722,7 +719,6 @@ class ModbusDataClient:
 class ConnectionManager:
     def __init__(self):
         self.active_connections: List[WebSocket] = []
-        self.socket_path = '/tmp/cabinet_data.sock'
         self._lock = asyncio.Lock()
 
     async def connect(self, websocket: WebSocket):
@@ -742,58 +738,41 @@ class ConnectionManager:
             except Exception as e:
                 print(f"브로드캐스트 오류: {e}")
                 await self.disconnect(connection)
-    async def handle_unix_connection(self, reader, writer):
-        try:
-            while True:
-                data = await reader.read(4096)
-                if not data:
-                    break
-                try:
-                    json_data = json.loads(data.decode())
-                    logger.info(f"Received data from Unix socket: {len(str(json_data))} bytes")
-                    await self.broadcast(json_data)
-                except json.JSONDecodeError as e:
-                    logger.error(f"Invalid JSON data received: {e}")
-        finally:
-            writer.close()
-            await writer.wait_closed()
-            
-    async def setup_unix_socket(self):
-        """유닉스 소켓 서버 설정"""
-        if os.path.exists(self.socket_path):
-            os.unlink(self.socket_path)
-        
-        self.unix_server = await asyncio.start_unix_server(
-            self.handle_unix_connection, 
-            self.socket_path
-        )
-        return self.unix_server        
-    
-    async def cleanup(self):
-        """리소스 정리"""
-        if self.unix_server:
-            self.unix_server.close()
-            await self.unix_server.wait_closed()
-        if os.path.exists(self.socket_path):
-            os.unlink(self.socket_path)
-
-manager = ConnectionManager()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """애플리케이션 시작/종료 시 실행될 코드"""
-    # 시작 시
+    print("애플리케이션 시작중...")
+    modbus_client = ModbusDataClient()
+    app.state.modbus_client = modbus_client
+    app.state.update_task = asyncio.create_task(update_client_data(modbus_client))
+    
     try:
-        server = await manager.setup_unix_socket()
-        asyncio.create_task(server.serve_forever())
-        logger.info("Unix socket server started")
         yield
+    except Exception as e:
+        print(f"라이프스팬 오류: {e}")
     finally:
-        # 종료 시
-        await manager.cleanup()
-        logger.info("Unix socket server stopped and cleaned up")    
+        print("애플리케이션 종료중...")
+        if hasattr(app.state, 'modbus_client'):
+            app.state.modbus_client.running = False
+            if app.state.modbus_client.client:
+                try:
+                    await app.state.modbus_client.close()
+                except Exception as e:
+                    print(f"Modbus 클라이언트 종료 오류: {e}")
+
+        if hasattr(app.state, 'update_task'):
+            try:
+                app.state.update_task.cancel()
+                try:
+                    await app.state.update_task
+                except asyncio.CancelledError:
+                    pass
+            except Exception as e:
+                print(f"업데이트 태스크 종료 오류: {e}")
+
 
 app = FastAPI(lifespan=lifespan)
+manager = ConnectionManager()
 
 app.add_middleware(
     CORSMiddleware,
@@ -807,28 +786,85 @@ app.add_middleware(
 async def get():
     return html
 
+async def update_client_data(modbus_client):
+    while True:
+        try:
+            data = await modbus_client.get_data()
+            if data:
+                await manager.broadcast(data)
+            await asyncio.sleep(0.5)
+        except Exception as e:
+            print(f"데이터 업데이트 오류: {e}")
+            await asyncio.sleep(1)
+
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
-    """웹소켓 연결 처리"""
-    await websocket.accept()  # 연결 승인 추가
-    await manager.connect(websocket)
     try:
+        await websocket.accept()
+        await manager.connect(websocket)
+        print("WebSocket 연결 성공")
+        
         while True:
             try:
-                await websocket.receive_text()
-                await asyncio.sleep(0.1)
-            except WebSocketDisconnect:
+                data = await app.state.modbus_client.get_data()
+                if data:
+                    print("데이터 전송:", data)
+                    await websocket.send_json(data)
+                await asyncio.sleep(0.5)
+            except Exception as e:
+                print(f"WebSocket 데이터 전송 오류: {e}")
                 break
+    except Exception as e:
+        print(f"WebSocket 연결 중 오류: {e}")
     finally:
         await manager.disconnect(websocket)
+        
+@app.get("/api/cabinet/data")
+async def get_cabinet_data():
+    """현재 캐비닛 데이터 조회"""
+    try:
+        data = await app.state.modbus_client.get_data()
+        return {"success": True, "data": data}
+    except Exception as e:
+        return {"success": False, "error": str(e)}
+    
+# 루트 경로에 HTML 페이지 제공
+@app.get("/", response_class=HTMLResponse)
+async def get():
+    return html
 
 if __name__ == "__main__":
-    import uvicorn
-    logger.info("=== Gas Cabinet Web Server Starting ===")
-    
-    uvicorn.run(
-        app=app,
-        host="0.0.0.0",
-        port=5001,
-        log_level="info"
-    )
+    try:
+        import uvicorn
+        print("=== Gas Cabinet Web Server 시작 ===")
+        
+        # uvicorn 설정
+        config = uvicorn.Config(
+            app=app,
+            host="0.0.0.0",
+            port=5001,
+            loop="asyncio",
+            log_level="info"
+        )
+        server = uvicorn.Server(config)
+
+        # 메인 실행
+        async def main():
+            try:
+                await server.serve()
+            except Exception as e:
+                print(f"서버 실행 중 오류: {e}")
+
+        # 서버 실행
+        asyncio.run(main())
+
+    except KeyboardInterrupt:
+        print("\n=== 서버 종료 요청됨 ===")
+        if hasattr(app.state, 'update_task'):
+            app.state.update_task.cancel()
+        if hasattr(app.state, 'modbus_client'):
+            app.state.modbus_client.running = False
+    except Exception as e:
+        print(f"\n예기치 않은 오류: {e}")
+    finally:
+        print("=== 서버가 종료되었습니다 ===")
